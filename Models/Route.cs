@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FlightManagementCompany.Models
 {
-    internal class Route
+    public class Route
     {
     }
 }
