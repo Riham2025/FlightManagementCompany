@@ -50,7 +50,7 @@ namespace FlightManagementCompany
               .Property(a => a.TailNumber).IsRequired(); // Ensure TailNumber is required
 
             // Route (Airport as Origin & Destination)
-            mb.Entity<Route>()
+            mb.Entity<Route>()//
               .HasOne(r => r.Origin).WithMany()
               .HasForeignKey(r => r.OriginAirportId)
               .OnDelete(DeleteBehavior.Restrict);
