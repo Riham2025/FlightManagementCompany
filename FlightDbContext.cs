@@ -113,7 +113,7 @@ namespace FlightManagementCompany
             mb.Entity<FlightCrew>() // Represents the FlightCrew entity
               .HasOne(fc => fc.Flight).WithMany(f => f.FlightCrew) // Navigation property for the flight associated with the crew member
               .HasForeignKey(fc => fc.FlightId); // Foreign key to the flight
-            mb.Entity<FlightCrew>()
+            mb.Entity<FlightCrew>() // Represents the FlightCrew entity
               .HasOne(fc => fc.CrewMember).WithMany(c => c.FlightCrew)
               .HasForeignKey(fc => fc.CrewId);
 
