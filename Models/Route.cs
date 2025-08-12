@@ -12,7 +12,7 @@ namespace FlightManagementCompany.Models
     {
         // Represents a flight route between two airports.
         [Key] public int RouteId { get; set; } // Unique identifier for the route
-        [ForeignKey(nameof(Origin))] public int OriginAirportId { get; set; }
+        [ForeignKey(nameof(Origin))] public int OriginAirportId { get; set; } // Identifier for the origin airport
         [ForeignKey(nameof(Destination))] public int DestinationAirportId { get; set; }
         [Range(1, 20000)] public int DistanceKm { get; set; }
     }
