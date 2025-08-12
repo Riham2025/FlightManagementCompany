@@ -11,7 +11,7 @@ namespace FlightManagementCompany.Models
     {
         // Represents a crew member working on a flight.
         [Key] public int CrewId { get; set; } // Unique identifier for the crew member
-        [Required] public string FullName { get; set; } = null!;
+        [Required] public string FullName { get; set; } = null!; // Full name of the crew member
         [Required] public string Role { get; set; } = "FlightAttendant"; // or enum
         public string? LicenseNo { get; set; }
 
