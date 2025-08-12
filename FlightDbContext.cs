@@ -68,7 +68,7 @@ namespace FlightManagementCompany
               .IsUnique(); // Ensure that the combination of FlightNumber and DepartureUtc is unique
             mb.Entity<Flight>() // Represents the Flight entity
               .HasOne(f => f.Route).WithMany(r => r.Flights) // Navigation property for the route associated with the flight
-              .HasForeignKey(f => f.RouteId);
+              .HasForeignKey(f => f.RouteId); // Foreign key to the route
             mb.Entity<Flight>()
               .HasOne(f => f.Aircraft).WithMany(a => a.Flights)
               .HasForeignKey(f => f.AircraftId);
