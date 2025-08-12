@@ -66,7 +66,7 @@ namespace FlightManagementCompany
             mb.Entity<Flight>() // Represents the Flight entity
               .HasIndex(f => new { f.FlightNumber, f.DepartureUtc }) // Ensure uniqueness of FlightNumber and DepartureUtc
               .IsUnique(); // Ensure that the combination of FlightNumber and DepartureUtc is unique
-            mb.Entity<Flight>()
+            mb.Entity<Flight>() // Represents the Flight entity
               .HasOne(f => f.Route).WithMany(r => r.Flights)
               .HasForeignKey(f => f.RouteId);
             mb.Entity<Flight>()
