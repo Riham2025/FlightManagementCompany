@@ -9,8 +9,12 @@ using FlightManagementCompany.Models;
 
 namespace FlightManagementCompany
 {
+
+
      public class FlightDbContext : DbContext
     {
+
+        // Represents the database context for the flight management system.
 
         // DbSets
         public DbSet<Airport> Airports { get; set; } // Represents a collection of airports in the database
