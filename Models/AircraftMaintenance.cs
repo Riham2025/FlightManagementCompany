@@ -16,6 +16,6 @@ namespace FlightManagementCompany.Models
         public DateTime MaintenanceDate { get; set; } // Date when the maintenance was performed, defaulting to the current UTC time
         [Required] public string Type { get; set; } = "A-Check"; // Type of maintenance performed (e.g., "A-Check", "B-Check", "C-Check", "D-Check")
         public string? Notes { get; set; } // Additional notes or comments about the maintenance performed
-        public Aircraft Aircraft { get; set; } = null!;
+        public Aircraft Aircraft { get; set; } = null!; // Aircraft associated with this maintenance record
     }
 }
