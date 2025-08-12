@@ -15,7 +15,7 @@ namespace FlightManagementCompany.Models
         [Required, StringLength(10)] public string FlightNumber { get; set; } = null!; // Flight number (e.g., "AA123")
         public DateTime DepartureUtc { get; set; } // Scheduled departure time in UTC
         public DateTime ArrivalUtc { get; set; } // Scheduled arrival time in UTC
-        [Required] public string Status { get; set; } = "Scheduled";
+        [Required] public string Status { get; set; } = "Scheduled"; // Status of the flight (e.g., "Scheduled", "Cancelled", "Delayed")
 
     }
 }
