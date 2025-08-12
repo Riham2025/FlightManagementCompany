@@ -81,7 +81,7 @@ namespace FlightManagementCompany
 
             // Booking
             mb.Entity<Booking>() // Represents the Booking entity
-              .HasIndex(b => b.BookingRef).IsUnique();
+              .HasIndex(b => b.BookingRef).IsUnique(); // Ensure BookingRef is unique
             mb.Entity<Booking>()
               .HasOne(b => b.Passenger).WithMany(p => p.Bookings)
               .HasForeignKey(b => b.PassengerId);
