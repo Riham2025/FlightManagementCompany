@@ -108,7 +108,7 @@ namespace FlightManagementCompany
               .Property(c => c.FullName).IsRequired().HasMaxLength(80); // Ensure FullName is required and has a maximum length of 80 characters
 
             // FlightCrew (composite key FlightId + CrewId)
-            mb.Entity<FlightCrew>()
+            mb.Entity<FlightCrew>() //
               .HasKey(fc => new { fc.FlightId, fc.CrewId });
             mb.Entity<FlightCrew>()
               .HasOne(fc => fc.Flight).WithMany(f => f.FlightCrew)
