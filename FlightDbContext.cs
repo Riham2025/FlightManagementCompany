@@ -41,7 +41,7 @@ namespace FlightManagementCompany
             mb.Entity<Airport>() // Represents the Airport entity
               .HasIndex(a => a.IATA).IsUnique(); // Ensure IATA code is unique
             mb.Entity<Airport>() // Represents the Airport entity
-              .Property(a => a.IATA).IsRequired().HasMaxLength(3);
+              .Property(a => a.IATA).IsRequired().HasMaxLength(3); // Ensure IATA code is required and has a maximum length of 3 characters
 
             // Aircraft
             mb.Entity<Aircraft>()
