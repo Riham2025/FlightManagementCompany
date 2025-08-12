@@ -74,7 +74,7 @@ namespace FlightManagementCompany
               .HasForeignKey(f => f.AircraftId); // Foreign key to the aircraft
 
             // Passenger
-            mb.Entity<Passenger>()
+            mb.Entity<Passenger>()//
               .HasIndex(p => p.PassportNo).IsUnique();
             mb.Entity<Passenger>()
               .Property(p => p.FullName).IsRequired().HasMaxLength(80);
