@@ -38,7 +38,7 @@ namespace FlightManagementCompany
         protected override void OnModelCreating(ModelBuilder mb)
         {
             // Airport
-            mb.Entity<Airport>()
+            mb.Entity<Airport>() // Represents the Airport entity
               .HasIndex(a => a.IATA).IsUnique();
             mb.Entity<Airport>()
               .Property(a => a.IATA).IsRequired().HasMaxLength(3);
