@@ -110,7 +110,7 @@ namespace FlightManagementCompany
             // FlightCrew (composite key FlightId + CrewId)
             mb.Entity<FlightCrew>() // Represents the FlightCrew entity
               .HasKey(fc => new { fc.FlightId, fc.CrewId }); // Composite key consisting of FlightId and CrewId
-            mb.Entity<FlightCrew>()
+            mb.Entity<FlightCrew>() // Represents the FlightCrew entity
               .HasOne(fc => fc.Flight).WithMany(f => f.FlightCrew)
               .HasForeignKey(fc => fc.FlightId);
             mb.Entity<FlightCrew>()
