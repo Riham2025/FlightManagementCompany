@@ -11,7 +11,7 @@ namespace FlightManagementCompany.Models
     {
 
         // Represents a flight with its details.
-        [Key] public int FlightId { get; set; }
+        [Key] public int FlightId { get; set; } // Unique identifier for the flight
         [Required, StringLength(10)] public string FlightNumber { get; set; } = null!;
         public DateTime DepartureUtc { get; set; }
         public DateTime ArrivalUtc { get; set; }
