@@ -14,5 +14,12 @@ namespace FlightManagementCompany.Models
         [Key] public int TicketId { get; set; } // Unique identifier for the ticket
         [ForeignKey(nameof(Booking))] public int BookingId { get; set; } // Identifier for the booking associated with this ticket
         [ForeignKey(nameof(Flight))] public int FlightId { get; set; } // Identifier for the flight associated with this ticket
+
+
+        // Navigation properties
+        [Required, StringLength(5)] public string SeatNumber { get; set; } = null!;
+        [Column(TypeName = "decimal(10,2)")] public decimal Fare { get; set; }
+        public bool CheckedIn { get; set; }
+
     }
 }
