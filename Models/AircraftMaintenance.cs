@@ -11,7 +11,7 @@ namespace FlightManagementCompany.Models
     public class AircraftMaintenance
     {
         // Represents maintenance records for an aircraft.
-        [Key] public int MaintenanceId { get; set; }
+        [Key] public int MaintenanceId { get; set; } // Unique identifier for the maintenance record
         [ForeignKey(nameof(Aircraft))] public int AircraftId { get; set; }
         public DateTime MaintenanceDate { get; set; }
         [Required] public string Type { get; set; } = "A-Check";
