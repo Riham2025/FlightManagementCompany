@@ -28,6 +28,8 @@ namespace FlightManagementCompany.Models
         // Navigation properties
         public Route Route { get; set; } = null!; // Route associated with this flight
         public Aircraft Aircraft { get; set; } = null!; // Aircraft operating this flight
+
+        // Navigation properties for related entities
         public ICollection<Ticket> Tickets { get; set; } = new List<Ticket>(); // Tickets booked for this flight
         public ICollection<FlightCrew> FlightCrew { get; set; } = new List<FlightCrew>(); // Flight crew members assigned to this flight
 
