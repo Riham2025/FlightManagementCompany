@@ -80,7 +80,7 @@ namespace FlightManagementCompany
               .Property(p => p.FullName).IsRequired().HasMaxLength(80); // Ensure FullName is required and has a maximum length of 80 characters
 
             // Booking
-            mb.Entity<Booking>() //
+            mb.Entity<Booking>() // Represents the Booking entity
               .HasIndex(b => b.BookingRef).IsUnique();
             mb.Entity<Booking>()
               .HasOne(b => b.Passenger).WithMany(p => p.Bookings)
