@@ -13,7 +13,7 @@ namespace FlightManagementCompany.Models
         [Key] public int CrewId { get; set; } // Unique identifier for the crew member
         [Required] public string FullName { get; set; } = null!; // Full name of the crew member
         [Required] public string Role { get; set; } = "FlightAttendant"; // or enum // Role of the crew member (e.g., "Pilot", "Flight Attendant", "Engineer")
-        public string? LicenseNo { get; set; }
+        public string? LicenseNo { get; set; } // License number of the crew member, if applicable (e.g., for pilots)
 
 
     }
