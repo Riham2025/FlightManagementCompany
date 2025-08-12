@@ -12,7 +12,7 @@ namespace FlightManagementCompany.Models
     {
 
         // Represents baggage associated with a ticket.
-        [Key] public int BaggageId { get; set; }
+        [Key] public int BaggageId { get; set; } // Unique identifier for the baggage
         [ForeignKey(nameof(Ticket))] public int TicketId { get; set; }
         [Column(TypeName = "decimal(10,2)")] public decimal WeightKg { get; set; }
         [StringLength(20)] public string? TagNumber { get; set; }
