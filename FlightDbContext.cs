@@ -44,7 +44,7 @@ namespace FlightManagementCompany
               .Property(a => a.IATA).IsRequired().HasMaxLength(3); // Ensure IATA code is required and has a maximum length of 3 characters
 
             // Aircraft
-            mb.Entity<Aircraft>() //
+            mb.Entity<Aircraft>() // Represents the Aircraft entity
               .HasIndex(a => a.TailNumber).IsUnique();
             mb.Entity<Aircraft>()
               .Property(a => a.TailNumber).IsRequired();
