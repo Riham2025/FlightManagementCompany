@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,12 @@ namespace FlightManagementCompany.Models
         public DateTime DepartureUtc { get; set; } // Scheduled departure time in UTC
         public DateTime ArrivalUtc { get; set; } // Scheduled arrival time in UTC
         [Required] public string Status { get; set; } = "Scheduled"; // Status of the flight (e.g., "Scheduled", "Cancelled", "Delayed")
+
+
+        // Navigation properties
+        [ForeignKey(nameof(Route))] public int RouteId { get; set; }
+        [ForeignKey(nameof(Aircraft))] public int AircraftId { get; set; }
+
 
     }
 }
