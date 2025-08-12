@@ -18,6 +18,6 @@ namespace FlightManagementCompany.Models
 
         // Navigation properties
         public ICollection<Flight> Flights { get; set; } = new List<Flight>(); // Flights operated by this aircraft
-        public ICollection<AircraftMaintenance> Maintenances { get; set; } = new List<AircraftMaintenance>();
+        public ICollection<AircraftMaintenance> Maintenances { get; set; } = new List<AircraftMaintenance>(); // Maintenance records for this aircraft
     }
 }
