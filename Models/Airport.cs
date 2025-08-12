@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,5 +19,9 @@ namespace FlightManagementCompany.Models
         [Required] public string City { get; set; } = null!; // City where the airport is located
         [Required] public string Country { get; set; } = null!; // Country where the airport is located
         public string? TimeZone { get; set; } // Time zone of the airport, optional
+
+        // Navigation
+        public ICollection<Route> OriginRoutes { get; set; } = new List<Route>();
+        public ICollection<Route> DestinationRoutes { get; set; } = new List<Route>();
     }
 }
