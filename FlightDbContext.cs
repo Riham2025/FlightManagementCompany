@@ -104,7 +104,7 @@ namespace FlightManagementCompany
               .HasForeignKey(b => b.TicketId); // Foreign key to the ticket
 
             // CrewMember
-            mb.Entity<CrewMember>() //
+            mb.Entity<CrewMember>() // Represents the CrewMember entity
               .Property(c => c.FullName).IsRequired().HasMaxLength(80);
 
             // FlightCrew (composite key FlightId + CrewId)
