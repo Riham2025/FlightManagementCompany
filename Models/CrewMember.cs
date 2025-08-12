@@ -17,7 +17,7 @@ namespace FlightManagementCompany.Models
 
 
         // Navigation properties
-        public ICollection<FlightCrew> FlightCrew { get; set; } = new List<FlightCrew>();
+        public ICollection<FlightCrew> FlightCrew { get; set; } = new List<FlightCrew>(); // Flight crew assignments for this crew member
     }
 
 }
