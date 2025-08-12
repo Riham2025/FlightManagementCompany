@@ -61,7 +61,7 @@ namespace FlightManagementCompany
 
             // Flight
             mb.Entity<Flight>() // Represents the Flight entity
-              .Property(f => f.FlightNumber).IsRequired().HasMaxLength(10);
+              .Property(f => f.FlightNumber).IsRequired().HasMaxLength(10); // Ensure FlightNumber is required and has a maximum length of 10 characters
             // Unique (FlightNumber + Departure Date only)
             mb.Entity<Flight>()
               .HasIndex(f => new { f.FlightNumber, f.DepartureUtc })
