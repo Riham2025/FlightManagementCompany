@@ -11,7 +11,7 @@ namespace FlightManagementCompany.Models
     public class FlightCrew
     {
         // Represents the assignment of a crew member to a flight.
-        public int FlightId { get; set; }
+        public int FlightId { get; set; } // Unique identifier for the flight
         public int CrewId { get; set; }
         [Required] public string RoleOnFlight { get; set; } = "Attendant";
     }
