@@ -14,6 +14,6 @@ namespace FlightManagementCompany.Models
         [Key] public int RouteId { get; set; } // Unique identifier for the route
         [ForeignKey(nameof(Origin))] public int OriginAirportId { get; set; } // Identifier for the origin airport
         [ForeignKey(nameof(Destination))] public int DestinationAirportId { get; set; } // Identifier for the destination airport
-        [Range(1, 20000)] public int DistanceKm { get; set; }
+        [Range(1, 20000)] public int DistanceKm { get; set; } // Distance of the route in kilometers
     }
 }
