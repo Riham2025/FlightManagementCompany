@@ -99,7 +99,7 @@ namespace FlightManagementCompany
             // Baggage
             mb.Entity<Baggage>() // Represents the Baggage entity
               .Property(b => b.WeightKg).HasColumnType("decimal(6,2)"); // Ensure WeightKg is a decimal with 6 digits total and 2 decimal places
-            mb.Entity<Baggage>()
+            mb.Entity<Baggage>() // Represents the Baggage entity
               .HasOne(b => b.Ticket).WithMany(t => t.Baggage)
               .HasForeignKey(b => b.TicketId);
 
