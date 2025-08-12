@@ -90,7 +90,7 @@ namespace FlightManagementCompany
             mb.Entity<Ticket>() // Represents the Ticket entity
               .Property(t => t.Fare).HasColumnType("decimal(10,2)"); // Ensure Fare is a decimal with 10 digits total and 2 decimal places
             mb.Entity<Ticket>() // Represents the Ticket entity
-              .HasOne(t => t.Booking).WithMany(b => b.Tickets)
+              .HasOne(t => t.Booking).WithMany(b => b.Tickets) // Navigation property for the booking associated with the ticket
               .HasForeignKey(t => t.BookingId);
             mb.Entity<Ticket>()
               .HasOne(t => t.Flight).WithMany(f => f.Tickets)
