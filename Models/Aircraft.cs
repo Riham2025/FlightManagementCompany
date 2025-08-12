@@ -12,7 +12,7 @@ namespace FlightManagementCompany.Models
         // Represents an aircraft with its details.
         [Key] public int AircraftId { get; set; } // Unique identifier for the aircraft
         [Required, StringLength(20)] public string TailNumber { get; set; } = null!; // Tail number of the aircraft
-        [Required] public string Model { get; set; } = null!;
+        [Required] public string Model { get; set; } = null!; // Model of the aircraft
         [Range(1, 500)] public int Capacity { get; set; }
     }
 }
