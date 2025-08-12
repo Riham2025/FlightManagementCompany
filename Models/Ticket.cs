@@ -13,6 +13,6 @@ namespace FlightManagementCompany.Models
         // Represents a ticket issued for a flight booking.
         [Key] public int TicketId { get; set; } // Unique identifier for the ticket
         [ForeignKey(nameof(Booking))] public int BookingId { get; set; } // Identifier for the booking associated with this ticket
-        [ForeignKey(nameof(Flight))] public int FlightId { get; set; }
+        [ForeignKey(nameof(Flight))] public int FlightId { get; set; } // Identifier for the flight associated with this ticket
     }
 }
