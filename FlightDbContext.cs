@@ -46,7 +46,7 @@ namespace FlightManagementCompany
             // Aircraft
             mb.Entity<Aircraft>() // Represents the Aircraft entity
               .HasIndex(a => a.TailNumber).IsUnique(); // Ensure TailNumber is unique
-            mb.Entity<Aircraft>()
+            mb.Entity<Aircraft>() // Represents the Aircraft entity
               .Property(a => a.TailNumber).IsRequired();
 
             // Route (Airport as Origin & Destination)
