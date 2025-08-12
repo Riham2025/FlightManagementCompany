@@ -18,7 +18,7 @@ namespace FlightManagementCompany.Models
 
         // Navigation properties
         [Required, StringLength(5)] public string SeatNumber { get; set; } = null!; // Seat number assigned to the ticket (e.g., "12A")
-        [Column(TypeName = "decimal(10,2)")] public decimal Fare { get; set; }
+        [Column(TypeName = "decimal(10,2)")] public decimal Fare { get; set; } // Fare for the ticket
         public bool CheckedIn { get; set; }
 
     }
