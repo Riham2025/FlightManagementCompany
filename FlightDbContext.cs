@@ -87,7 +87,7 @@ namespace FlightManagementCompany
               .HasForeignKey(b => b.PassengerId); // Foreign key to the passenger
 
             // Ticket
-            mb.Entity<Ticket>()
+            mb.Entity<Ticket>() //
               .Property(t => t.Fare).HasColumnType("decimal(10,2)");
             mb.Entity<Ticket>()
               .HasOne(t => t.Booking).WithMany(b => b.Tickets)
