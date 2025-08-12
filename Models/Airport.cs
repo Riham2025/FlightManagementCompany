@@ -17,6 +17,6 @@ namespace FlightManagementCompany.Models
         [Required] public string Name { get; set; } = null!; // Name of the airport
         [Required] public string City { get; set; } = null!; // City where the airport is located
         [Required] public string Country { get; set; } = null!; // Country where the airport is located
-        public string? TimeZone { get; set; }
+        public string? TimeZone { get; set; } // Time zone of the airport, optional
     }
 }
