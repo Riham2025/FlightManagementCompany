@@ -93,7 +93,7 @@ namespace FlightManagementCompany
               .HasOne(t => t.Booking).WithMany(b => b.Tickets) // Navigation property for the booking associated with the ticket
               .HasForeignKey(t => t.BookingId); // Foreign key to the booking
             mb.Entity<Ticket>() // Represents the Ticket entity
-              .HasOne(t => t.Flight).WithMany(f => f.Tickets)
+              .HasOne(t => t.Flight).WithMany(f => f.Tickets) // Navigation property for the flight associated with the ticket
               .HasForeignKey(t => t.FlightId);
 
             // Baggage
