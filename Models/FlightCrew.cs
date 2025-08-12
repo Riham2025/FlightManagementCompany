@@ -17,7 +17,7 @@ namespace FlightManagementCompany.Models
 
 
         //  Navigation properties for related entities
-        public Flight Flight { get; set; } = null!;
+        public Flight Flight { get; set; } = null!; // Flight associated with this crew member assignment
         public CrewMember CrewMember { get; set; } = null!;
     }
 }
