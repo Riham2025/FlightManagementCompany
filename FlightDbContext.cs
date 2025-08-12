@@ -60,7 +60,7 @@ namespace FlightManagementCompany
               .OnDelete(DeleteBehavior.Restrict); // Prevent cascading delete on destination airport
 
             // Flight
-            mb.Entity<Flight>() //
+            mb.Entity<Flight>() // Represents the Flight entity
               .Property(f => f.FlightNumber).IsRequired().HasMaxLength(10);
             // Unique (FlightNumber + Departure Date only)
             mb.Entity<Flight>()
