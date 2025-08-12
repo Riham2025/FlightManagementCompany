@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace FlightManagementCompany.Models
 {
-    internal class FlightCrew
+    // Join table (many-to-many): Flight <-> CrewMember
+    public class FlightCrew
     {
     }
 }
