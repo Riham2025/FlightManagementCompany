@@ -17,5 +17,9 @@ namespace FlightManagementCompany.Models
         
         public string Nationality { get; set; } = "US";  
         public DateTime DOB { get; set; } // Date of birth of the passenger
+
+
+        // Navigation properties
+        public ICollection<Booking> Bookings { get; set; } = new List<Booking>();
     }
 }
