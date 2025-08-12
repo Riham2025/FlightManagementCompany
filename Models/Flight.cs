@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,6 +24,12 @@ namespace FlightManagementCompany.Models
         [ForeignKey(nameof(Route))] public int RouteId { get; set; } // Identifier for the route associated with this flight
         [ForeignKey(nameof(Aircraft))] public int AircraftId { get; set; } // Identifier for the aircraft operating this flight
 
+
+        // Navigation properties
+        public Route Route { get; set; } = null!; // Route associated with this flight
+        public Aircraft Aircraft { get; set; } = null!;
+        public ICollection<Ticket> Tickets { get; set; } = new List<Ticket>();
+        public ICollection<FlightCrew> FlightCrew { get; set; } = new List<FlightCrew>();
 
     }
 }
