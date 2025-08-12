@@ -22,5 +22,12 @@ namespace FlightManagementCompany
         public DbSet<CrewMember> CrewMembers { get; set; } // Represents a collection of crew members in the database
         public DbSet<FlightCrew> FlightCrew { get; set; } // Represents a collection of flight crew assignments in the database
         public DbSet<AircraftMaintenance> AircraftMaintenance { get; set; } // Represents a collection of aircraft maintenance records in the database
+
+
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
+        {
+            // Configure the database connection
+            options.UseSqlServer("Server=.;Database=FlightDb;Trusted_Connection=True;TrustServerCertificate=True;");
+        }
     }
 }
