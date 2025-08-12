@@ -19,7 +19,7 @@ namespace FlightManagementCompany.Models
 
         // Navigation properties
         public Airport Origin { get; set; } = null!; // Origin airport of the route
-        public Airport Destination { get; set; } = null!;
+        public Airport Destination { get; set; } = null!; // Destination airport of the route
         public ICollection<Flight> Flights { get; set; } = new List<Flight>();
 
 
