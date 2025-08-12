@@ -39,7 +39,7 @@ namespace FlightManagementCompany
         {
             // Airport
             mb.Entity<Airport>() // Represents the Airport entity
-              .HasIndex(a => a.IATA).IsUnique();
+              .HasIndex(a => a.IATA).IsUnique(); //
             mb.Entity<Airport>()
               .Property(a => a.IATA).IsRequired().HasMaxLength(3);
 
