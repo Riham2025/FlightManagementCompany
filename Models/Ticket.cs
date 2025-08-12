@@ -25,7 +25,7 @@ namespace FlightManagementCompany.Models
         // Navigation properties for related entities
         public Booking Booking { get; set; } = null!; // Booking associated with this ticket
         public Flight Flight { get; set; } = null!; // Flight associated with this ticket
-        public ICollection<Baggage> Baggage { get; set; } = new List<Baggage>();
+        public ICollection<Baggage> Baggage { get; set; } = new List<Baggage>();// Baggage associated with this ticket
 
     }
 }
