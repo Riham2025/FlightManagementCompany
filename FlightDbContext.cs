@@ -75,7 +75,7 @@ namespace FlightManagementCompany
 
             // Passenger
             mb.Entity<Passenger>()// Represents the Passenger entity
-              .HasIndex(p => p.PassportNo).IsUnique();
+              .HasIndex(p => p.PassportNo).IsUnique(); // Ensure PassportNo is unique
             mb.Entity<Passenger>()
               .Property(p => p.FullName).IsRequired().HasMaxLength(80);
 
