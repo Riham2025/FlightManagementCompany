@@ -120,7 +120,7 @@ namespace FlightManagementCompany
             // AircraftMaintenance
             mb.Entity<AircraftMaintenance>() // Represents the AircraftMaintenance entity
               .HasOne(m => m.Aircraft).WithMany(a => a.Maintenance) // Navigation property for the aircraft associated with the maintenance record
-              .HasForeignKey(m => m.AircraftId);
+              .HasForeignKey(m => m.AircraftId); // Foreign key to the aircraft
         }
 
     }
