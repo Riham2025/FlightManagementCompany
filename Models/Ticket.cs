@@ -21,5 +21,11 @@ namespace FlightManagementCompany.Models
         [Column(TypeName = "decimal(10,2)")] public decimal Fare { get; set; } // Fare for the ticket
         public bool CheckedIn { get; set; } // Indicates whether the passenger has checked in for the flight
 
+
+        // Navigation properties for related entities
+        public Booking Booking { get; set; } = null!;
+        public Flight Flight { get; set; } = null!;
+        public ICollection<Baggage> Baggage { get; set; } = new List<Baggage>();
+
     }
 }
