@@ -22,6 +22,6 @@ namespace FlightManagementCompany.Models
 
         // Navigation
         public ICollection<Route> OriginRoutes { get; set; } = new List<Route>(); // Routes originating from this airport
-        public ICollection<Route> DestinationRoutes { get; set; } = new List<Route>();
+        public ICollection<Route> DestinationRoutes { get; set; } = new List<Route>(); // Routes arriving at this airport
     }
 }
