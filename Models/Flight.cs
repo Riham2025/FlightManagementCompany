@@ -20,7 +20,7 @@ namespace FlightManagementCompany.Models
 
 
         // Navigation properties
-        [ForeignKey(nameof(Route))] public int RouteId { get; set; }
+        [ForeignKey(nameof(Route))] public int RouteId { get; set; } // Identifier for the route associated with this flight
         [ForeignKey(nameof(Aircraft))] public int AircraftId { get; set; }
 
 
