@@ -14,5 +14,10 @@ namespace FlightManagementCompany.Models
         public int FlightId { get; set; } // Unique identifier for the flight
         public int CrewId { get; set; }// Unique identifier for the crew member
         [Required] public string RoleOnFlight { get; set; } = "Attendant"; // Role of the crew member on the flight (e.g., "Pilot", "Flight Attendant", "Engineer")
+
+
+        //  Navigation properties for related entities
+        public Flight Flight { get; set; } = null!;
+        public CrewMember CrewMember { get; set; } = null!;
     }
 }
