@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,5 +16,11 @@ namespace FlightManagementCompany.Models
         [Required, StringLength(12)] public string BookingRef { get; set; } = null!; // Reference number for the booking
         public DateTime BookingDate { get; set; } = DateTime.UtcNow; // Date when the booking was made, defaulting to the current UTC time
         [Required] public string Status { get; set; } = "Confirmed"; // Status of the booking (e.g., "Confirmed", "Cancelled", "Pending")
+
+
+        // Navigation properties
+        [ForeignKey(nameof(Passenger))] public int PassengerId { get; set; }
+        public Passenger Passenger { get; set; } = null!;
+        public ICollection<Ticket> Tickets { get; set; } = new List<Ticket>();
     }
 }
