@@ -56,7 +56,7 @@ namespace FlightManagementCompany
               .OnDelete(DeleteBehavior.Restrict); // Prevent cascading delete on origin airport
             mb.Entity<Route>() // Represents the Route entity
               .HasOne(r => r.Destination).WithMany() // Navigation property for destination airport
-              .HasForeignKey(r => r.DestinationAirportId)
+              .HasForeignKey(r => r.DestinationAirportId) // Foreign key to the destination airport
               .OnDelete(DeleteBehavior.Restrict);
 
             // Flight
