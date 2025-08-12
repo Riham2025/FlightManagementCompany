@@ -20,7 +20,7 @@ namespace FlightManagementCompany.Models
 
         // Navigation properties
         [ForeignKey(nameof(Passenger))] public int PassengerId { get; set; } // Identifier for the passenger who made the booking
-        public Passenger Passenger { get; set; } = null!;
+        public Passenger Passenger { get; set; } = null!; // Passenger who made the booking
         public ICollection<Ticket> Tickets { get; set; } = new List<Ticket>();
     }
 }
