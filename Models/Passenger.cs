@@ -10,7 +10,7 @@ namespace FlightManagementCompany.Models
     public class Passenger
     {
         // Represents a passenger with their details.
-        [Key] public int PassengerId { get; set; }
+        [Key] public int PassengerId { get; set; } // Unique identifier for the passenger
         [Required] public string FullName { get; set; } = null!;
         [Required, StringLength(20)] public string PassportNo { get; set; } = null!;
         public string Nationality { get; set; } = "US";
