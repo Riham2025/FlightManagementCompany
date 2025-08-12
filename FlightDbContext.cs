@@ -52,7 +52,7 @@ namespace FlightManagementCompany
             // Route (Airport as Origin & Destination)
             mb.Entity<Route>()// Represents the Route entity
               .HasOne(r => r.Origin).WithMany()
-              .HasForeignKey(r => r.OriginAirportId)
+              .HasForeignKey(r => r.OriginAirportId) // Foreign key to the origin airport
               .OnDelete(DeleteBehavior.Restrict);
             mb.Entity<Route>()
               .HasOne(r => r.Destination).WithMany()
