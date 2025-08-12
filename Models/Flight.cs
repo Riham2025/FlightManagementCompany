@@ -13,7 +13,7 @@ namespace FlightManagementCompany.Models
         // Represents a flight with its details.
         [Key] public int FlightId { get; set; } // Unique identifier for the flight
         [Required, StringLength(10)] public string FlightNumber { get; set; } = null!; // Flight number (e.g., "AA123")
-        public DateTime DepartureUtc { get; set; }
+        public DateTime DepartureUtc { get; set; } // Scheduled departure time in UTC
         public DateTime ArrivalUtc { get; set; }
         [Required] public string Status { get; set; } = "Scheduled";
 
