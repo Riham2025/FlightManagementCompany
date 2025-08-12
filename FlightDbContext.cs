@@ -105,7 +105,7 @@ namespace FlightManagementCompany
 
             // CrewMember
             mb.Entity<CrewMember>() // Represents the CrewMember entity
-              .Property(c => c.FullName).IsRequired().HasMaxLength(80);
+              .Property(c => c.FullName).IsRequired().HasMaxLength(80); // Ensure FullName is required and has a maximum length of 80 characters
 
             // FlightCrew (composite key FlightId + CrewId)
             mb.Entity<FlightCrew>()
