@@ -13,6 +13,6 @@ namespace FlightManagementCompany.Models
         [Key] public int BookingId { get; set; } // Unique identifier for the booking
         [Required, StringLength(12)] public string BookingRef { get; set; } = null!; // Reference number for the booking
         public DateTime BookingDate { get; set; } = DateTime.UtcNow; // Date when the booking was made, defaulting to the current UTC time
-        [Required] public string Status { get; set; } = "Confirmed";
+        [Required] public string Status { get; set; } = "Confirmed"; // Status of the booking (e.g., "Confirmed", "Cancelled", "Pending")
     }
 }
