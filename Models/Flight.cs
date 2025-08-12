@@ -27,7 +27,7 @@ namespace FlightManagementCompany.Models
 
         // Navigation properties
         public Route Route { get; set; } = null!; // Route associated with this flight
-        public Aircraft Aircraft { get; set; } = null!;
+        public Aircraft Aircraft { get; set; } = null!; // Aircraft operating this flight
         public ICollection<Ticket> Tickets { get; set; } = new List<Ticket>();
         public ICollection<FlightCrew> FlightCrew { get; set; } = new List<FlightCrew>();
 
