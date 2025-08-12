@@ -12,7 +12,7 @@ namespace FlightManagementCompany
 
         // DbSets
         public DbSet<Airport> Airports { get; set; } // Represents a collection of airports in the database
-        public DbSet<Aircraft> Aircraft { get; set; }
+        public DbSet<Aircraft> Aircraft { get; set; } // Represents a collection of aircraft in the database
         public DbSet<Route> Routes { get; set; }
         public DbSet<Flight> Flights { get; set; }
         public DbSet<Passenger> Passengers { get; set; }
