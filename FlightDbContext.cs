@@ -19,7 +19,7 @@ namespace FlightManagementCompany
         public DbSet<Booking> Bookings { get; set; } // Represents a collection of bookings in the database
         public DbSet<Ticket> Tickets { get; set; } // Represents a collection of tickets in the database
         public DbSet<Baggage> Baggage { get; set; } // Represents a collection of baggage items in the database
-        public DbSet<CrewMember> CrewMembers { get; set; }
+        public DbSet<CrewMember> CrewMembers { get; set; } // Represents a collection of crew members in the database
         public DbSet<FlightCrew> FlightCrew { get; set; }
         public DbSet<AircraftMaintenance> AircraftMaintenance { get; set; }
     }
