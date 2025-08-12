@@ -70,7 +70,7 @@ namespace FlightManagementCompany
               .HasOne(f => f.Route).WithMany(r => r.Flights) // Navigation property for the route associated with the flight
               .HasForeignKey(f => f.RouteId); // Foreign key to the route
             mb.Entity<Flight>() // Represents the Flight entity
-              .HasOne(f => f.Aircraft).WithMany(a => a.Flights)
+              .HasOne(f => f.Aircraft).WithMany(a => a.Flights) // Navigation property for the aircraft operating the flight
               .HasForeignKey(f => f.AircraftId);
 
             // Passenger
