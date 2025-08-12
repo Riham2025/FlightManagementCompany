@@ -97,7 +97,7 @@ namespace FlightManagementCompany
               .HasForeignKey(t => t.FlightId); // Foreign key to the flight
 
             // Baggage
-            mb.Entity<Baggage>() //
+            mb.Entity<Baggage>() // Represents the Baggage entity
               .Property(b => b.WeightKg).HasColumnType("decimal(6,2)");
             mb.Entity<Baggage>()
               .HasOne(b => b.Ticket).WithMany(t => t.Baggage)
