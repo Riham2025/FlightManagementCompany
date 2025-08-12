@@ -13,7 +13,7 @@ namespace FlightManagementCompany.Models
         // Represents an airport with its details.
 
         [Key] public int AirportId { get; set; } // Unique identifier for the airport
-        [Required, StringLength(3)] public string IATA { get; set; } = null!;
+        [Required, StringLength(3)] public string IATA { get; set; } = null!; // IATA code (3-letter code) for the airport
         [Required] public string Name { get; set; } = null!;
         [Required] public string City { get; set; } = null!;
         [Required] public string Country { get; set; } = null!;
