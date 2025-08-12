@@ -21,7 +21,7 @@ namespace FlightManagementCompany.Models
         public string? TimeZone { get; set; } // Time zone of the airport, optional
 
         // Navigation
-        public ICollection<Route> OriginRoutes { get; set; } = new List<Route>();
+        public ICollection<Route> OriginRoutes { get; set; } = new List<Route>(); // Routes originating from this airport
         public ICollection<Route> DestinationRoutes { get; set; } = new List<Route>();
     }
 }
