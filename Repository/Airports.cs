@@ -22,5 +22,19 @@ namespace FlightManagementCompany.Repository
 
         public Airport? GetById(int id) => // Retrieves an airport by its unique identifier.
             _ctx.Airports.Find(id);// Find() is used to retrieve an entity by its primary key, which is the AirportId in this case.
+
+        public Airport? GetByIata(string iata) => // Retrieves an airport by its IATA code.
+            _ctx.Airports.AsNoTracking().FirstOrDefault(a => a.IATA == iata);
+
+        public void Add(Airport entity) => _ctx.Airports.Add(entity);
+        public void Update(Airport entity) => _ctx.Airports.Update(entity);
+
+        public void Delete(int id)
+        {
+            var e = _ctx.Airports.Find(id);
+            if (e != null) _ctx.Airports.Remove(e);
+        }
+
+        public void Save() => _ctx.SaveChanges();
     }
 }
