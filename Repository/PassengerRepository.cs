@@ -51,7 +51,7 @@ namespace FlightManagementCompany.Repository
         public void Delete(int id)
         {
             var e = _ctx.Passengers.Find(id); //    Find the passenger entity by its primary key (PassengerId).
-            if (e != null) _ctx.Passengers.Remove(e);
+            if (e != null) _ctx.Passengers.Remove(e); // If the entity is found, remove it from the database context. This method is used to delete a passenger record from the database.
         }
 
         // Commit staged changes to the database
