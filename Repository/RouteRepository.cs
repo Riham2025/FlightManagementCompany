@@ -37,7 +37,7 @@ namespace FlightManagementCompany.Repository
 
         public void Add(Route entity) // Stage add new route
         {
-            _ctx.Routes.Add(entity);
+            _ctx.Routes.Add(entity); // Adds a new route entity to the database context.
         }
 
         public void Update(Route entity)               // Stage update
