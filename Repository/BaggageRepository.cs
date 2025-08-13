@@ -35,7 +35,7 @@ namespace FlightManagementCompany.Repository
 
         public void Add(Baggage entity) // Stage add new baggage record
         {
-            _ctx.Baggage.Add(entity);
+            _ctx.Baggage.Add(entity); // Adds a new baggage entity to the database context. This method is used to insert a new baggage record into the database.
         }
 
         public void Update(Baggage entity)
