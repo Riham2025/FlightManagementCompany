@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FlightManagementCompany.Repository
 {
-    public class PassengerRepository
+    public class PassengerRepository : IPassengerRepository // Represents a repository for managing passenger entities in the flight management system. 
     {
 
         private readonly FlightDbContext _ctx;// EF Core DbContext
@@ -42,7 +42,7 @@ namespace FlightManagementCompany.Repository
         }
 
         //Update an existing passenger in the context
-        public void Update(Passenger entity) 
+        public void Update(Passenger entity)
         {
             _ctx.Passengers.Update(entity); // Updates an existing passenger entity in the database context. This method is used to modify an existing passenger record in the database.
         }
