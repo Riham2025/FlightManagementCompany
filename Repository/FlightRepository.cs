@@ -28,7 +28,7 @@ namespace FlightManagementCompany.Repository
                         .ThenInclude(r => r.Destination) // Eager-load the destination airport of the route
                       .Include(f => f.Aircraft) // Eager-load the aircraft associated with the flight
                       .AsNoTracking() // Use AsNoTracking for performance optimization
-                      .ToList(); 
+                      .ToList(); // Converts the DbSet to a list of Flight entities.
         }
 
         public Flight? GetById(int id)
