@@ -51,6 +51,6 @@ namespace FlightManagementCompany.Repository
             if (e != null) _ctx.Routes.Remove(e); // If the entity is found, remove it from the database context.
         }
 
-        public void Save() => _ctx.SaveChanges();
+        public void Save() => _ctx.SaveChanges(); // Saves changes made to the database context. This method is used to persist any changes made to the route entities in the database, such as adding, updating, or deleting records.
     }
 }
