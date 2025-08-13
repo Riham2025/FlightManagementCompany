@@ -29,7 +29,7 @@ namespace FlightManagementCompany.Repository
         public void Add(Airport entity) => _ctx.Airports.Add(entity); // Adds a new airport entity to the database context. This method is used to insert a new airport record into the database.
         public void Update(Airport entity) => _ctx.Airports.Update(entity); // Updates an existing airport entity in the database context. This method is used to modify an existing airport record in the database.
 
-        public void Delete(int id)
+        public void Delete(int id) // Deletes an airport by its unique identifier.
         {
             var e = _ctx.Airports.Find(id);
             if (e != null) _ctx.Airports.Remove(e);
