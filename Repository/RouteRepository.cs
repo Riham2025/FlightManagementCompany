@@ -24,7 +24,7 @@ namespace FlightManagementCompany.Repository
                       .Include(r => r.Origin) // Eager-load origin airport
                       .Include(r => r.Destination)   // Eager-load destination airport
                       .AsNoTracking()   // Use AsNoTracking for performance optimization
-                      .ToList();                       // Materialize result
+                      .ToList();  // Converts the DbSet to a list of Route entities.
         }
 
         public Route? GetById(int id)                  // Retrieve a single route by key
