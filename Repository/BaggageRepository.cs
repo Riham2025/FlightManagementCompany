@@ -13,7 +13,7 @@ namespace FlightManagementCompany.Repository
 
         private readonly FlightDbContext _ctx; // Database context for accessing baggage data
 
-        public BaggageRepository(FlightDbContext ctx)
+        public BaggageRepository(FlightDbContext ctx)// Constructor to initialize the repository with a database context
         {
             _ctx = ctx;
         }
