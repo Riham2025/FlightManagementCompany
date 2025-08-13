@@ -37,7 +37,7 @@ namespace FlightManagementCompany.Repository
                       .Include(f => f.Route).ThenInclude(r => r.Origin) // Eager-load the origin airport of the route
 
                       .Include(f => f.Route).ThenInclude(r => r.Destination) // Eager-load the destination airport of the route
-                      .Include(f => f.Aircraft)
+                      .Include(f => f.Aircraft) // Eager-load the aircraft associated with the flight
                       .FirstOrDefault(f => f.FlightId == id);
         }
 
