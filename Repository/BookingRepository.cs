@@ -34,7 +34,7 @@ namespace FlightManagementCompany.Repository
             return _ctx.Bookings // Represents the Bookings DbSet in the database context
                        .Include(b => b.Passenger) // Eager-load the passenger associated with the booking
                        .Include(b => b.Flight) // Eager-load the flight associated with the booking
-                       .FirstOrDefault(b => b.BookingId == id);
+                       .FirstOrDefault(b => b.BookingId == id); // Find the first booking that matches the specified BookingId.
         }
 
         public void Add(Booking entity)
