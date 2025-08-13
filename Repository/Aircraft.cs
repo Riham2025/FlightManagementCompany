@@ -14,7 +14,7 @@ namespace FlightManagementCompany.Repository
         public Aircraft(FlightDbContext ctx) => _ctx = ctx; // Constructor to initialize the repository with a database context
 
         public List<Aircraft> GetAll() => // Retrieves all aircraft from the database.
-            _ctx.Aircraft.AsNoTracking().ToList();
+            _ctx.Aircraft.AsNoTracking().ToList();// AsNoTracking() is used to improve performance by not tracking changes to the entities.
 
         public Aircraft? GetById(int id) =>
             _ctx.Aircraft.Find(id);
