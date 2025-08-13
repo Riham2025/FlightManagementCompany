@@ -56,7 +56,7 @@ namespace FlightManagementCompany.Repository
 
         public void Save() // Saves changes made to the database context. This method is used to persist any changes made to the ticket entities in the database, such as adding, updating, or deleting records.
         {
-            _ctx.SaveChanges();
+            _ctx.SaveChanges(); // Saves changes made to the database context, persisting any modifications made to the ticket entities.
         }
     }
 }
