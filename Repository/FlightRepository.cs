@@ -60,7 +60,7 @@ namespace FlightManagementCompany.Repository
 
         public void Update(Flight entity)  // Stage update existing flight 
         {
-            _ctx.Flights.Update(entity);
+            _ctx.Flights.Update(entity); // Updates an existing flight entity in the database context. This method is used to modify an existing flight record in the database.
         }
 
         public void Delete(int id)  
