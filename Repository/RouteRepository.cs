@@ -27,7 +27,7 @@ namespace FlightManagementCompany.Repository
                       .ToList();  // Converts the DbSet to a list of Route entities.
         }
 
-        public Route? GetById(int id)                  // Retrieve a single route by key
+        public Route? GetById(int id) // Retrieve a route by its unique identifier
         {
             return _ctx.Routes
                       .Include(r => r.Origin)
