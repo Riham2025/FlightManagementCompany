@@ -11,7 +11,7 @@ namespace FlightManagementCompany.Repository
     public class RouteRepository : IRouteRepository // Represents a repository for managing flight routes in the flight management system.
     {
 
-        private readonly FlightDbContext _ctx;        // EF Core DbContext for persistence
+        private readonly FlightDbContext _ctx; // Database context for accessing route data
 
         public RouteRepository(FlightDbContext ctx)    // Inject DbContext via constructor
         {
