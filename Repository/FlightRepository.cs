@@ -48,7 +48,7 @@ namespace FlightManagementCompany.Repository
                       .Include(f => f.Route).ThenInclude(r => r.Destination) // Eager-load the destination airport of the route
                       .Include(f => f.Aircraft) // Eager-load the aircraft associated with the flight
                       .Where(f => f.DepartureUtc >= fromUtc && f.DepartureUtc <= toUtc) // Filter flights based on the specified date range
-                      .AsNoTracking()
+                      .AsNoTracking() // Use AsNoTracking for performance optimization
                       .ToList();
         }
 
