@@ -13,7 +13,8 @@ namespace FlightManagementCompany.Repository
 
         private readonly FlightDbContext _ctx;// EF Core DbContext
 
-        // Constructor injection to ensure DbContext is provided
+
+        //Constructor injection to ensure DbContext is provided
         public PassengerRepository(FlightDbContext ctx)
         {
             _ctx = ctx;
