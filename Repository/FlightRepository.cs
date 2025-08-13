@@ -28,10 +28,10 @@ namespace FlightManagementCompany.Repository
                         .ThenInclude(r => r.Destination)// and destination airport
                       .Include(f => f.Aircraft)// Include aircraft
                       .AsNoTracking() // Read-only optimization
-                      .ToList();
+                      .ToList(); 
         }
 
-        public Flight? GetById(int id)                 // Get a single flight with details
+        public Flight? GetById(int id)// Get a single flight with details
         {
             return _ctx.Flights
                       .Include(f => f.Route).ThenInclude(r => r.Origin)
