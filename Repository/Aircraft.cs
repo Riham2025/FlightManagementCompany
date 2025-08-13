@@ -11,7 +11,7 @@ namespace FlightManagementCompany.Repository
     {
 
         private readonly FlightDbContext _ctx; // Represents a repository for managing aircraft entities in the flight management system.
-        public Aircraft(FlightDbContext ctx) => _ctx = ctx;
+        public Aircraft(FlightDbContext ctx) => _ctx = ctx; // Constructor to initialize the repository with a database context
 
         public List<Aircraft> GetAll() =>
             _ctx.Aircraft.AsNoTracking().ToList();
