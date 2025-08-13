@@ -14,7 +14,7 @@ namespace FlightManagementCompany.Repository
 
         private readonly FlightDbContext _ctx; // Database context for accessing ticket data
 
-        public TicketRepository(FlightDbContext ctx)
+        public TicketRepository(FlightDbContext ctx) // Constructor to initialize the repository with a database context
         {
             _ctx = ctx;
         }
