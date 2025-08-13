@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace FlightManagementCompany.Repository
 {
-    internal class Aircraft
+    public class Aircraft
     {
+
+
     }
 }

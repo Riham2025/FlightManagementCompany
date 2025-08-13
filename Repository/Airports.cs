@@ -31,10 +31,13 @@ namespace FlightManagementCompany.Repository
 
         public void Delete(int id) // Deletes an airport by its unique identifier.
         {
+            
             var e = _ctx.Airports.Find(id); // Find the airport entity by its primary key (AirportId).
             if (e != null) _ctx.Airports.Remove(e);
         }
 
         public void Save() => _ctx.SaveChanges();
+
+
     }
 }
