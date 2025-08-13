@@ -16,6 +16,6 @@ namespace FlightManagementCompany.Repository
 
         
         public List<Airport> GetAll() => // Retrieves all airports from the database.
-            _ctx.Airports.AsNoTracking().ToList();
+            _ctx.Airports.AsNoTracking().ToList();// AsNoTracking() is used to improve performance by not tracking changes to the entities.
     }
 }
