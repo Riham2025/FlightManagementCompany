@@ -58,7 +58,7 @@ namespace FlightManagementCompany.Repository
             _ctx.Flights.Add(entity); // Adds a new flight entity to the database context. This method is used to insert a new flight record into the database.
         }
 
-        public void Update(Flight entity)  
+        public void Update(Flight entity)  // Stage update existing flight 
         {
             _ctx.Flights.Update(entity);
         }
