@@ -51,7 +51,7 @@ namespace FlightManagementCompany.Repository
         public void Delete(int id) // Delete a ticket by its unique identifier
         {
             var e = _ctx.Tickets.Find(id); // Find the ticket entity by its primary key (TicketId).
-            if (e != null) _ctx.Tickets.Remove(e);
+            if (e != null) _ctx.Tickets.Remove(e); // If the entity is found, remove it from the database context. This method is used to delete a ticket record from the database.
         }
 
         public void Save()
