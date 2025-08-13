@@ -63,7 +63,7 @@ namespace FlightManagementCompany.Repository
             _ctx.Flights.Update(entity); // Updates an existing flight entity in the database context. This method is used to modify an existing flight record in the database.
         }
 
-        public void Delete(int id)  
+        public void Delete(int id) // Delete a flight by its unique identifier 
         {
             var e = _ctx.Flights.Find(id);    
             if (e != null) _ctx.Flights.Remove(e); 
