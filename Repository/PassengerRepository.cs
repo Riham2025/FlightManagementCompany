@@ -24,7 +24,7 @@ namespace FlightManagementCompany.Repository
         public List<Passenger> GetAll()
         {
             return _ctx.Passengers // Represents the Passengers DbSet in the database context
-                       .AsNoTracking()
+                       .AsNoTracking() // AsNoTracking() is used to improve performance by not tracking changes to the entities.
                        .ToList();
         }
 
