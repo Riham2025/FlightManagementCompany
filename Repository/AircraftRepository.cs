@@ -32,7 +32,7 @@ namespace FlightManagementCompany.Repository
         }
 
         // Add new aircraft
-        public void Add(FlightManagementCompany.Models.Aircraft entity)
+        public void Add(FlightManagementCompany.Models.Aircraft entity) //
         {
             _ctx.Aircraft.Add(entity);
             _ctx.SaveChanges();
