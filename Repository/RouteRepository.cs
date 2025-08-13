@@ -47,7 +47,7 @@ namespace FlightManagementCompany.Repository
 
         public void Delete(int id)  // Delete a route by its unique identifier
         {
-            var e = _ctx.Routes.Find(id);             // Try to find tracked/attached entity
+            var e = _ctx.Routes.Find(id); // Find the route entity by its primary key (RouteId).
             if (e != null) _ctx.Routes.Remove(e);     // Remove if found
         }
 
