@@ -54,7 +54,7 @@ namespace FlightManagementCompany.Repository
             if (e != null) _ctx.Tickets.Remove(e); // If the entity is found, remove it from the database context. This method is used to delete a ticket record from the database.
         }
 
-        public void Save()
+        public void Save() // Saves changes made to the database context. This method is used to persist any changes made to the ticket entities in the database, such as adding, updating, or deleting records.
         {
             _ctx.SaveChanges();
         }
