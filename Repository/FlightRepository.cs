@@ -16,10 +16,10 @@ namespace FlightManagementCompany.Repository
 
         public FlightRepository(FlightDbContext ctx) // DI constructor
         {
-            _ctx = ctx;
+            _ctx = ctx; 
         }
 
-        public List<Flight> GetAll()                   // Get all flights with route & aircraft
+        public List<Flight> GetAll() // Get all flights with route & aircraft
         {
             return _ctx.Flights
                       .Include(f => f.Route)           // Include route
