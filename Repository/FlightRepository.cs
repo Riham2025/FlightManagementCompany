@@ -48,11 +48,12 @@ namespace FlightManagementCompany.Repository
                       .Include(f => f.Route).ThenInclude(r => r.Destination) // Eager-load the destination airport of the route
                       .Include(f => f.Aircraft) // Eager-load the aircraft associated with the flight
                       .Where(f => f.DepartureUtc >= fromUtc && f.DepartureUtc <= toUtc) // Filter flights based on the specified date range
-                      .AsNoTracking() // Use AsNoTracking for performance optimization
-                      .ToList();
+                      .AsNoTracking() //Use AsNoTracking for performance optimization
+                      .ToList(); 
         }
 
         public void Add(Flight entity) // Stage add new flight
+
         {
             _ctx.Flights.Add(entity);
         }
@@ -68,7 +69,7 @@ namespace FlightManagementCompany.Repository
             if (e != null) _ctx.Flights.Remove(e); 
         }
 
-        public void Save() => _ctx.SaveChanges();    
+        public void Save() => _ctx.SaveChanges();  
     }
 }
 
