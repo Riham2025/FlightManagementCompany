@@ -18,7 +18,7 @@ namespace FlightManagementCompany.Repository
             _ctx = ctx; // Assign the provided context to the private field
         }
 
-        // Get all bookings, including related Passenger and Flight
+        //Get all bookings, including related Passenger and Flight
         public List<Booking> GetAll()
         {
             return _ctx.Bookings
