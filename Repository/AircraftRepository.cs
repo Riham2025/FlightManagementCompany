@@ -17,7 +17,7 @@ namespace FlightManagementCompany.Repository
             _ctx = ctx; // Assign the provided context to the private field
         }
 
-        // Get all aircraft (MODEL), not a repository type
+        // Get all aircraft
         public List<FlightManagementCompany.Models.Aircraft> GetAll()
         {
             return _ctx.Aircraft               // DbSet<Models.Aircraft>
