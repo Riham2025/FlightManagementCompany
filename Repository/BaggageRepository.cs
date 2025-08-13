@@ -33,7 +33,7 @@ namespace FlightManagementCompany.Repository
                        .FirstOrDefault(b => b.BaggageId == id); // Find the first baggage record that matches the specified BaggageId.
         }
 
-        public void Add(Baggage entity)
+        public void Add(Baggage entity) // Stage add new baggage record
         {
             _ctx.Baggage.Add(entity);
         }
