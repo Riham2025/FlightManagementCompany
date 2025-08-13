@@ -9,6 +9,6 @@ namespace FlightManagementCompany.Repository
         List<Passenger> GetAll(); //Retrieves all passenger entities from the repository.
         Passenger? GetById(int id); // Retrieves a passenger entity by its unique identifier.
         void Save(); // Saves changes made to the repository.
-        void Update(Passenger entity);
+        void Update(Passenger entity); // Updates an existing passenger entity in the repository.
     }
 }
