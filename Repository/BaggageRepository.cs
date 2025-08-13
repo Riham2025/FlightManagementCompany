@@ -40,7 +40,7 @@ namespace FlightManagementCompany.Repository
 
         public void Update(Baggage entity) // Stage update existing baggage record
         {
-            _ctx.Baggage.Update(entity);
+            _ctx.Baggage.Update(entity);// Updates an existing baggage entity in the database context. This method is used to modify an existing baggage record in the database.
         }
 
         public void Delete(int id)
