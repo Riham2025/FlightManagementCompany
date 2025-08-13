@@ -21,5 +21,6 @@ namespace FlightManagementCompany.Models
 
         // Navigation properties
         public Ticket Ticket { get; set; } = null!; // Ticket associated with this baggage
+        public Passenger Passenger { get; set; } // Passenger associated with this baggage
     }
 }
