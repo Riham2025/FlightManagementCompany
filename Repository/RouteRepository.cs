@@ -18,7 +18,7 @@ namespace FlightManagementCompany.Repository
             _ctx = ctx; // Assign the provided context to the private field
         }
 
-        public List<Route> GetAll()                    // Retrieve all routes with airports
+        public List<Route> GetAll() // Retrieve all routes from the database                 
         {
             return _ctx.Routes
                       .Include(r => r.Origin)          // Eager-load origin airport
