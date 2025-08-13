@@ -13,7 +13,7 @@ namespace FlightManagementCompany.Repository
 
         private readonly FlightDbContext _ctx; // Database context for accessing route data
 
-        public RouteRepository(FlightDbContext ctx)    // Inject DbContext via constructor
+        public RouteRepository(FlightDbContext ctx) // Constructor to initialize the repository with a database context
         {
             _ctx = ctx;
         }
