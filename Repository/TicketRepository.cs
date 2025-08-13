@@ -38,7 +38,7 @@ namespace FlightManagementCompany.Repository
                        .FirstOrDefault(t => t.TicketId == id); // Find the first ticket that matches the specified TicketId.
         }
 
-        public void Add(Ticket entity)
+        public void Add(Ticket entity)// Stage add new ticket
         {
             _ctx.Tickets.Add(entity);
         }
