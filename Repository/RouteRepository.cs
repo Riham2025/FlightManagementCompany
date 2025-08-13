@@ -35,7 +35,7 @@ namespace FlightManagementCompany.Repository
                       .FirstOrDefault(r => r.RouteId == id); // Find the first route that matches the specified RouteId.
         }
 
-        public void Add(Route entity)                  // Stage insert
+        public void Add(Route entity) // Stage add new route
         {
             _ctx.Routes.Add(entity);
         }
