@@ -38,7 +38,7 @@ namespace FlightManagementCompany.Repository
 
                       .Include(f => f.Route).ThenInclude(r => r.Destination) // Eager-load the destination airport of the route
                       .Include(f => f.Aircraft) // Eager-load the aircraft associated with the flight
-                      .FirstOrDefault(f => f.FlightId == id);
+                      .FirstOrDefault(f => f.FlightId == id); // Find the first flight that matches the specified FlightId.
         }
 
         public List<Flight> GetByDateRange(DateTime fromUtc, DateTime toUtc) 
