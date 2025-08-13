@@ -37,7 +37,7 @@ namespace FlightManagementCompany.Repository
                        .FirstOrDefault(b => b.BookingId == id); // Find the first booking that matches the specified BookingId.
         }
 
-        public void Add(Booking entity)
+        public void Add(Booking entity) // Stage add new booking
         {
             _ctx.Bookings.Add(entity);
         }
