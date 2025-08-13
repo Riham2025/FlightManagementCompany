@@ -29,7 +29,7 @@ namespace FlightManagementCompany.Repository
 
         public Route? GetById(int id) // Retrieve a route by its unique identifier
         {
-            return _ctx.Routes
+            return _ctx.Routes // Represents the Routes DbSet in the database context
                       .Include(r => r.Origin)
                       .Include(r => r.Destination)
                       .FirstOrDefault(r => r.RouteId == id);
