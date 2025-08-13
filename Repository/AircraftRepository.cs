@@ -50,7 +50,7 @@ namespace FlightManagementCompany.Repository
         {
             var e = _ctx.Aircraft.Find(id); // Find the aircraft entity by its primary key (AircraftId).
                                             // If the entity is found, remove it from the database context.
-            if (e != null)
+            if (e != null) // Check if the entity exists before attempting to remove it
             {
                 _ctx.Aircraft.Remove(e);
                 _ctx.SaveChanges();
