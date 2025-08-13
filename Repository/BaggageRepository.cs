@@ -20,7 +20,7 @@ namespace FlightManagementCompany.Repository
 
         public List<Baggage> GetAll() // Retrieve all baggage records from the database
         {
-            return _ctx.Baggage
+            return _ctx.Baggage // Represents the Baggage DbSet in the database context
                        .Include(b => b.Passenger)
                        .AsNoTracking()
                        .ToList();
