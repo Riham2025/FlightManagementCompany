@@ -44,7 +44,7 @@ namespace FlightManagementCompany.Repository
 
         public void Update(Booking entity) // Stage update existing booking
         {
-            _ctx.Bookings.Update(entity);
+            _ctx.Bookings.Update(entity); // Updates an existing booking entity in the database context. This method is used to modify an existing booking record in the database.
         }
 
         public void Delete(int id)
