@@ -36,7 +36,7 @@ namespace FlightManagementCompany.Repository
             return _ctx.Flights // Represents the Flights DbSet in the database context
                       .Include(f => f.Route).ThenInclude(r => r.Origin) // Eager-load the origin airport of the route
 
-                      .Include(f => f.Route).ThenInclude(r => r.Destination)
+                      .Include(f => f.Route).ThenInclude(r => r.Destination) // Eager-load the destination airport of the route
                       .Include(f => f.Aircraft)
                       .FirstOrDefault(f => f.FlightId == id);
         }
