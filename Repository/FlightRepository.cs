@@ -14,7 +14,7 @@ namespace FlightManagementCompany.Repository
 
         private readonly FlightDbContext _ctx; // DbContext field
 
-        public FlightRepository(FlightDbContext ctx)   // DI constructor
+        public FlightRepository(FlightDbContext ctx) // DI constructor
         {
             _ctx = ctx;
         }
