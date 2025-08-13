@@ -42,7 +42,7 @@ namespace FlightManagementCompany.Repository
 
         public void Update(Route entity) // Stage update existing route
         {
-            _ctx.Routes.Update(entity);
+            _ctx.Routes.Update(entity); // Updates an existing route entity in the database context.
         }
 
         public void Delete(int id)                     // Stage delete by key
