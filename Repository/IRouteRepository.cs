@@ -8,7 +8,7 @@ namespace FlightManagementCompany.Repository
         void Delete(int id); // Delete a route by its unique identifier
         List<Route> GetAll(); // Retrieve all routes from the database
         Route? GetById(int id); // Retrieve a route by its unique identifier
-        void Save();
+        void Save(); // Saves changes made to the database context
         void Update(Route entity);
     }
 }
