@@ -26,7 +26,7 @@ namespace FlightManagementCompany.Repository
                         .ThenInclude(r => r.Origin) // Eager-load the origin airport of the route
                       .Include(f => f.Route) // Eager-load the destination airport of the route
                         .ThenInclude(r => r.Destination) // Eager-load the destination airport of the route
-                      .Include(f => f.Aircraft)
+                      .Include(f => f.Aircraft) // Eager-load the aircraft associated with the flight
                       .AsNoTracking() 
                       .ToList(); 
         }
