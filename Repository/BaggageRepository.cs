@@ -49,7 +49,7 @@ namespace FlightManagementCompany.Repository
             if (e != null) _ctx.Baggage.Remove(e); // If the entity is found, remove it from the database context. This method is used to delete a baggage record from the database.
         }
 
-        public void Save()
+        public void Save() // Saves changes made to the database context
         {
             _ctx.SaveChanges();
         }
