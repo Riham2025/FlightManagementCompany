@@ -6,7 +6,7 @@ namespace FlightManagementCompany.Repository
     public interface IAirports // Represents an interface for managing airport entities in the flight management system.
     {
         void Add(Airport entity); // Adds a new airport entity to the repository.
-        void Delete(int id);
+        void Delete(int id); // Deletes an airport entity by its unique identifier.
         List<Airport> GetAll();
         Airport? GetByIata(string iata);
         Airport? GetById(int id);
