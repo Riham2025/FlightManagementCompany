@@ -30,7 +30,7 @@ namespace FlightManagementCompany.Repository
         }
 
         //Find a specific ticket
-        public Ticket? GetById(int id)
+        public Ticket? GetById(int id) // Retrieve a ticket by its unique identifier
         {
             return _ctx.Tickets
                        .Include(t => t.Booking)
