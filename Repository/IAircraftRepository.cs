@@ -2,7 +2,7 @@
 
 namespace FlightManagementCompany.Repository
 {
-    public interface IAircraftRepository
+    public interface IAircraftRepository // Represents an interface for managing aircraft entities in the flight management system.
     {
         void Add(Aircraft entity);
         void Delete(int id);
