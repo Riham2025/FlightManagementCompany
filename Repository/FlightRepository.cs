@@ -34,7 +34,7 @@ namespace FlightManagementCompany.Repository
         public Flight? GetById(int id) // Retrieve a flight by its unique identifier
         {
             return _ctx.Flights // Represents the Flights DbSet in the database context
-                      .Include(f => f.Route).ThenInclude(r => r.Origin) 
+                      .Include(f => f.Route).ThenInclude(r => r.Origin) // Eager-load the origin airport of the route
 
                       .Include(f => f.Route).ThenInclude(r => r.Destination)
                       .Include(f => f.Aircraft)
