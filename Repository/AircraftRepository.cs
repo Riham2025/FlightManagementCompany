@@ -34,7 +34,7 @@ namespace FlightManagementCompany.Repository
         // Add new aircraft
         public void Add(FlightManagementCompany.Models.Aircraft entity) // Adds a new aircraft entity to the database context.
         {
-            _ctx.Aircraft.Add(entity);
+            _ctx.Aircraft.Add(entity); // This method is used to insert a new aircraft record into the database.
             _ctx.SaveChanges();
         }
 
