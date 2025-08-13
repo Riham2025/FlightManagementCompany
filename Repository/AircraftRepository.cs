@@ -22,7 +22,7 @@ namespace FlightManagementCompany.Repository
         {
             return _ctx.Aircraft  // Represents the Aircraft DbSet in the database context             
                        .AsNoTracking() // AsNoTracking() is used to improve performance by not tracking changes to the entities.
-                       .ToList();             
+                       .ToList();// Converts the DbSet to a list of Aircraft entities.         
         }
 
         // Get by id
