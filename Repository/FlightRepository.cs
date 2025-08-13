@@ -31,7 +31,7 @@ namespace FlightManagementCompany.Repository
                       .ToList(); // Converts the DbSet to a list of Flight entities.
         }
 
-        public Flight? GetById(int id)
+        public Flight? GetById(int id) // Retrieve a flight by its unique identifier
         {
             return _ctx.Flights 
                       .Include(f => f.Route).ThenInclude(r => r.Origin) 
