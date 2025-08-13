@@ -21,6 +21,6 @@ namespace FlightManagementCompany.Repository
 
 
         public Airport? GetById(int id) => // Retrieves an airport by its unique identifier.
-            _ctx.Airports.Find(id);
+            _ctx.Airports.Find(id);// Find() is used to retrieve an entity by its primary key, which is the AirportId in this case.
     }
 }
