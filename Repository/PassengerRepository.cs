@@ -38,7 +38,7 @@ namespace FlightManagementCompany.Repository
         //Add a new passenger to the context
         public void Add(Passenger entity)
         {
-            _ctx.Passengers.Add(entity);
+            _ctx.Passengers.Add(entity); // Adds a new passenger entity to the database context. This method is used to insert a new passenger record into the database.
         }
 
         // Update an existing passenger in the context
