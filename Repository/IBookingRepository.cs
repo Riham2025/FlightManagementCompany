@@ -2,9 +2,9 @@
 
 namespace FlightManagementCompany.Repository
 {
-    public interface IBookingRepository
+    public interface IBookingRepository // Represents an interface for managing booking entities in the flight management system.
     {
-        void Add(Booking entity);
+        void Add(Booking entity); // Stage add new booking
         void Delete(int id);
         List<Booking> GetAll();
         Booking? GetById(int id);
