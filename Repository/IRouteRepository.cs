@@ -9,6 +9,6 @@ namespace FlightManagementCompany.Repository
         List<Route> GetAll(); // Retrieve all routes from the database
         Route? GetById(int id); // Retrieve a route by its unique identifier
         void Save(); // Saves changes made to the database context
-        void Update(Route entity);
+        void Update(Route entity); // Stage update existing route
     }
 }
