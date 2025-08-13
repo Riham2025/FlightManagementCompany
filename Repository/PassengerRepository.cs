@@ -47,7 +47,7 @@ namespace FlightManagementCompany.Repository
             _ctx.Passengers.Update(entity); // Updates an existing passenger entity in the database context. This method is used to modify an existing passenger record in the database.
         }
 
-        // Remove a passenger by id
+        //Remove a passenger by id
         public void Delete(int id)
         {
             var e = _ctx.Passengers.Find(id);
