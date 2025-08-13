@@ -45,7 +45,7 @@ namespace FlightManagementCompany.Repository
 
         public void Update(Ticket entity) // Stage update existing ticket
         {
-            _ctx.Tickets.Update(entity);
+            _ctx.Tickets.Update(entity); // Updates an existing ticket entity in the database context. This method is used to modify an existing ticket record in the database.
         }
 
         public void Delete(int id)
