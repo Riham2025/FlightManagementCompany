@@ -22,7 +22,7 @@ namespace FlightManagementCompany.Repository
         {
             return _ctx.Baggage // Represents the Baggage DbSet in the database context
                        .Include(b => b.Passenger) // Eager-load the passenger associated with the baggage
-                       .AsNoTracking()
+                       .AsNoTracking() // Use AsNoTracking for performance optimization
                        .ToList();
         }
 
