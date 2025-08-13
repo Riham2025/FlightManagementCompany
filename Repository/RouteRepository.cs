@@ -22,7 +22,7 @@ namespace FlightManagementCompany.Repository
         {
             return _ctx.Routes // Represents the Routes DbSet in the database context
                       .Include(r => r.Origin) // Eager-load origin airport
-                      .Include(r => r.Destination)     // Eager-load destination airport
+                      .Include(r => r.Destination)   // Eager-load destination airport
                       .AsNoTracking()                  // Read-only optimization
                       .ToList();                       // Materialize result
         }
