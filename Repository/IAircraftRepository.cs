@@ -8,6 +8,6 @@ namespace FlightManagementCompany.Repository
         void Delete(int id); // Deletes an aircraft entity by its unique identifier.
         List<Aircraft> GetAll(); // Retrieves all aircraft entities from the repository.
         Aircraft? GetById(int id); // Retrieves an aircraft entity by its unique identifier.
-        void Update(Aircraft entity);
+        void Update(Aircraft entity); // Updates an existing aircraft entity in the repository.
     }
 }
