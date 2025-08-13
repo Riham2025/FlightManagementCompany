@@ -52,7 +52,7 @@ namespace FlightManagementCompany.Repository
                                             // If the entity is found, remove it from the database context.
             if (e != null) // Check if the entity exists before attempting to remove it
             {
-                _ctx.Aircraft.Remove(e);
+                _ctx.Aircraft.Remove(e); // This method is used to delete an aircraft record from the database.
                 _ctx.SaveChanges();
             }
         }
