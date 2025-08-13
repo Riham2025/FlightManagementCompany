@@ -33,7 +33,7 @@ namespace FlightManagementCompany.Repository
         public Ticket? GetById(int id) // Retrieve a ticket by its unique identifier
         {
             return _ctx.Tickets // Represents the Tickets DbSet in the database context
-                       .Include(t => t.Booking)
+                       .Include(t => t.Booking) // Eager-load the booking associated with the ticket
                            .ThenInclude(b => b.Passenger)
                        .FirstOrDefault(t => t.TicketId == id);
         }
