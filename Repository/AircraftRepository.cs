@@ -28,7 +28,7 @@ namespace FlightManagementCompany.Repository
         // Get by id
         public FlightManagementCompany.Models.Aircraft? GetById(int id) // Retrieves an aircraft by its unique identifier.
         {
-            return _ctx.Aircraft.Find(id);
+            return _ctx.Aircraft.Find(id); // Find() is used to retrieve an entity by its primary key, which is the AircraftId in this case.
         }
 
         // Add new aircraft
