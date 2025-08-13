@@ -19,7 +19,7 @@ namespace FlightManagementCompany.Repository
             _ctx = ctx; // Assign the provided context to the private field
         }
 
-        public List<Flight> GetAll() 
+        public List<Flight> GetAll() // Retrieve all flights from the database
         {
             return _ctx.Flights 
                       .Include(f => f.Route) 
