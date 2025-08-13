@@ -21,8 +21,8 @@ namespace FlightManagementCompany.Repository
 
         public List<Flight> GetAll() // Get all flights with route & aircraft
         {
-            return _ctx.Flights
-                      .Include(f => f.Route)           // Include route
+            return _ctx.Flights 
+                      .Include(f => f.Route) // Include route
                         .ThenInclude(r => r.Origin)    //   and origin airport
                       .Include(f => f.Route)
                         .ThenInclude(r => r.Destination)//  and destination airport
