@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FlightManagementCompany.Repository
 {
-    public class Airports : IAirports 
+    public class Airports : IAirports // Represents a repository for managing airport entities in the flight management system.
     {
         // Represents a repository for managing airports in the flight management system.
         private readonly FlightDbContext _ctx; // Database context for accessing airport data
