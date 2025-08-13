@@ -49,7 +49,7 @@ namespace FlightManagementCompany.Repository
 
         public void Delete(int id) // Delete a booking by its unique identifier
         {
-            var e = _ctx.Bookings.Find(id);
+            var e = _ctx.Bookings.Find(id); // Find the booking entity by its primary key (BookingId).
             if (e != null) _ctx.Bookings.Remove(e);
         }
 
