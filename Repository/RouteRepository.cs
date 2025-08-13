@@ -15,7 +15,7 @@ namespace FlightManagementCompany.Repository
 
         public RouteRepository(FlightDbContext ctx) // Constructor to initialize the repository with a database context
         {
-            _ctx = ctx;
+            _ctx = ctx; // Assign the provided context to the private field
         }
 
         public List<Route> GetAll()                    // Retrieve all routes with airports
