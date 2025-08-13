@@ -33,7 +33,7 @@ namespace FlightManagementCompany.Repository
 
         public Flight? GetById(int id)// Get a single flight with details
         {
-            return _ctx.Flights
+            return _ctx.Flights 
                       .Include(f => f.Route).ThenInclude(r => r.Origin)
                       .Include(f => f.Route).ThenInclude(r => r.Destination)
                       .Include(f => f.Aircraft)
