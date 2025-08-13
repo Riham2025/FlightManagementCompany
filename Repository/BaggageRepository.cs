@@ -28,7 +28,7 @@ namespace FlightManagementCompany.Repository
 
         public Baggage? GetById(int id)// Retrieve a baggage record by its unique identifier
         {
-            return _ctx.Baggage
+            return _ctx.Baggage // Represents the Baggage DbSet in the database context
                        .Include(b => b.Passenger)
                        .FirstOrDefault(b => b.BaggageId == id);
         }
