@@ -50,7 +50,7 @@ namespace FlightManagementCompany.Repository
         public void Delete(int id) // Delete a booking by its unique identifier
         {
             var e = _ctx.Bookings.Find(id); // Find the booking entity by its primary key (BookingId).
-            if (e != null) _ctx.Bookings.Remove(e);
+            if (e != null) _ctx.Bookings.Remove(e); // If the entity is found, remove it from the database context. This method is used to delete a booking record from the database.
         }
 
         public void Save()
