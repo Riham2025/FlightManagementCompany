@@ -22,7 +22,7 @@ namespace FlightManagementCompany.Repository
         public List<Flight> GetAll() // Retrieve all flights from the database
         {
             return _ctx.Flights // Represents the Flights DbSet in the database context
-                      .Include(f => f.Route) 
+                      .Include(f => f.Route) // Eager-load the route associated with the flight
                         .ThenInclude(r => r.Origin) 
                       .Include(f => f.Route) 
                         .ThenInclude(r => r.Destination)
