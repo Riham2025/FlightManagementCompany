@@ -27,7 +27,7 @@ namespace FlightManagementCompany.Repository
 
         public void Delete(int id) // Deletes an aircraft by its unique identifier.
         {
-            var e = _ctx.Aircraft.Find(id);
+            var e = _ctx.Aircraft.Find(id); // Find the aircraft entity by its primary key (AircraftId).
             if (e != null) _ctx.Aircraft.Remove(e);
         }
 
