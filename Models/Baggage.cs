@@ -17,6 +17,7 @@ namespace FlightManagementCompany.Models
         [Column(TypeName = "decimal(10,2)")] public decimal WeightKg { get; set; } // Weight of the baggage in kilograms
         [StringLength(20)] public string? TagNumber { get; set; } // Baggage tag number (optional, can be null)
 
+        public int PassengerId { get; set; } // Identifier for the passenger associated with this baggage
 
         // Navigation properties
         public Ticket Ticket { get; set; } = null!; // Ticket associated with this baggage
