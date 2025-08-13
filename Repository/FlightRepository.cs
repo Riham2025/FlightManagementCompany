@@ -8,39 +8,40 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FlightManagementCompany.Repository
 {
-    public class FlightRepository : IFlightRepository // 
+    public class FlightRepository : IFlightRepository // Represents a repository for managing flight entities in the flight management system.
     {
         
 
-        private readonly FlightDbContext _ctx; // DbContext field
+        private readonly FlightDbContext _ctx; 
 
-        public FlightRepository(FlightDbContext ctx) // DI constructor
+        public FlightRepository(FlightDbContext ctx) 
         {
             _ctx = ctx; 
         }
 
-        public List<Flight> GetAll() // Get all flights with route & aircraft
+        public List<Flight> GetAll() 
         {
             return _ctx.Flights 
-                      .Include(f => f.Route) // Include route
-                        .ThenInclude(r => r.Origin) //and origin airport
                       .Include(f => f.Route) 
-                        .ThenInclude(r => r.Destination)// and destination airport
-                      .Include(f => f.Aircraft)// Include aircraft
-                      .AsNoTracking() // Read-only optimization
+                        .ThenInclude(r => r.Origin) 
+                      .Include(f => f.Route) 
+                        .ThenInclude(r => r.Destination)
+                      .Include(f => f.Aircraft)
+                      .AsNoTracking() 
                       .ToList(); 
         }
 
-        public Flight? GetById(int id)// Get a single flight with details
+        public Flight? GetById(int id)
         {
             return _ctx.Flights 
-                      .Include(f => f.Route).ThenInclude(r => r.Origin)
+                      .Include(f => f.Route).ThenInclude(r => r.Origin) 
+
                       .Include(f => f.Route).ThenInclude(r => r.Destination)
                       .Include(f => f.Aircraft)
                       .FirstOrDefault(f => f.FlightId == id);
         }
 
-        public List<Flight> GetByDateRange(DateTime fromUtc, DateTime toUtc) // Filter by departure time
+        public List<Flight> GetByDateRange(DateTime fromUtc, DateTime toUtc) 
         {
             return _ctx.Flights
                       .Include(f => f.Route).ThenInclude(r => r.Origin)
@@ -51,23 +52,23 @@ namespace FlightManagementCompany.Repository
                       .ToList();
         }
 
-        public void Add(Flight entity)                 // Stage insert
+        public void Add(Flight entity) 
         {
             _ctx.Flights.Add(entity);
         }
 
-        public void Update(Flight entity)              // Stage update
+        public void Update(Flight entity)  
         {
             _ctx.Flights.Update(entity);
         }
 
-        public void Delete(int id)                     // Stage delete
+        public void Delete(int id)  
         {
-            var e = _ctx.Flights.Find(id);            // Find by PK (tracked or from DB)
-            if (e != null) _ctx.Flights.Remove(e);    // Remove if exists
+            var e = _ctx.Flights.Find(id);    
+            if (e != null) _ctx.Flights.Remove(e); 
         }
 
-        public void Save() => _ctx.SaveChanges();      // Commit all staged changes
+        public void Save() => _ctx.SaveChanges();    
     }
 }
 
