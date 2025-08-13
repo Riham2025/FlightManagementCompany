@@ -51,7 +51,7 @@ namespace FlightManagementCompany.Repository
 
         public void Save() // Saves changes made to the database context
         {
-            _ctx.SaveChanges();
+            _ctx.SaveChanges(); // This method is used to persist any changes made to the baggage entities in the database, such as adding, updating, or deleting records.
         }
     }
 }
