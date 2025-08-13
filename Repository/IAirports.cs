@@ -8,7 +8,7 @@ namespace FlightManagementCompany.Repository
         void Add(Airport entity); // Adds a new airport entity to the repository.
         void Delete(int id); // Deletes an airport entity by its unique identifier.
         List<Airport> GetAll(); // Retrieves all airport entities from the repository.
-        Airport? GetByIata(string iata);
+        Airport? GetByIata(string iata); // Retrieves an airport entity by its IATA code.
         Airport? GetById(int id);
         void Save();
         void Update(Airport entity);
