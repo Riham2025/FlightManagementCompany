@@ -57,7 +57,7 @@ namespace FlightManagementCompany.Repository
         //Commit staged changes to the database
         public void Save()
         {
-            _ctx.SaveChanges();
+            _ctx.SaveChanges(); // Saves changes made to the database context. This method is used to persist any changes made to the passenger entities in the database, such as adding, updating, or deleting records.
         }
     }
 }
