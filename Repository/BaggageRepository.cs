@@ -43,7 +43,7 @@ namespace FlightManagementCompany.Repository
             _ctx.Baggage.Update(entity);// Updates an existing baggage entity in the database context. This method is used to modify an existing baggage record in the database.
         }
 
-        public void Delete(int id)
+        public void Delete(int id) // Delete a baggage record by its unique identifier
         {
             var e = _ctx.Baggage.Find(id);
             if (e != null) _ctx.Baggage.Remove(e);
