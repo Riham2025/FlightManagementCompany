@@ -35,7 +35,7 @@ namespace FlightManagementCompany.Repository
                        .FirstOrDefault(p => p.PassengerId == id); // FirstOrDefault() is used to find the first entity that matches the specified condition, or null if no such entity exists.
         }
 
-        // Add a new passenger to the context
+        //Add a new passenger to the context
         public void Add(Passenger entity)
         {
             _ctx.Passengers.Add(entity);
