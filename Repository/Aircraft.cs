@@ -31,6 +31,6 @@ namespace FlightManagementCompany.Repository
             if (e != null) _ctx.Aircraft.Remove(e); // If the entity is found, remove it from the database context. This method is used to delete an aircraft record from the database.
         }
 
-        public void Save() => _ctx.SaveChanges();
+        public void Save() => _ctx.SaveChanges(); // Saves changes made to the database context. This method is used to persist any changes made to the aircraft entities in the database, such as adding, updating, or deleting records.
     }
 }
