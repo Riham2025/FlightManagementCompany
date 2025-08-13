@@ -50,7 +50,7 @@ namespace FlightManagementCompany.Repository
         //Remove a passenger by id
         public void Delete(int id)
         {
-            var e = _ctx.Passengers.Find(id);
+            var e = _ctx.Passengers.Find(id); //    Find the passenger entity by its primary key (PassengerId).
             if (e != null) _ctx.Passengers.Remove(e);
         }
 
