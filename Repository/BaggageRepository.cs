@@ -11,7 +11,7 @@ namespace FlightManagementCompany.Repository
     public class BaggageRepository : IBaggageRepository// Represents a repository for managing baggage entities in the flight management system.
     {
 
-        private readonly FlightDbContext _ctx;
+        private readonly FlightDbContext _ctx; // Database context for accessing baggage data
 
         public BaggageRepository(FlightDbContext ctx)
         {
