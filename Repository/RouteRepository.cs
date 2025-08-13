@@ -32,7 +32,7 @@ namespace FlightManagementCompany.Repository
             return _ctx.Routes // Represents the Routes DbSet in the database context
                       .Include(r => r.Origin) // Eager-load origin airport
                       .Include(r => r.Destination) // Eager-load destination airport
-                      .FirstOrDefault(r => r.RouteId == id);
+                      .FirstOrDefault(r => r.RouteId == id); // Find the first route that matches the specified RouteId.
         }
 
         public void Add(Route entity)                  // Stage insert
