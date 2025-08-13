@@ -41,7 +41,7 @@ namespace FlightManagementCompany.Repository
         // Update existing aircraft
         public void Update(FlightManagementCompany.Models.Aircraft entity) // Updates an existing aircraft entity in the database context.
         {
-            _ctx.Aircraft.Update(entity);
+            _ctx.Aircraft.Update(entity); // This method is used to modify an existing aircraft record in the database.
             _ctx.SaveChanges();
         }
 
