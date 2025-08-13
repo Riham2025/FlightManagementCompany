@@ -19,7 +19,7 @@ namespace FlightManagementCompany.Repository
         public Aircraft? GetById(int id) => // Retrieves an aircraft by its unique identifier.
             _ctx.Aircraft.Find(id); // Find() is used to retrieve an entity by its primary key, which is the AircraftId in this case.
 
-        public Aircraft? GetByTail(string tailNumber) =>
+        public Aircraft? GetByTail(string tailNumber) => // Retrieves an aircraft by its tail number.
             _ctx.Aircraft.AsNoTracking().FirstOrDefault(a => a.TailNumber == tailNumber);
 
         public void Add(Aircraft entity) => _ctx.Aircraft.Add(entity);
