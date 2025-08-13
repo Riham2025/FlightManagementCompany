@@ -43,7 +43,7 @@ namespace FlightManagementCompany.Repository
 
         public List<Flight> GetByDateRange(DateTime fromUtc, DateTime toUtc) // Retrieve flights within a specified date range 
         {
-            return _ctx.Flights
+            return _ctx.Flights // Represents the Flights DbSet in the database context
                       .Include(f => f.Route).ThenInclude(r => r.Origin)
                       .Include(f => f.Route).ThenInclude(r => r.Destination)
                       .Include(f => f.Aircraft)
