@@ -2,7 +2,7 @@
 
 namespace FlightManagementCompany.Repository
 {
-    public interface IRouteRepository
+    public interface IRouteRepository // Represents an interface for managing flight routes in the flight management system.
     {
         void Add(Route entity);
         void Delete(int id);
