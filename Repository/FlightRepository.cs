@@ -24,8 +24,8 @@ namespace FlightManagementCompany.Repository
             return _ctx.Flights 
                       .Include(f => f.Route) // Include route
                         .ThenInclude(r => r.Origin) //and origin airport
-                      .Include(f => f.Route)
-                        .ThenInclude(r => r.Destination)//  and destination airport
+                      .Include(f => f.Route) 
+                        .ThenInclude(r => r.Destination)// and destination airport
                       .Include(f => f.Aircraft)        // Include aircraft
                       .AsNoTracking()                  // Read-only optimization
                       .ToList();
