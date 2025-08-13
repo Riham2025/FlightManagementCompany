@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FlightManagementCompany.Repository
 {
-    public class BookingRepository 
+    public class BookingRepository : IBookingRepository // Represents a repository for managing booking entities in the flight management system.
     {
 
         private readonly FlightDbContext _ctx; // Database context for accessing booking data
