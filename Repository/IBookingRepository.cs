@@ -9,6 +9,6 @@ namespace FlightManagementCompany.Repository
         List<Booking> GetAll(); // Retrieve all bookings from the database
         Booking? GetById(int id); // Retrieve a booking by its unique identifier
         void Save(); // Saves changes made to the database context
-        void Update(Booking entity);
+        void Update(Booking entity); // Stage update existing booking
     }
 }
