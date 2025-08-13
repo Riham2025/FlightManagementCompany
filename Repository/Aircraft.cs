@@ -25,7 +25,7 @@ namespace FlightManagementCompany.Repository
         public void Add(Aircraft entity) => _ctx.Aircraft.Add(entity); // Adds a new aircraft entity to the database context. This method is used to insert a new aircraft record into the database.
         public void Update(Aircraft entity) => _ctx.Aircraft.Update(entity); // Updates an existing aircraft entity in the database context. This method is used to modify an existing aircraft record in the database.
 
-        public void Delete(int id)
+        public void Delete(int id) // Deletes an aircraft by its unique identifier.
         {
             var e = _ctx.Aircraft.Find(id);
             if (e != null) _ctx.Aircraft.Remove(e);
