@@ -25,10 +25,10 @@ namespace FlightManagementCompany.Repository
                        .Include(b => b.Passenger) // Eager-load the passenger associated with the booking
                        .Include(b => b.Flight) // Eager-load the flight associated with the booking
                        .AsNoTracking() // Use AsNoTracking for performance optimization
-                       .ToList();
+                       .ToList(); // Converts the DbSet to a list of Booking entities.
         }
 
-        // Find a specific booking by primary key
+        //Find a specific booking by primary key
         public Booking? GetById(int id)
         {
             return _ctx.Bookings
