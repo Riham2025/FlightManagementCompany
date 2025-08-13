@@ -26,7 +26,7 @@ namespace FlightManagementCompany.Repository
                        .ToList(); // Converts the DbSet to a list of Baggage entities.
         }
 
-        public Baggage? GetById(int id)
+        public Baggage? GetById(int id)// Retrieve a baggage record by its unique identifier
         {
             return _ctx.Baggage
                        .Include(b => b.Passenger)
