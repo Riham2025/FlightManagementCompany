@@ -26,10 +26,10 @@ namespace FlightManagementCompany.Repository
                        .Include(t => t.Booking) // Eager-load the booking associated with the ticket
                            .ThenInclude(b => b.Passenger) // Eager-load the passenger associated with the booking
                        .AsNoTracking() // Use AsNoTracking for performance optimization
-                       .ToList();
+                       .ToList(); 
         }
 
-        // Find a specific ticket
+        //Find a specific ticket
         public Ticket? GetById(int id)
         {
             return _ctx.Tickets
