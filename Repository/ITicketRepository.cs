@@ -8,7 +8,7 @@ namespace FlightManagementCompany.Repository
         void Delete(int id); // Deletes a ticket entity by its unique identifier.
         List<Ticket> GetAll();// Retrieves all ticket entities from the repository.
         Ticket? GetById(int id);// Retrieves a ticket entity by its unique identifier.
-        void Save();
+        void Save(); // Saves changes made to the repository.
         void Update(Ticket entity);
     }
 }
