@@ -34,7 +34,7 @@ namespace FlightManagementCompany.Repository
         {
             return _ctx.Tickets // Represents the Tickets DbSet in the database context
                        .Include(t => t.Booking) // Eager-load the booking associated with the ticket
-                           .ThenInclude(b => b.Passenger)
+                           .ThenInclude(b => b.Passenger) // Eager-load the passenger associated with the booking
                        .FirstOrDefault(t => t.TicketId == id);
         }
 
