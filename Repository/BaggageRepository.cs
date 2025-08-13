@@ -18,7 +18,7 @@ namespace FlightManagementCompany.Repository
             _ctx = ctx; // Assign the provided context to the private field
         }
 
-        public List<Baggage> GetAll()
+        public List<Baggage> GetAll() // Retrieve all baggage records from the database
         {
             return _ctx.Baggage
                        .Include(b => b.Passenger)
