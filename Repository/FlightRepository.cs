@@ -12,7 +12,7 @@ namespace FlightManagementCompany.Repository
     {
         
 
-        private readonly FlightDbContext _ctx; 
+        private readonly FlightDbContext _ctx; // Database context for accessing flight data
 
         public FlightRepository(FlightDbContext ctx) 
         {
