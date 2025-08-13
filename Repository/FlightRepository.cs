@@ -52,7 +52,7 @@ namespace FlightManagementCompany.Repository
                       .ToList();
         }
 
-        public void Add(Flight entity) 
+        public void Add(Flight entity) // Stage add new flight
         {
             _ctx.Flights.Add(entity);
         }
