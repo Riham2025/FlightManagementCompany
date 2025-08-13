@@ -33,7 +33,7 @@ namespace FlightManagementCompany.Repository
         {
 
             var e = _ctx.Airports.Find(id); // Find the airport entity by its primary key (AirportId).
-            if (e != null) _ctx.Airports.Remove(e);
+            if (e != null) _ctx.Airports.Remove(e); // If the entity is found, remove it from the database context. This method is used to delete an airport record from the database.
         }
 
         public void Save() => _ctx.SaveChanges();
