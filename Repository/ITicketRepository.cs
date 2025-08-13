@@ -9,6 +9,6 @@ namespace FlightManagementCompany.Repository
         List<Ticket> GetAll();// Retrieves all ticket entities from the repository.
         Ticket? GetById(int id);// Retrieves a ticket entity by its unique identifier.
         void Save(); // Saves changes made to the repository.
-        void Update(Ticket entity);
+        void Update(Ticket entity); // Updates an existing ticket entity in the repository.
     }
 }
