@@ -2,7 +2,7 @@
 
 namespace FlightManagementCompany.Repository
 {
-    public interface IFlightRepository
+    public interface IFlightRepository 
     {
         void Add(Flight entity);
         void Delete(int id);
