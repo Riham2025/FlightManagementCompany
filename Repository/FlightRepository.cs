@@ -41,7 +41,7 @@ namespace FlightManagementCompany.Repository
                       .FirstOrDefault(f => f.FlightId == id); // Find the first flight that matches the specified FlightId.
         }
 
-        public List<Flight> GetByDateRange(DateTime fromUtc, DateTime toUtc) 
+        public List<Flight> GetByDateRange(DateTime fromUtc, DateTime toUtc) // Retrieve flights within a specified date range 
         {
             return _ctx.Flights
                       .Include(f => f.Route).ThenInclude(r => r.Origin)
