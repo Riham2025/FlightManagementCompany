@@ -15,8 +15,12 @@ namespace FlightManagementCompany.Repository
         public Airports(FlightDbContext ctx) => _ctx = ctx; // Constructor to initialize the repository with a database context
 
 
-        // Retrieves an airport by its unique identifier.
+       
         public List<Airport> GetAll() => // Retrieves all airports from the database.
             _ctx.Airports.AsNoTracking().ToList();// AsNoTracking() is used to improve performance by not tracking changes to the entities.
+
+
+        public Airport? GetById(int id) => // Retrieves an airport by its unique identifier.
+            _ctx.Airports.Find(id);
     }
 }
