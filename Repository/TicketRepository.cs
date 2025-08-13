@@ -23,7 +23,7 @@ namespace FlightManagementCompany.Repository
         public List<Ticket> GetAll() // Retrieve all tickets from the database
         {
             return _ctx.Tickets // Represents the Tickets DbSet in the database context
-                       .Include(t => t.Booking)
+                       .Include(t => t.Booking) // Eager-load the booking associated with the ticket
                            .ThenInclude(b => b.Passenger)
                        .AsNoTracking()
                        .ToList();
