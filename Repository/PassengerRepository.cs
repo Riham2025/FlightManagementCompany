@@ -15,7 +15,7 @@ namespace FlightManagementCompany.Repository
 
 
         //Constructor injection to ensure DbContext is provided
-        public PassengerRepository(FlightDbContext ctx)
+        public PassengerRepository(FlightDbContext ctx) // Represents a repository for managing passenger entities in the flight management system.
         {
             _ctx = ctx;
         }
