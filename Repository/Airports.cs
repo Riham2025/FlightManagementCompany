@@ -26,7 +26,7 @@ namespace FlightManagementCompany.Repository
         public Airport? GetByIata(string iata) => // Retrieves an airport by its IATA code.
             _ctx.Airports.AsNoTracking().FirstOrDefault(a => a.IATA == iata); // FirstOrDefault() is used to find the first entity that matches the specified condition, or null if no such entity exists.
 
-        public void Add(Airport entity) => _ctx.Airports.Add(entity);
+        public void Add(Airport entity) => _ctx.Airports.Add(entity); // Adds a new airport entity to the database context. This method is used to insert a new airport record into the database.
         public void Update(Airport entity) => _ctx.Airports.Update(entity);
 
         public void Delete(int id)
