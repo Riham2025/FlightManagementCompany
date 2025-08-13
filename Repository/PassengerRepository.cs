@@ -28,7 +28,7 @@ namespace FlightManagementCompany.Repository
                        .ToList();
         }
 
-        // Find a passenger by their primary key (PassengerId)
+        //Find a passenger by their primary key (PassengerId)
         public Passenger? GetById(int id)
         {
             return _ctx.Passengers
