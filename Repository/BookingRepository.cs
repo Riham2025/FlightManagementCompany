@@ -31,7 +31,7 @@ namespace FlightManagementCompany.Repository
         //Find a specific booking by primary key
         public Booking? GetById(int id) // Retrieve a booking by its unique identifier
         {
-            return _ctx.Bookings
+            return _ctx.Bookings // Represents the Bookings DbSet in the database context
                        .Include(b => b.Passenger)
                        .Include(b => b.Flight)
                        .FirstOrDefault(b => b.BookingId == id);
