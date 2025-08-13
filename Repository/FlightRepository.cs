@@ -27,7 +27,7 @@ namespace FlightManagementCompany.Repository
                       .Include(f => f.Route) 
                         .ThenInclude(r => r.Destination)// and destination airport
                       .Include(f => f.Aircraft)// Include aircraft
-                      .AsNoTracking()                  // Read-only optimization
+                      .AsNoTracking() // Read-only optimization
                       .ToList();
         }
 
