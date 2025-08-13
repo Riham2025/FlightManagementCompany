@@ -10,7 +10,7 @@ namespace FlightManagementCompany.Repository
     public class AircraftRepository : IAircraftRepository // Represents a repository for managing aircraft entities in the flight management system.
     {
 
-        private readonly FlightDbContext _ctx;
+        private readonly FlightDbContext _ctx; // Database context for accessing aircraft data
 
         public AircraftRepository(FlightDbContext ctx) // ctor injection
         {
