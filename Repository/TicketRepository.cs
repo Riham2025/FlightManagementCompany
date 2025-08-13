@@ -40,7 +40,7 @@ namespace FlightManagementCompany.Repository
 
         public void Add(Ticket entity)// Stage add new ticket
         {
-            _ctx.Tickets.Add(entity);
+            _ctx.Tickets.Add(entity); // Adds a new ticket entity to the database context. This method is used to insert a new ticket record into the database.
         }
 
         public void Update(Ticket entity)
