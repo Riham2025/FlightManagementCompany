@@ -32,7 +32,7 @@ namespace FlightManagementCompany.Repository
         public Passenger? GetById(int id)
         {
             return _ctx.Passengers
-                       .FirstOrDefault(p => p.PassengerId == id);
+                       .FirstOrDefault(p => p.PassengerId == id); // FirstOrDefault() is used to find the first entity that matches the specified condition, or null if no such entity exists.
         }
 
         // Add a new passenger to the context
