@@ -23,7 +23,7 @@ namespace FlightManagementCompany.Repository
         //Get all passengers with no tracking for better performance
         public List<Passenger> GetAll()
         {
-            return _ctx.Passengers
+            return _ctx.Passengers // Represents the Passengers DbSet in the database context
                        .AsNoTracking()
                        .ToList();
         }
