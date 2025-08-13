@@ -20,9 +20,9 @@ namespace FlightManagementCompany.Repository
         // Get all aircraft
         public List<FlightManagementCompany.Models.Aircraft> GetAll() // Retrieves all aircraft from the database.
         {
-            return _ctx.Aircraft               // DbSet<Models.Aircraft>
+            return _ctx.Aircraft  // Represents the Aircraft DbSet in the database context             
                        .AsNoTracking()
-                       .ToList();              // List<Models.Aircraft>
+                       .ToList();             
         }
 
         // Get by id
