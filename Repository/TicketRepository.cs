@@ -48,7 +48,7 @@ namespace FlightManagementCompany.Repository
             _ctx.Tickets.Update(entity); // Updates an existing ticket entity in the database context. This method is used to modify an existing ticket record in the database.
         }
 
-        public void Delete(int id)
+        public void Delete(int id) // Delete a ticket by its unique identifier
         {
             var e = _ctx.Tickets.Find(id);
             if (e != null) _ctx.Tickets.Remove(e);
