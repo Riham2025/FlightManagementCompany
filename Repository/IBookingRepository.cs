@@ -6,7 +6,7 @@ namespace FlightManagementCompany.Repository
     {
         void Add(Booking entity); // Stage add new booking
         void Delete(int id); // Delete a booking by its unique identifier
-        List<Booking> GetAll();
+        List<Booking> GetAll(); // Retrieve all bookings from the database
         Booking? GetById(int id);
         void Save();
         void Update(Booking entity);
