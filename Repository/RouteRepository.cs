@@ -45,7 +45,7 @@ namespace FlightManagementCompany.Repository
             _ctx.Routes.Update(entity); // Updates an existing route entity in the database context.
         }
 
-        public void Delete(int id)                     // Stage delete by key
+        public void Delete(int id)  // Delete a route by its unique identifier
         {
             var e = _ctx.Routes.Find(id);             // Try to find tracked/attached entity
             if (e != null) _ctx.Routes.Remove(e);     // Remove if found
