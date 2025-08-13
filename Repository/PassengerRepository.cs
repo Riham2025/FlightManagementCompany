@@ -20,7 +20,7 @@ namespace FlightManagementCompany.Repository
             _ctx = ctx;
         }
 
-        // Get all passengers with no tracking for better performance
+        //Get all passengers with no tracking for better performance
         public List<Passenger> GetAll()
         {
             return _ctx.Passengers
