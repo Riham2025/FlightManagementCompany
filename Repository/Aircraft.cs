@@ -17,7 +17,7 @@ namespace FlightManagementCompany.Repository
             _ctx.Aircraft.AsNoTracking().ToList();// AsNoTracking() is used to improve performance by not tracking changes to the entities.
 
         public Aircraft? GetById(int id) => // Retrieves an aircraft by its unique identifier.
-            _ctx.Aircraft.Find(id);
+            _ctx.Aircraft.Find(id); // Find() is used to retrieve an entity by its primary key, which is the AircraftId in this case.
 
         public Aircraft? GetByTail(string tailNumber) =>
             _ctx.Aircraft.AsNoTracking().FirstOrDefault(a => a.TailNumber == tailNumber);
