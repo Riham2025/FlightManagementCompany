@@ -6,7 +6,7 @@ namespace FlightManagementCompany.Repository
     {
         void Add(Route entity); // Stage add new route
         void Delete(int id); // Delete a route by its unique identifier
-        List<Route> GetAll();
+        List<Route> GetAll(); // Retrieve all routes from the database
         Route? GetById(int id);
         void Save();
         void Update(Route entity);
