@@ -15,7 +15,7 @@ namespace FlightManagementCompany.Repository
 
         public BaggageRepository(FlightDbContext ctx)// Constructor to initialize the repository with a database context
         {
-            _ctx = ctx;
+            _ctx = ctx; // Assign the provided context to the private field
         }
 
         public List<Baggage> GetAll()
