@@ -39,7 +39,7 @@ namespace FlightManagementCompany.Repository
 
         public void Add(Booking entity) // Stage add new booking
         {
-            _ctx.Bookings.Add(entity);
+            _ctx.Bookings.Add(entity); // Adds a new booking entity to the database context. This method is used to insert a new booking record into the database.
         }
 
         public void Update(Booking entity)
