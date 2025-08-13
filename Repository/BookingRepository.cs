@@ -21,7 +21,7 @@ namespace FlightManagementCompany.Repository
         //Get all bookings, including related Passenger and Flight
         public List<Booking> GetAll() // Retrieve all bookings from the database
         {
-            return _ctx.Bookings
+            return _ctx.Bookings // Represents the Bookings DbSet in the database context
                        .Include(b => b.Passenger)
                        .Include(b => b.Flight)
                        .AsNoTracking()
