@@ -20,7 +20,7 @@ namespace FlightManagementCompany.Repository
         //Get all maintenance records with their aircraft
         public List<AircraftMaintenance> GetAll()
         {
-            return _ctx.AircraftMaintenance
+            return _ctx.AircraftMaintenance // Represents the AircraftMaintenance DbSet in the database context
                        .Include(m => m.Aircraft) // Eager-load aircraft
                        .AsNoTracking() // Read-only optimization
                        .ToList(); // Materialize list
