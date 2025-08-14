@@ -23,7 +23,7 @@ namespace FlightManagementCompany.Repository
         //Retrieve all crew members (read-only)
         public List<CrewMember> GetAll()
         {
-            return _ctx.CrewMembers                  // Start from CrewMembers table
+            return _ctx.CrewMembers // Start from CrewMembers table
                        .AsNoTracking()               // No tracking for speed on reads
                        .ToList();                    // Materialize as List<CrewMember>
         }
