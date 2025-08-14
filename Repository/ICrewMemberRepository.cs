@@ -8,7 +8,7 @@ namespace FlightManagementCompany.Repository
         void Delete(int id); // Delete a crew member by its unique identifier
         List<CrewMember> GetAll(); // Retrieve all crew members
         CrewMember? GetById(int id); // Retrieve a crew member by its unique identifier
-        void Save();
+        void Save(); // Saves changes made to the database context
         void Update(CrewMember entity);
     }
 }
