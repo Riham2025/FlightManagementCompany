@@ -35,7 +35,7 @@ namespace FlightManagementCompany.Repository
                        .FirstOrDefault(c => c.CrewId == id);// Return first match or null
         }
 
-        // Insert a new crew member
+        //Insert a new crew member
         public void Add(CrewMember entity)
         {
             _ctx.CrewMembers.Add(entity);            // Stage insert in change tracker
