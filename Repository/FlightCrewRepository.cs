@@ -61,7 +61,7 @@ namespace FlightManagementCompany.Repository
                        .ToList(); // Materialize
         }
 
-        // Retrieve all flights assigned to a specific crew member
+        //Retrieve all flights assigned to a specific crew member
         public List<Flight> GetFlightsForCrew(int crewId)
         {
             return _ctx.FlightCrew
