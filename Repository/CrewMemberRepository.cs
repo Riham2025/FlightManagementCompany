@@ -44,7 +44,7 @@ namespace FlightManagementCompany.Repository
         //Update an existing crew member
         public void Update(CrewMember entity)
         {
-            _ctx.CrewMembers.Update(entity);         // Mark as Modified
+            _ctx.CrewMembers.Update(entity);// Mark as Modified
         }
 
         // Delete a crew member by key
