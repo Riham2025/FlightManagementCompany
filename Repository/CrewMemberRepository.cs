@@ -38,7 +38,7 @@ namespace FlightManagementCompany.Repository
         //Insert a new crew member
         public void Add(CrewMember entity)
         {
-            _ctx.CrewMembers.Add(entity);            // Stage insert in change tracker
+            _ctx.CrewMembers.Add(entity); // Stage insert in change tracker
         }
 
         // Update an existing crew member
