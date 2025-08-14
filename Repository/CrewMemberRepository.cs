@@ -17,7 +17,7 @@ namespace FlightManagementCompany.Repository
         //Constructor injection of DbContext
         public CrewMemberRepository(FlightDbContext ctx)
         {
-            _ctx = ctx;                              // Store context for later use
+            _ctx = ctx; // Store context for later use
         }
 
         // Retrieve all crew members (read-only)
