@@ -67,7 +67,7 @@ namespace FlightManagementCompany.Repository
             _ctx.AircraftMaintenance.Update(entity); // Mark as Modified
         }
 
-        // Stage delete by PK
+        //Stage delete by PK
         public void Delete(int id)
         {
             var e = _ctx.AircraftMaintenance.Find(id); // Try to locate by key
