@@ -57,7 +57,7 @@ namespace FlightManagementCompany.Repository
         //Persist all staged changes
         public void Save()
         {
-            _ctx.SaveChanges();                      // Flush to database
+            _ctx.SaveChanges();// Flush to database
         }
     }
 }
