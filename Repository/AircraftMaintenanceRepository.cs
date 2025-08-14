@@ -40,7 +40,7 @@ namespace FlightManagementCompany.Repository
             return _ctx.AircraftMaintenance
                        .Where(m => m.AircraftId == aircraftId) //Filter by FK
                        .Include(m => m.Aircraft) // Include aircraft
-                       .AsNoTracking()                          // Read-only
+                       .AsNoTracking() // Read-only
                        .ToList();                               // Materialize
         }
 
