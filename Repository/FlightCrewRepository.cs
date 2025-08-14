@@ -78,7 +78,7 @@ namespace FlightManagementCompany.Repository
         //Persist changes
         public void Save()
         {
-            _ctx.SaveChanges();                      // Commit unit of work
+            _ctx.SaveChanges(); // Commit unit of work
         }
     }
 }
