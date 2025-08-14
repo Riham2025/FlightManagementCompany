@@ -12,7 +12,7 @@ namespace FlightManagementCompany.Repository
     {
 
 
-        private readonly FlightDbContext _ctx;       // Context used for persistence
+        private readonly FlightDbContext _ctx; // Context used for persistence
 
         public FlightCrewRepository(FlightDbContext ctx)
         {
