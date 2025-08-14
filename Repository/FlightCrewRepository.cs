@@ -50,7 +50,7 @@ namespace FlightManagementCompany.Repository
             if (e != null) _ctx.FlightCrew.Remove(e); //Remove if found
         }
 
-        // Retrieve all crew members assigned to a specific flight
+        //Retrieve all crew members assigned to a specific flight
         public List<CrewMember> GetCrewForFlight(int flightId)
         {
             return _ctx.FlightCrew
