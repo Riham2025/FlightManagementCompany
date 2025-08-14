@@ -51,7 +51,7 @@ namespace FlightManagementCompany.Repository
         public void Delete(int id)
         {
             var e = _ctx.CrewMembers.Find(id); // Attempt to locate by PK
-            if (e != null) _ctx.CrewMembers.Remove(e); // Remove if found
+            if (e != null) _ctx.CrewMembers.Remove(e);// Remove if found
         }
 
         // Persist all staged changes
