@@ -14,7 +14,7 @@ namespace FlightManagementCompany.Repository
 
         public AircraftMaintenanceRepository(FlightDbContext ctx) // Constructor to initialize the repository with a database context
         {
-            _ctx = ctx;                              // Store context for later use
+            _ctx = ctx;  // Store context for later use
         }
 
         // Get all maintenance records with their aircraft
