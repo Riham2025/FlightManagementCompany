@@ -34,7 +34,7 @@ namespace FlightManagementCompany.Repository
                        .FirstOrDefault(m => m.MaintenanceId == id); // Return first match or null
         }
 
-        // Get all maintenance entries for a specific aircraft
+        //Get all maintenance entries for a specific aircraft
         public List<AircraftMaintenance> GetByAircraft(int aircraftId)
         {
             return _ctx.AircraftMaintenance
