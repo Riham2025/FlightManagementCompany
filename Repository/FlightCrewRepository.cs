@@ -33,7 +33,7 @@ namespace FlightManagementCompany.Repository
         public bool Exists(int flightId, int crewId)
         {
             return _ctx.FlightCrew
-                       .Any(fc => fc.FlightId == flightId && fc.CrewId == crewId);
+                       .Any(fc => fc.FlightId == flightId && fc.CrewId == crewId); // Check existence by composite key
         }
 
         // Create a new assignment
