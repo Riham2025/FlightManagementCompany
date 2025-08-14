@@ -31,7 +31,7 @@ namespace FlightManagementCompany.Repository
         {
             return _ctx.AircraftMaintenance // Query the DbSet
                        .Include(m => m.Aircraft)  // Include the aircraft
-                       .FirstOrDefault(m => m.MaintenanceId == id);
+                       .FirstOrDefault(m => m.MaintenanceId == id); // Return first match or null
         }
 
         // Get all maintenance entries for a specific aircraft
