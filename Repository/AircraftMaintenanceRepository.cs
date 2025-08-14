@@ -21,7 +21,7 @@ namespace FlightManagementCompany.Repository
         public List<AircraftMaintenance> GetAll()
         {
             return _ctx.AircraftMaintenance
-                       .Include(m => m.Aircraft)      // Eager-load aircraft
+                       .Include(m => m.Aircraft) // Eager-load aircraft
                        .AsNoTracking()                // Read-only optimization
                        .ToList();                     // Materialize list
         }
