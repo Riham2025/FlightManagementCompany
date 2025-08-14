@@ -41,7 +41,7 @@ namespace FlightManagementCompany.Repository
                        .Where(m => m.AircraftId == aircraftId) //Filter by FK
                        .Include(m => m.Aircraft) // Include aircraft
                        .AsNoTracking() // Read-only
-                       .ToList();                               // Materialize
+                       .ToList(); // Materialize
         }
 
         // Get maintenance records in the last N days
