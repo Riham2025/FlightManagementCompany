@@ -24,7 +24,7 @@ namespace FlightManagementCompany.Repository
         {
             return _ctx.FlightCrew
                        .Include(fc => fc.Flight) // Eager-load the Flight
-                       .Include(fc => fc.CrewMember)  // Eager-load the CrewMember
+                       .Include(fc => fc.CrewMember) // Eager-load the CrewMember
                        .AsNoTracking()                // Read-only optimization
                        .ToList();                     // Materialize
         }
