@@ -64,7 +64,7 @@ namespace FlightManagementCompany.Repository
         //Stage update
         public void Update(AircraftMaintenance entity)
         {
-            _ctx.AircraftMaintenance.Update(entity);  // Mark as Modified
+            _ctx.AircraftMaintenance.Update(entity); // Mark as Modified
         }
 
         // Stage delete by PK
