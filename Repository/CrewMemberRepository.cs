@@ -20,7 +20,7 @@ namespace FlightManagementCompany.Repository
             _ctx = ctx; // Store context for later use
         }
 
-        // Retrieve all crew members (read-only)
+        //Retrieve all crew members (read-only)
         public List<CrewMember> GetAll()
         {
             return _ctx.CrewMembers                  // Start from CrewMembers table
