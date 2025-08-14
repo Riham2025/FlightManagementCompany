@@ -7,7 +7,7 @@ namespace FlightManagementCompany.Repository
         void Add(CrewMember entity);// Stage add new crew member
         void Delete(int id); // Delete a crew member by its unique identifier
         List<CrewMember> GetAll(); // Retrieve all crew members
-        CrewMember? GetById(int id);
+        CrewMember? GetById(int id); // Retrieve a crew member by its unique identifier
         void Save();
         void Update(CrewMember entity);
     }
