@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FlightManagementCompany.Repository
 {
-    public class AircraftMaintenanceRepository
+    public class AircraftMaintenanceRepository : IAircraftMaintenanceRepository
     {
         private readonly FlightDbContext _ctx;// Represents the database context for accessing aircraft maintenance data
 
@@ -68,14 +68,14 @@ namespace FlightManagementCompany.Repository
         }
 
         //Stage delete by PK
-        public void Delete(int id) 
+        public void Delete(int id)
         {
             var e = _ctx.AircraftMaintenance.Find(id); //Try to locate by key
             if (e != null) _ctx.AircraftMaintenance.Remove(e); //Remove if found
         }
 
         //Persist all staged changes
-        public void Save() 
+        public void Save()
         {
             _ctx.SaveChanges();  // Commit to database
         }
