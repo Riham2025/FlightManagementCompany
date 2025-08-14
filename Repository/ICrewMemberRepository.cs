@@ -9,6 +9,6 @@ namespace FlightManagementCompany.Repository
         List<CrewMember> GetAll(); // Retrieve all crew members
         CrewMember? GetById(int id); // Retrieve a crew member by its unique identifier
         void Save(); // Saves changes made to the database context
-        void Update(CrewMember entity);
+        void Update(CrewMember entity); // Stage update existing crew member
     }
 }
