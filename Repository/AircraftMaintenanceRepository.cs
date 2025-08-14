@@ -38,7 +38,7 @@ namespace FlightManagementCompany.Repository
         public List<AircraftMaintenance> GetByAircraft(int aircraftId)
         {
             return _ctx.AircraftMaintenance
-                       .Where(m => m.AircraftId == aircraftId) // Filter by FK
+                       .Where(m => m.AircraftId == aircraftId) //Filter by FK
                        .Include(m => m.Aircraft)                // Include aircraft
                        .AsNoTracking()                          // Read-only
                        .ToList();                               // Materialize
