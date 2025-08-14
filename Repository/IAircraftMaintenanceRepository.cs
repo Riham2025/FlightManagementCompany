@@ -6,7 +6,7 @@ namespace FlightManagementCompany.Repository
     {
         void Add(AircraftMaintenance entity); // Stage add new aircraft maintenance record
         void Delete(int id); // Delete an aircraft maintenance record by its unique identifier
-        List<AircraftMaintenance> GetAll();
+        List<AircraftMaintenance> GetAll(); // Retrieve all aircraft maintenance records, including linked Aircraft
         List<AircraftMaintenance> GetByAircraft(int aircraftId);
         AircraftMaintenance? GetById(int id);
         List<AircraftMaintenance> GetRecent(int days);
