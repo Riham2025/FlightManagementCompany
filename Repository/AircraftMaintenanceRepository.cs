@@ -29,7 +29,7 @@ namespace FlightManagementCompany.Repository
         //Get a single maintenance record by PK
         public AircraftMaintenance? GetById(int id)
         {
-            return _ctx.AircraftMaintenance
+            return _ctx.AircraftMaintenance // Query the DbSet
                        .Include(m => m.Aircraft)      // Include the aircraft
                        .FirstOrDefault(m => m.MaintenanceId == id);
         }
