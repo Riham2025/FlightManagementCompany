@@ -65,7 +65,7 @@ namespace FlightManagementCompany.Repository
         public List<Flight> GetFlightsForCrew(int crewId)
         {
             return _ctx.FlightCrew
-                       .Where(fc => fc.CrewId == crewId)         // Filter by crew
+                       .Where(fc => fc.CrewId == crewId) // Filter by crew
                        .Include(fc => fc.Flight)                  // Load flight
                            .ThenInclude(f => f.Route)             // Load Route
                        .Include(fc => fc.Flight)                  // Load again to chain
