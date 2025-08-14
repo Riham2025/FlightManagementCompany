@@ -45,7 +45,7 @@ namespace FlightManagementCompany.Repository
         //Remove an assignment by composite key
         public void Delete(int flightId, int crewId)
         {
-            // Find accepts a key array for composite keys
+            //Find accepts a key array for composite keys
             var e = _ctx.FlightCrew.Find(flightId, crewId);
             if (e != null) _ctx.FlightCrew.Remove(e); // Remove if found
         }
