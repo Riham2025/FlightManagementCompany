@@ -26,7 +26,7 @@ namespace FlightManagementCompany.Repository
                        .Include(fc => fc.Flight) // Eager-load the Flight
                        .Include(fc => fc.CrewMember) // Eager-load the CrewMember
                        .AsNoTracking() // Read-only optimization
-                       .ToList();                     // Materialize
+                       .ToList(); // Materialize
         }
 
         // Check if an assignment exists using composite key
