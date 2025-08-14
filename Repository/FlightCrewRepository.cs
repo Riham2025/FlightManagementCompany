@@ -58,7 +58,7 @@ namespace FlightManagementCompany.Repository
                        .Include(fc => fc.CrewMember) // Load crew
                        .Select(fc => fc.CrewMember!) // Project to CrewMember
                        .AsNoTracking() // Read-only
-                       .ToList();                                 // Materialize
+                       .ToList(); // Materialize
         }
 
         // Retrieve all flights assigned to a specific crew member
