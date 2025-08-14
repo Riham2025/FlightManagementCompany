@@ -17,7 +17,7 @@ namespace FlightManagementCompany.Repository
             _ctx = ctx;  // Store context for later use
         }
 
-        // Get all maintenance records with their aircraft
+        //Get all maintenance records with their aircraft
         public List<AircraftMaintenance> GetAll()
         {
             return _ctx.AircraftMaintenance
