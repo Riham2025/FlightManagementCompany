@@ -29,7 +29,7 @@ namespace FlightManagementCompany.Repository
                        .ToList(); // Materialize
         }
 
-        // Check if an assignment exists using composite key
+        //Check if an assignment exists using composite key
         public bool Exists(int flightId, int crewId)
         {
             return _ctx.FlightCrew
