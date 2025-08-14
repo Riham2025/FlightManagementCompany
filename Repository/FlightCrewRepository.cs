@@ -47,7 +47,7 @@ namespace FlightManagementCompany.Repository
         {
             //Find accepts a key array for composite keys
             var e = _ctx.FlightCrew.Find(flightId, crewId);
-            if (e != null) _ctx.FlightCrew.Remove(e); // Remove if found
+            if (e != null) _ctx.FlightCrew.Remove(e); //Remove if found
         }
 
         // Retrieve all crew members assigned to a specific flight
