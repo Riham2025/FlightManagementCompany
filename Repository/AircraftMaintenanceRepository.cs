@@ -47,7 +47,7 @@ namespace FlightManagementCompany.Repository
         //Get maintenance records in the last N days
         public List<AircraftMaintenance> GetRecent(int days)
         {
-            var fromDate = DateTime.UtcNow.AddDays(-Math.Abs(days)); // Compute lower bound (UTC)
+            var fromDate = DateTime.UtcNow.AddDays(-Math.Abs(days)); //Compute lower bound (UTC)
             return _ctx.AircraftMaintenance
                        .Where(m => m.PerformedAtUtc >= fromDate)     // Filter by date
                        .Include(m => m.Aircraft)                      // Include aircraft
