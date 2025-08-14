@@ -11,6 +11,6 @@ namespace FlightManagementCompany.Repository
         AircraftMaintenance? GetById(int id);// Retrieve a single aircraft maintenance record by its unique identifier
         List<AircraftMaintenance> GetRecent(int days); // Retrieve maintenance records performed in the last N days
         void Save(); // Saves changes made to the database context
-        void Update(AircraftMaintenance entity);
+        void Update(AircraftMaintenance entity); // Stage update existing aircraft maintenance record
     }
 }
