@@ -12,7 +12,7 @@ namespace FlightManagementCompany.Repository
     {
         private readonly FlightDbContext _ctx;// Represents the database context for accessing aircraft maintenance data
 
-        public AircraftMaintenanceRepository(FlightDbContext ctx)
+        public AircraftMaintenanceRepository(FlightDbContext ctx) // Constructor to initialize the repository with a database context
         {
             _ctx = ctx;                              // Store context for later use
         }
