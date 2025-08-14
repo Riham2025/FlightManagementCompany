@@ -5,7 +5,7 @@ namespace FlightManagementCompany.Repository
     public interface IAircraftMaintenanceRepository // Represents a repository for managing aircraft maintenance records in the flight management system.
     {
         void Add(AircraftMaintenance entity); // Stage add new aircraft maintenance record
-        void Delete(int id);
+        void Delete(int id); // Delete an aircraft maintenance record by its unique identifier
         List<AircraftMaintenance> GetAll();
         List<AircraftMaintenance> GetByAircraft(int aircraftId);
         AircraftMaintenance? GetById(int id);
