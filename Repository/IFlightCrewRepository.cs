@@ -10,6 +10,6 @@ namespace FlightManagementCompany.Repository
         List<FlightCrew> GetAll(); // Retrieve all flight crew assignments, including linked Flight and CrewMember
         List<CrewMember> GetCrewForFlight(int flightId); // Retrieve all crew members assigned to a specific flight
         List<Flight> GetFlightsForCrew(int crewId); // Retrieve all flights assigned to a specific crew member
-        void Save();
+        void Save(); // Saves changes made to the database context
     }
 }
