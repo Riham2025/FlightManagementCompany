@@ -72,7 +72,7 @@ namespace FlightManagementCompany.Repository
                            .ThenInclude(f => f.Aircraft) //Load Aircraft
                        .Select(fc => fc.Flight!) // Project to Flight
                        .AsNoTracking() // Read-only
-                       .ToList();                                 // Materialize
+                       .ToList(); // Materialize
         }
 
         // Persist changes
