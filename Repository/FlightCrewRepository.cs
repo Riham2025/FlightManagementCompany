@@ -36,7 +36,7 @@ namespace FlightManagementCompany.Repository
                        .Any(fc => fc.FlightId == flightId && fc.CrewId == crewId); // Check existence by composite key
         }
 
-        // Create a new assignment
+        //Create a new assignment
         public void Add(FlightCrew entity)
         {
             _ctx.FlightCrew.Add(entity);             // Stage insert
