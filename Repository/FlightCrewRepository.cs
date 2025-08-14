@@ -56,7 +56,7 @@ namespace FlightManagementCompany.Repository
             return _ctx.FlightCrew
                        .Where(fc => fc.FlightId == flightId) // Filter by flight
                        .Include(fc => fc.CrewMember) // Load crew
-                       .Select(fc => fc.CrewMember!)             // Project to CrewMember
+                       .Select(fc => fc.CrewMember!) // Project to CrewMember
                        .AsNoTracking()                            // Read-only
                        .ToList();                                 // Materialize
         }
