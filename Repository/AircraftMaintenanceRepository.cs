@@ -52,7 +52,7 @@ namespace FlightManagementCompany.Repository
                        .Where(m => m.PerformedAtUtc >= fromDate) // Filter by date
                        .Include(m => m.Aircraft) // Include aircraft
                        .AsNoTracking() // Read-only
-                       .ToList();                                     // Materialize
+                       .ToList(); // Materialize
         }
 
         // Stage insert
