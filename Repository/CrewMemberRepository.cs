@@ -31,7 +31,7 @@ namespace FlightManagementCompany.Repository
         //Find a single crew member by primary key
         public CrewMember? GetById(int id)
         {
-            return _ctx.CrewMembers                  // Query the DbSet
+            return _ctx.CrewMembers // Query the DbSet
                        .FirstOrDefault(c => c.CrewId == id); // Return first match or null
         }
 
