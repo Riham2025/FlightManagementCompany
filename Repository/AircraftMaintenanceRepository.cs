@@ -51,7 +51,7 @@ namespace FlightManagementCompany.Repository
             return _ctx.AircraftMaintenance // Query the DbSet
                        .Where(m => m.PerformedAtUtc >= fromDate) // Filter by date
                        .Include(m => m.Aircraft) // Include aircraft
-                       .AsNoTracking()                                // Read-only
+                       .AsNoTracking() // Read-only
                        .ToList();                                     // Materialize
         }
 
