@@ -69,7 +69,7 @@ namespace FlightManagementCompany.Repository
                        .Include(fc => fc.Flight) // Load flight
                            .ThenInclude(f => f.Route) // Load Route
                        .Include(fc => fc.Flight) // Load again to chain
-                           .ThenInclude(f => f.Aircraft)          // Load Aircraft
+                           .ThenInclude(f => f.Aircraft) //Load Aircraft
                        .Select(fc => fc.Flight!)                  // Project to Flight
                        .AsNoTracking()                            // Read-only
                        .ToList();                                 // Materialize
