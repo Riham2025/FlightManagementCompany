@@ -11,7 +11,7 @@ namespace FlightManagementCompany.Repository
     public class CrewMemberRepository : ICrewMemberRepository // Represents a repository for managing crew member entities in the flight management system.
     {
 
-        // Private context reference used to access the database
+        //Private context reference used to access the database
         private readonly FlightDbContext _ctx;
 
         // Constructor injection of DbContext
