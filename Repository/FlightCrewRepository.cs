@@ -42,7 +42,7 @@ namespace FlightManagementCompany.Repository
             _ctx.FlightCrew.Add(entity); // Stage insert
         }
 
-        // Remove an assignment by composite key
+        //Remove an assignment by composite key
         public void Delete(int flightId, int crewId)
         {
             // Find accepts a key array for composite keys
