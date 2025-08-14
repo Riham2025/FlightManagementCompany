@@ -8,7 +8,7 @@ namespace FlightManagementCompany.Repository
         void Delete(int flightId, int crewId); // Delete a flight crew assignment by composite key (flightId, crewId)
         bool Exists(int flightId, int crewId); // Check if a flight crew assignment exists using composite key (flightId, crewId)
         List<FlightCrew> GetAll(); // Retrieve all flight crew assignments, including linked Flight and CrewMember
-        List<CrewMember> GetCrewForFlight(int flightId);
+        List<CrewMember> GetCrewForFlight(int flightId); // Retrieve all crew members assigned to a specific flight
         List<Flight> GetFlightsForCrew(int crewId);
         void Save();
     }
