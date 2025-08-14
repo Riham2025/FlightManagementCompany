@@ -25,7 +25,7 @@ namespace FlightManagementCompany.Repository
         {
             return _ctx.CrewMembers // Start from CrewMembers table
                        .AsNoTracking() // No tracking for speed on reads
-                       .ToList();                    // Materialize as List<CrewMember>
+                       .ToList(); // Materialize as List<CrewMember>
         }
 
         // Find a single crew member by primary key
