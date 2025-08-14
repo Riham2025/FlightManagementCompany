@@ -2,9 +2,9 @@
 
 namespace FlightManagementCompany.Repository
 {
-    public interface IFlightCrewRepository
+    public interface IFlightCrewRepository // Represents a repository for managing flight crew assignments in the flight management system.
     {
-        void Add(FlightCrew entity);
+        void Add(FlightCrew entity); // Stage add new flight crew assignment
         void Delete(int flightId, int crewId);
         bool Exists(int flightId, int crewId);
         List<FlightCrew> GetAll();
