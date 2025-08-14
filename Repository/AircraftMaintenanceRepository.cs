@@ -23,7 +23,7 @@ namespace FlightManagementCompany.Repository
             return _ctx.AircraftMaintenance
                        .Include(m => m.Aircraft) // Eager-load aircraft
                        .AsNoTracking() // Read-only optimization
-                       .ToList();                     // Materialize list
+                       .ToList(); // Materialize list
         }
 
         // Get a single maintenance record by PK
