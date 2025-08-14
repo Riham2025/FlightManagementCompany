@@ -16,7 +16,7 @@ namespace FlightManagementCompany.Repository
 
         public FlightCrewRepository(FlightDbContext ctx)
         {
-            _ctx = ctx;                              // Save context reference
+            _ctx = ctx; // Save context reference
         }
 
         // Return all assignments, including linked Flight and CrewMember
