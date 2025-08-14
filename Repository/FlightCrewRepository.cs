@@ -39,7 +39,7 @@ namespace FlightManagementCompany.Repository
         //Create a new assignment
         public void Add(FlightCrew entity)
         {
-            _ctx.FlightCrew.Add(entity);             // Stage insert
+            _ctx.FlightCrew.Add(entity); // Stage insert
         }
 
         // Remove an assignment by composite key
