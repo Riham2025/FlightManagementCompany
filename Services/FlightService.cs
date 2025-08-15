@@ -50,7 +50,7 @@ namespace FlightManagementCompany.Services
             error = string.Empty;
             if (flight == null || flight.FlightId <= 0) { error = "Invalid flight."; return false; } // Validate the flight object and its ID.
             if (flight.ArrivalUtc <= flight.DepartureUtc) { error = "Arrival must be after departure."; return false; } // Validate that the arrival time is after the departure time.
-            _flights.Update(flight); _flights.Save();
+            _flights.Update(flight); _flights.Save(); // Stage the updated flight for modification in the repository and save it.
             return true;
         }
 
