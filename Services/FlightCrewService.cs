@@ -19,7 +19,7 @@ namespace FlightManagementCompany.Services
         {
             _repo = repo; // Assign the provided FlightCrewRepository to the private field.
             _flights = flights; // Assign the provided FlightRepository to the private field.
-            _crew = crew;
+            _crew = crew; // Assign the provided CrewMemberRepository to the private field.
         }
 
         public List<FlightCrew> GetAll() => _repo.GetAll();
