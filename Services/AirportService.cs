@@ -30,7 +30,7 @@ namespace FlightManagementCompany.Services
             return true; // Return true to indicate successful creation of the airport.
         }
 
-        public bool Update(Airport airport, out string error)
+        public bool Update(Airport airport, out string error) // Updates an existing airport with the provided details and validates the input.
         {
             error = string.Empty;
             if (airport == null || airport.AirportId <= 0) { error = "Invalid airport."; return false; }
