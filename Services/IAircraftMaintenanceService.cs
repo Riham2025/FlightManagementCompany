@@ -2,7 +2,7 @@
 
 namespace FlightManagementCompany.Services
 {
-    public interface IAircraftMaintenanceService
+    public interface IAircraftMaintenanceService // Represents a service for managing aircraft maintenance operations in the flight management system.
     {
         bool Add(int aircraftId, string description, DateTime performedAtUtc, out string error);
         bool Delete(int id, out string error);
