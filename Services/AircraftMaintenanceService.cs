@@ -24,7 +24,7 @@ namespace FlightManagementCompany.Services
         public List<AircraftMaintenance> GetByAircraft(int aircraftId) => _maint.GetByAircraft(aircraftId); // Retrieves all aircraft maintenance records associated with a specific aircraft by its unique identifier, including associated aircraft details.
         public List<AircraftMaintenance> GetRecent(int days) => _maint.GetRecent(days); // Retrieves recent aircraft maintenance records from the repository, filtering by the specified number of days.
 
-        public bool Add(int aircraftId, string description, DateTime performedAtUtc, out string error)
+        public bool Add(int aircraftId, string description, DateTime performedAtUtc, out string error) // Adds a new aircraft maintenance record for a specific aircraft and validates the input.
         {
             error = string.Empty;
             if (_aircraft.GetById(aircraftId) == null) { error = "Aircraft not found."; return false; }
