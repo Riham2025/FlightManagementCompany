@@ -18,7 +18,7 @@ namespace FlightManagementCompany.Services
         public FlightCrewService(FlightCrewRepository repo, FlightRepository flights, CrewMemberRepository crew) // Constructor to initialize the FlightCrewService with repositories for flight crew assignments, flights, and crew members.
         {
             _repo = repo; // Assign the provided FlightCrewRepository to the private field.
-            _flights = flights;
+            _flights = flights; // Assign the provided FlightRepository to the private field.
             _crew = crew;
         }
 
