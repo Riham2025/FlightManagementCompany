@@ -32,7 +32,7 @@ namespace FlightManagementCompany.Services
             if (weightKg <= 0) { error = "Weight must be positive."; return false; } // Validate that the weight is a positive value.
 
             var b = new Baggage { PassengerId = passengerId, TagNumber = tagNumber.Trim(), Weight = weightKg }; // Create a new Baggage object with the provided passenger ID, tag number, and weight.
-            _baggage.Add(b); _baggage.Save();
+            _baggage.Add(b); _baggage.Save(); // Stage the new baggage for addition to the repository and save it.
             return true;
         }
 
