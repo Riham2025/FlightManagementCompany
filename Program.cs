@@ -22,7 +22,7 @@ namespace FlightManagementCompany
             // 2)Repositories (one per entity, as you implemented)
             Airports airportRepo = new Airports(ctx); // Repository for managing airport entities in the flight management system.
             AircraftRepository aircraftRepo = new AircraftRepository(ctx); // Repository for managing aircraft entities in the flight management system.
-            RouteRepository routeRepo = new RouteRepository(ctx);
+            RouteRepository routeRepo = new RouteRepository(ctx); // Repository for managing flight routes in the flight management system.
             FlightRepository flightRepo = new FlightRepository(ctx);
             PassengerRepository passengerRepo = new PassengerRepository(ctx);
             BookingRepository bookingRepo = new BookingRepository(ctx);
