@@ -22,7 +22,7 @@ namespace FlightManagementCompany.Services
             _flights = flights; _routes = routes; _aircraft = aircraft; // Assign the provided repositories to the private fields
         }
 
-        public List<Flight> GetAll() => _flights.GetAll();
+        public List<Flight> GetAll() => _flights.GetAll(); // Retrieves all flights from the repository, including associated routes and aircraft.
         public Flight? GetById(int id) => _flights.GetById(id);
         public List<Flight> GetByDateRange(DateTime fromUtc, DateTime toUtc) => _flights.GetByDateRange(fromUtc, toUtc);
 
