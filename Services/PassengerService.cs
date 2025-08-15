@@ -23,7 +23,7 @@ namespace FlightManagementCompany.Services
             if (string.IsNullOrWhiteSpace(fullName)) // Validate that the full name is not empty or whitespace.
             { error = "Name required."; return false; // Return false to indicate that the registration failed due to an invalid name. }
             }
-            if (string.IsNullOrWhiteSpace(passportNo)) { error = "Passport required."; return false; }
+            if (string.IsNullOrWhiteSpace(passportNo)) { error = "Passport required."; return false; } // Validate that the passport number is not empty or whitespace.
             if (_repo.GetAll().Any(p => p.PassportNo == passportNo.Trim())) { error = "Passport already exists."; return false; }
 
             var p = new Passenger { FullName = fullName.Trim(), PassportNo = passportNo.Trim(), Email = email?.Trim() };
