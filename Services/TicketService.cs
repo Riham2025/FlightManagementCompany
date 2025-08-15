@@ -8,7 +8,7 @@ using FlightManagementCompany.Repository;
 
 namespace FlightManagementCompany.Services
 {
-    public  class TicketService
+    public class TicketService : ITicketService // Service class for managing ticket operations in the flight management system.
     {
 
         private readonly TicketRepository _tickets; // Represents a repository for managing ticket entities in the flight management system.    
@@ -27,14 +27,14 @@ namespace FlightManagementCompany.Services
         {
             error = string.Empty; // Initialize error message to empty string.
             if (_bookings.GetById(bookingId) == null) // Validate that the specified booking exists in the repository.
-            { error = "Booking not found."; return false; } 
+            { error = "Booking not found."; return false; }
 
             if (_flights.GetById(flightId) == null)   // Validate that the specified flight exists in the repository.  
-            { error = "Flight not found."; return false; } 
+            { error = "Flight not found."; return false; }
             if (fare <= 0) { error = "Fare must be positive."; return false; } // Validate that the fare is a positive value.
 
             var t = new Ticket // Create a new Ticket object with the provided booking ID, flight ID, fare, and seat information.
-            { BookingId = bookingId, FlightId = flightId, Fare = fare, Seat = seat?.Trim() }; 
+            { BookingId = bookingId, FlightId = flightId, Fare = fare, Seat = seat?.Trim() };
             _tickets.Add(t); // Stage the new ticket for addition to the repository.
             _tickets.Save(); // Save the changes to the repository after adding the new ticket.
             return true;
