@@ -57,5 +57,7 @@ namespace FlightManagementCompany.Repository
             }
         }
 
+        public void Save() => _ctx.SaveChanges(); // Saves changes made to the database context, persisting any modifications made to the aircraft entities.
+
     }
 }
