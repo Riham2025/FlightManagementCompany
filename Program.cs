@@ -20,7 +20,7 @@ namespace FlightManagementCompany
             ctx.Database.EnsureCreated();
 
             // 2)Repositories (one per entity, as you implemented)
-            Airports airportRepo = new Airports(ctx);
+            Airports airportRepo = new Airports(ctx); // Repository for managing airport entities in the flight management system.
             AircraftRepository aircraftRepo = new AircraftRepository(ctx);
             RouteRepository routeRepo = new RouteRepository(ctx);
             FlightRepository flightRepo = new FlightRepository(ctx);
