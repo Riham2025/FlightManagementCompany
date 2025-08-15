@@ -11,7 +11,7 @@ namespace FlightManagementCompany.Services
     public class CrewMemberService : ICrewMemberService // Service class for managing crew member operations in the flight management system.
     {
 
-        private readonly CrewMemberRepository _crew;
+        private readonly CrewMemberRepository _crew; // Repository for accessing crew member data
         public CrewMemberService(CrewMemberRepository crew) { _crew = crew; }
 
         public List<CrewMember> GetAll() => _crew.GetAll();
