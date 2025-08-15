@@ -15,7 +15,7 @@ namespace FlightManagementCompany.Services
         private readonly BookingRepository _bookings; // Represents a repository for managing booking entities in the flight management system.
         private readonly FlightRepository _flights; // Represents a repository for managing flight entities in the flight management system.
 
-        public TicketService(TicketRepository tickets, BookingRepository bookings, FlightRepository flights)
+        public TicketService(TicketRepository tickets, BookingRepository bookings, FlightRepository flights) // Constructor to initialize the TicketService with repositories for tickets, bookings, and flights.
         {
             _tickets = tickets; _bookings = bookings; _flights = flights;
         }
