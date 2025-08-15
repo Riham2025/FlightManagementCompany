@@ -45,7 +45,7 @@ namespace FlightManagementCompany
             IFlightCrewService flightCrewService = new FlightCrewService(flightCrewRepo, flightRepo, crewRepo); // Service for managing flight crew assignments in the flight management system, including flight and crew member details.
             IAircraftMaintenanceService maintenanceService = new AircraftMaintenanceService(maintenanceRepo, aircraftRepo); // Service for managing aircraft maintenance records in the flight management system, including aircraft details.
 
-            // ===================== MENU LOOP =====================
+            //  ===================== MENU LOOP =====================
 
             bool exit = false;
             while (!exit)
