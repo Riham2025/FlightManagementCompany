@@ -2,7 +2,7 @@
 
 namespace FlightManagementCompany.Services
 {
-    public interface IRouteService
+    public interface IRouteService // Represents a service for managing flight routes in the flight management system.
     {
         bool Create(int originAirportId, int destinationAirportId, out string error);
         bool Delete(int id, out string error);
