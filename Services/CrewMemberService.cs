@@ -20,7 +20,7 @@ namespace FlightManagementCompany.Services
         public bool Create(string fullName, string role, out string error) // Creates a new crew member with the provided details and validates the input.
         {
             error = string.Empty; // Initialize error message to empty string.
-            if (string.IsNullOrWhiteSpace(fullName)) { error = "Name required."; return false; }
+            if (string.IsNullOrWhiteSpace(fullName)) { error = "Name required."; return false; } // Validate that the full name is not empty or whitespace.
             if (string.IsNullOrWhiteSpace(role)) { error = "Role required."; return false; }
             var c = new CrewMember { FullName = fullName.Trim(), Role = role.Trim() };
             _crew.Add(c); _crew.Save();
