@@ -26,7 +26,7 @@ namespace FlightManagementCompany.Services
 
         public bool Assign(int flightId, int crewId, string role, out string error) // Assigns a crew member to a flight with a specified role and validates the input.
         {
-            error = string.Empty;
+            error = string.Empty; // Initialize error message to empty string.
             if (_flights.GetById(flightId) == null) { error = "Flight not found."; return false; }
             if (_crew.GetById(crewId) == null) { error = "Crew member not found."; return false; }
             if (_repo.Exists(flightId, crewId)) { error = "Already assigned."; return false; }
