@@ -2,7 +2,7 @@
 
 namespace FlightManagementCompany.Services
 {
-    public interface IAirportService
+    public interface IAirportService // Represents a service for managing airport operations in the flight management system.
     {
         bool Create(string iata, string name, string city, string country, string timeZone, out string error);
         bool Delete(int id, out string error);
