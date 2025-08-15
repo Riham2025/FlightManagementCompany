@@ -29,7 +29,7 @@ namespace FlightManagementCompany.Services
             error = string.Empty; // Initialize error message to empty string.
             if (_passengers.GetById(passengerId) == null) { error = "Passenger not found."; return false; } // Validate that the specified passenger exists in the repository.
             if (string.IsNullOrWhiteSpace(tagNumber)) { error = "Tag number required."; return false; } // Validate that the tag number is not empty or whitespace.
-            if (weightKg <= 0) { error = "Weight must be positive."; return false; }
+            if (weightKg <= 0) { error = "Weight must be positive."; return false; } // Validate that the weight is a positive value.
 
             var b = new Baggage { PassengerId = passengerId, TagNumber = tagNumber.Trim(), Weight = weightKg };
             _baggage.Add(b); _baggage.Save();
