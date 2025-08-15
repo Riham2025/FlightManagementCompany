@@ -27,7 +27,7 @@ namespace FlightManagementCompany.Services
 
             var a = new Aircraft { TailNumber = tailNumber.Trim().ToUpper(), Model = model?.Trim(), Capacity = capacity }; // Create a new Aircraft object with the provided details.
             _repo.Add(a); // Save the new aircraft to the repository.
-            _repo.Save(); 
+            _repo.Save(); // Return true to indicate successful creation of the aircraft. 
             return true;
         }
 
