@@ -31,7 +31,8 @@ namespace FlightManagementCompany.Services
             if (string.IsNullOrWhiteSpace(description)) { error = "Description required."; return false; } // Validate that the description is not empty or whitespace.
 
             var m = new AircraftMaintenance { AircraftId = aircraftId, Description = description.Trim(), PerformedAtUtc = performedAtUtc }; // Create a new AircraftMaintenance object with the provided details.
-            _maint.Add(m); _maint.Save();
+            _maint.Add(m);  // Stage the new maintenance record for addition to the repository.
+            _maint.Save();
             return true;
         }
 
