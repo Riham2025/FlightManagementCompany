@@ -14,7 +14,7 @@ namespace FlightManagementCompany.Services
 
         private readonly RouteRepository _routes; // Repository for accessing route data
         private readonly Airports _airports; // Repository for accessing airport data
-        public RouteService(RouteRepository routes, Airports airports) { _routes = routes; _airports = airports; }
+        public RouteService(RouteRepository routes, Airports airports) { _routes = routes; _airports = airports; } // Constructor to initialize the service with repositories
 
         public List<Route> GetAll() => _routes.GetAll();
         public Route? GetById(int id) => _routes.GetById(id);
