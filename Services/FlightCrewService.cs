@@ -33,7 +33,7 @@ namespace FlightManagementCompany.Services
             if (string.IsNullOrWhiteSpace(role)) { error = "Role required."; return false; } // Validate that the role is not empty or whitespace.
 
             _repo.Add(new FlightCrew { FlightId = flightId, CrewId = crewId, Role = role.Trim() }); // Create a new FlightCrew object with the provided flight ID, crew ID, and role.
-            _repo.Save();
+            _repo.Save(); // Save the new flight crew assignment to the repository.
             return true;
         }
 
