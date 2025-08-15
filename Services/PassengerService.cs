@@ -11,7 +11,7 @@ namespace FlightManagementCompany.Services
     public class PassengerService
     {
 
-        private readonly PassengerRepository _repo;
+        private readonly PassengerRepository _repo; // Repository for accessing passenger data
         public PassengerService(PassengerRepository repo) { _repo = repo; }
 
         public List<Passenger> GetAll() => _repo.GetAll();
