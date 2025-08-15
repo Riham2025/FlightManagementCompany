@@ -45,7 +45,8 @@ namespace FlightManagementCompany.Services
         public bool Cancel(int id, out string error) 
         {
             error = string.Empty; // Initialize error message to empty string.
-            _bookings.Delete(id); _bookings.Save();
+            _bookings.Delete(id); // Delete the booking with the specified ID from the repository.
+            _bookings.Save();
             return true;
         }
     }
