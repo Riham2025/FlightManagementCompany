@@ -25,7 +25,7 @@ namespace FlightManagementCompany.Services
             if (originAirportId == destinationAirportId) { error = "Origin and destination must differ."; return false; } // Validate that the origin and destination airport IDs are not the same.
             if (_airports.GetById(originAirportId) == null || _airports.GetById(destinationAirportId) == null) { error = "Airport(s) not found."; return false; } // Validate that both the origin and destination airports exist in the repository.
 
-            var r = new Route { OriginAirportId = originAirportId, DestinationAirportId = destinationAirportId };
+            var r = new Route { OriginAirportId = originAirportId, DestinationAirportId = destinationAirportId }; // Create a new Route object with the provided origin and destination airport IDs.
             _routes.Add(r); _routes.Save();
             return true;
         }
