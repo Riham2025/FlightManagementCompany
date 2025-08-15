@@ -17,7 +17,7 @@ namespace FlightManagementCompany.Services
         public RouteService(RouteRepository routes, Airports airports) { _routes = routes; _airports = airports; } // Constructor to initialize the service with repositories
 
         public List<Route> GetAll() => _routes.GetAll(); // Retrieves all routes from the repository, including origin and destination airports.
-        public Route? GetById(int id) => _routes.GetById(id);
+        public Route? GetById(int id) => _routes.GetById(id); // Retrieves a route by its unique identifier, including origin and destination airports.
 
         public bool Create(int originAirportId, int destinationAirportId, out string error)
         {
