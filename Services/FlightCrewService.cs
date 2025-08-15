@@ -37,7 +37,7 @@ namespace FlightManagementCompany.Services
             return true;
         }
 
-        public bool Unassign(int flightId, int crewId, out string error)
+        public bool Unassign(int flightId, int crewId, out string error) // Unassigns a crew member from a flight by their unique identifiers and validates the input.
         {
             error = string.Empty;
             _repo.Delete(flightId, crewId);
