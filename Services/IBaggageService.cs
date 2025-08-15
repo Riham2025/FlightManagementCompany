@@ -8,6 +8,6 @@ namespace FlightManagementCompany.Services
         bool Delete(int id, out string error); // Deletes a baggage entry by its unique identifier and validates the input.
         List<Baggage> GetAll(); // Retrieves all baggage entries from the repository, including associated passengers.
         Baggage? GetById(int id); // Retrieves a baggage entry by its unique identifier, including associated passenger details.
-        bool Update(Baggage baggage, out string error);
+        bool Update(Baggage baggage, out string error); // Updates an existing baggage entry with the provided details and validates the input.
     }
 }
