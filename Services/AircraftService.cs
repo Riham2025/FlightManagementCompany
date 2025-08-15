@@ -41,7 +41,7 @@ namespace FlightManagementCompany.Services
 
         public bool Delete(int id, out string error) // Deletes an aircraft by its unique identifier and validates the input.
         {
-            error = string.Empty;
+            error = string.Empty; // Initialize error message to empty string.
             if (id <= 0) { error = "Invalid id."; return false; }
             _repo.Delete(id); _repo.Save();
             return true;
