@@ -42,9 +42,9 @@ namespace FlightManagementCompany.Services
             return true;
         }
 
-        public bool Cancel(int id, out string error)
+        public bool Cancel(int id, out string error) 
         {
-            error = string.Empty;
+            error = string.Empty; // Initialize error message to empty string.
             _bookings.Delete(id); _bookings.Save();
             return true;
         }
