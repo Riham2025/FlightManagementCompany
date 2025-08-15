@@ -17,7 +17,7 @@ namespace FlightManagementCompany.Services
         public List<Passenger> GetAll() => _repo.GetAll(); // Retrieves all passengers from the repository, including their details such as full name, passport number, and email.
         public Passenger? GetById(int id) => _repo.GetById(id); // Retrieves a passenger by their unique identifier, including their details such as full name, passport number, and email.
 
-        public bool Register(string fullName, string passportNo, string email, out string error)
+        public bool Register(string fullName, string passportNo, string email, out string error) // Registers a new passenger with the provided details and validates the input.
         {
             error = string.Empty;
             if (string.IsNullOrWhiteSpace(fullName)) { error = "Name required."; return false; }
