@@ -36,8 +36,9 @@ namespace FlightManagementCompany.Services
             if (_bookings.GetAll().Any(b => b.PassengerId == passengerId && b.FlightId == flightId)) { error = "Already booked."; return false; } // Check if a booking for the same passenger and flight already exists in the repository.
 
             var b = new Booking  // Create a new Booking object with the provided passenger and flight identifiers.
-            { PassengerId = passengerId, FlightId = flightId };
-            _bookings.Add(b); _bookings.Save();
+            { PassengerId = passengerId, FlightId = flightId }; 
+            _bookings.Add(b); // Stage the new booking for addition to the repository.
+            _bookings.Save();
             return true;
         }
 
