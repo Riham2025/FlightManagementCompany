@@ -58,7 +58,7 @@ namespace FlightManagementCompany.Services
         {
             error = string.Empty; // Initialize error message to empty string.
             _flights.Delete(id); // Stage the flight for deletion in the repository.
-            _flights.Save(); 
+            _flights.Save();  // Save the changes to the repository after deletion.
             return true;
         }
     }
