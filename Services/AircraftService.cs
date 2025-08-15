@@ -28,10 +28,10 @@ namespace FlightManagementCompany.Services
             var a = new Aircraft { TailNumber = tailNumber.Trim().ToUpper(), Model = model?.Trim(), Capacity = capacity }; // Create a new Aircraft object with the provided details.
             _repo.Add(a); // Save the new aircraft to the repository.
             _repo.Save(); // Return true to indicate successful creation of the aircraft. 
-            return true;
+            return true; 
         }
 
-        public bool Update(Aircraft aircraft, out string error)
+        public bool Update(Aircraft aircraft, out string error) // Updates an existing aircraft with the provided details and validates the input.
         {
             error = string.Empty;
             if (aircraft == null || aircraft.AircraftId <= 0) { error = "Invalid aircraft."; return false; }
