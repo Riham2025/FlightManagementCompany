@@ -30,7 +30,7 @@ namespace FlightManagementCompany.Services
         {
             error = string.Empty; // Initialize error message to empty string.
             if (string.IsNullOrWhiteSpace(flightNumber)) { error = "Flight number required."; return false; } // Validate flight number.
-            if (arrUtc <= depUtc) { error = "Arrival must be after departure."; return false; }
+            if (arrUtc <= depUtc) { error = "Arrival must be after departure."; return false; } // Validate that the arrival time is after the departure time.
             if (_routes.GetById(routeId) == null) { error = "Route not found."; return false; }
             if (_aircraft.GetById(aircraftId) == null) { error = "Aircraft not found."; return false; }
             // basic uniqueness check on same departure timestamp
