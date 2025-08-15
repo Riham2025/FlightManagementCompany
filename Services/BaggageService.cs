@@ -14,7 +14,7 @@ namespace FlightManagementCompany.Services
 
 
         private readonly BaggageRepository _baggage; // Represents a repository for managing baggage entities in the flight management system.
-        private readonly PassengerRepository _passengers;
+        private readonly PassengerRepository _passengers; // Represents a repository for managing passenger entities in the flight management system.
 
         public BaggageService(BaggageRepository baggage, PassengerRepository passengers)
         {
