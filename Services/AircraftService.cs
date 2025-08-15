@@ -15,7 +15,7 @@ namespace FlightManagementCompany.Services
         private readonly AircraftRepository _repo; // Repository for accessing aircraft data
         public AircraftService(AircraftRepository repo) { _repo = repo; } // Constructor to initialize the service with a repository
 
-        public List<Aircraft> GetAll() => _repo.GetAll();
+        public List<Aircraft> GetAll() => _repo.GetAll(); // Retrieves all aircraft from the repository.
         public Aircraft? GetById(int id) => _repo.GetById(id);
 
         public bool Create(string tailNumber, string model, int capacity, out string error)
