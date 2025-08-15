@@ -8,7 +8,7 @@ namespace FlightManagementCompany.Services
         bool Delete(int id, out string error); // Deletes a flight by its unique identifier and validates the input.
         List<Flight> GetAll(); // Retrieves all flights from the repository, including associated routes and aircraft.
         List<Flight> GetByDateRange(DateTime fromUtc, DateTime toUtc); // Retrieves flights within a specified date range, including associated routes and aircraft details.
-        Flight? GetById(int id);
+        Flight? GetById(int id); // Retrieves a flight by its unique identifier, including associated route and aircraft details.
         bool Update(Flight flight, out string error);
     }
 }
