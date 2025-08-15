@@ -23,7 +23,7 @@ namespace FlightManagementCompany.Services
         }
 
         public List<Flight> GetAll() => _flights.GetAll(); // Retrieves all flights from the repository, including associated routes and aircraft.
-        public Flight? GetById(int id) => _flights.GetById(id);
+        public Flight? GetById(int id) => _flights.GetById(id); // Retrieves a flight by its unique identifier, including associated route and aircraft details.
         public List<Flight> GetByDateRange(DateTime fromUtc, DateTime toUtc) => _flights.GetByDateRange(fromUtc, toUtc);
 
         public bool Create(string flightNumber, int routeId, int aircraftId, DateTime depUtc, DateTime arrUtc, out string error)
