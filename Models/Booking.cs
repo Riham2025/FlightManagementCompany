@@ -18,9 +18,13 @@ namespace FlightManagementCompany.Models
         [Required] public string Status { get; set; } = "Confirmed"; // Status of the booking (e.g., "Confirmed", "Cancelled", "Pending")
 
 
+
+
         // Navigation properties
         [ForeignKey(nameof(Passenger))] public int PassengerId { get; set; } // Identifier for the passenger who made the booking
         public Passenger Passenger { get; set; } = null!; // Passenger who made the booking
+
+        [ForeignKey(nameof(Flight))] public int FlightId { get; set; } // Identifier for the flight associated with this booking
         public ICollection<Ticket> Tickets { get; set; } = new List<Ticket>(); // Tickets associated with this booking
     }
 }
