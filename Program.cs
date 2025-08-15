@@ -33,7 +33,7 @@ namespace FlightManagementCompany
             AircraftMaintenanceRepository maintenanceRepo = new AircraftMaintenanceRepository(ctx); // Repository for managing aircraft maintenance records in the flight management system.
 
             //3) Services (business logic)
-            IAirportService airportService = new AirportService(airportRepo);
+            IAirportService airportService = new AirportService(airportRepo); // Service for managing airport operations in the flight management system.
             IAircraftService aircraftService = new AircraftService(aircraftRepo);
             IRouteService routeService = new RouteService(routeRepo, airportRepo);
             IFlightService flightService = new FlightService(flightRepo, routeRepo, aircraftRepo);
