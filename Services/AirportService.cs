@@ -17,7 +17,7 @@ namespace FlightManagementCompany.Services
         public List<Airport> GetAll() => _repo.GetAll(); // Retrieves all airports from the repository.
         public Airport? GetById(int id) => _repo.GetById(id); // Retrieves an airport by its unique identifier.
 
-        public bool Create(string iata, string name, string city, string country, string timeZone, out string error)
+        public bool Create(string iata, string name, string city, string country, string timeZone, out string error) // Creates a new airport with the specified details and validates the input.
         {
             error = string.Empty;
             if (string.IsNullOrWhiteSpace(iata) || iata.Trim().Length != 3) { error = "IATA must be 3 letters."; return false; }
