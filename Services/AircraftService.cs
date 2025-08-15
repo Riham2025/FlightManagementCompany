@@ -34,7 +34,7 @@ namespace FlightManagementCompany.Services
         public bool Update(Aircraft aircraft, out string error) // Updates an existing aircraft with the provided details and validates the input.
         {
             error = string.Empty; // Initialize error message to empty string.
-            if (aircraft == null || aircraft.AircraftId <= 0) { error = "Invalid aircraft."; return false; }
+            if (aircraft == null || aircraft.AircraftId <= 0) { error = "Invalid aircraft."; return false; } // Validate the aircraft object and its ID.
             _repo.Update(aircraft); _repo.Save();
             return true;
         }
