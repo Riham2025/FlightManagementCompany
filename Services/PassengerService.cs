@@ -28,7 +28,8 @@ namespace FlightManagementCompany.Services
             { error = "Passport already exists."; return false; // Return false to indicate that the registration failed due to a duplicate passport number. }
             }
 
-            var p = new Passenger { FullName = fullName.Trim(), PassportNo = passportNo.Trim(), Email = email?.Trim() };
+            var p = new Passenger { FullName = fullName.Trim(), PassportNo = passportNo.Trim(), Email = email?.Trim()  // Create a new Passenger object with the provided details.
+            };
             _repo.Add(p); _repo.Save();
             return true;
         }
