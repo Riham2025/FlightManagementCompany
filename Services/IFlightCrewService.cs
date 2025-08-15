@@ -2,9 +2,9 @@
 
 namespace FlightManagementCompany.Services
 {
-    public interface IFlightCrewService
+    public interface IFlightCrewService // Represents a service for managing flight crew assignments in the flight management system.
     {
-        bool Assign(int flightId, int crewId, string role, out string error);
+        bool Assign(int flightId, int crewId, string role, out string error); 
         List<FlightCrew> GetAll();
         List<CrewMember> GetCrewForFlight(int flightId);
         List<Flight> GetFlightsForCrew(int crewId);
