@@ -24,7 +24,7 @@ namespace FlightManagementCompany.Services
         public List<Baggage> GetAll() => _baggage.GetAll(); // Retrieves all baggage items from the repository, including associated passenger details.
         public Baggage? GetById(int id) => _baggage.GetById(id); // Retrieves a baggage item by its unique identifier, including associated passenger details.
 
-        public bool Add(int passengerId, string tagNumber, double weightKg, out string error)
+        public bool Add(int passengerId, string tagNumber, double weightKg, out string error) // Creates a new baggage item for a passenger and validates the input.
         {
             error = string.Empty;
             if (_passengers.GetById(passengerId) == null) { error = "Passenger not found."; return false; }
