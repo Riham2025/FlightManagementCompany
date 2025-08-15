@@ -16,7 +16,7 @@ namespace FlightManagementCompany.Services
         public AircraftService(AircraftRepository repo) { _repo = repo; } // Constructor to initialize the service with a repository
 
         public List<Aircraft> GetAll() => _repo.GetAll(); // Retrieves all aircraft from the repository.
-        public Aircraft? GetById(int id) => _repo.GetById(id);
+        public Aircraft? GetById(int id) => _repo.GetById(id); // Retrieves an aircraft by its unique identifier.
 
         public bool Create(string tailNumber, string model, int capacity, out string error)
         {
