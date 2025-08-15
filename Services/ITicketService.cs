@@ -8,6 +8,6 @@ namespace FlightManagementCompany.Services
         bool Delete(int id, out string error); // Deletes a ticket by its unique identifier and validates the input.
         List<Ticket> GetAll(); // Retrieves all tickets from the repository, including associated bookings and flights.
         Ticket? GetById(int id); // Retrieves a ticket by its unique identifier, including associated booking and flight details.
-        bool Update(Ticket ticket, out string error);
+        bool Update(Ticket ticket, out string error); // Updates an existing ticket with the provided details and validates the input.
     }
 }
