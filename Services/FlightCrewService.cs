@@ -24,7 +24,7 @@ namespace FlightManagementCompany.Services
 
         public List<FlightCrew> GetAll() => _repo.GetAll(); // Retrieves all flight crew assignments from the repository, including associated flights and crew members.
 
-        public bool Assign(int flightId, int crewId, string role, out string error)
+        public bool Assign(int flightId, int crewId, string role, out string error) // Assigns a crew member to a flight with a specified role and validates the input.
         {
             error = string.Empty;
             if (_flights.GetById(flightId) == null) { error = "Flight not found."; return false; }
