@@ -34,7 +34,7 @@ namespace FlightManagementCompany
 
             //3) Services (business logic)
             IAirportService airportService = new AirportService(airportRepo); // Service for managing airport operations in the flight management system.
-            IAircraftService aircraftService = new AircraftService(aircraftRepo);
+            IAircraftService aircraftService = new AircraftService(aircraftRepo); // Service for managing aircraft operations in the flight management system.
             IRouteService routeService = new RouteService(routeRepo, airportRepo);
             IFlightService flightService = new FlightService(flightRepo, routeRepo, aircraftRepo);
             IPassengerService passengerService = new PassengerService(passengerRepo);
