@@ -19,7 +19,7 @@ namespace FlightManagementCompany.Services
             _maint = maint; _aircraft = aircraft; // Assign the provided repositories to the private fields
         }
 
-        public List<AircraftMaintenance> GetAll() => _maint.GetAll();
+        public List<AircraftMaintenance> GetAll() => _maint.GetAll(); // Retrieves all aircraft maintenance records from the repository, including associated aircraft details.
         public AircraftMaintenance? GetById(int id) => _maint.GetById(id);
         public List<AircraftMaintenance> GetByAircraft(int aircraftId) => _maint.GetByAircraft(aircraftId);
         public List<AircraftMaintenance> GetRecent(int days) => _maint.GetRecent(days);
