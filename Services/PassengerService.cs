@@ -8,7 +8,7 @@ using FlightManagementCompany.Repository;
 
 namespace FlightManagementCompany.Services
 {
-    public class PassengerService
+    public class PassengerService : IPassengerService // Represents a service for managing passenger operations in the flight management system.
     {
 
         private readonly PassengerRepository _repo; // Repository for accessing passenger data
@@ -21,14 +21,20 @@ namespace FlightManagementCompany.Services
         {
             error = string.Empty; // Initialize error message to empty string.
             if (string.IsNullOrWhiteSpace(fullName)) // Validate that the full name is not empty or whitespace.
-            { error = "Name required."; return false; // Return false to indicate that the registration failed due to an invalid name. }
+            {
+                error = "Name required."; return false; // Return false to indicate that the registration failed due to an invalid name. }
             }
             if (string.IsNullOrWhiteSpace(passportNo)) { error = "Passport required."; return false; } // Validate that the passport number is not empty or whitespace.
             if (_repo.GetAll().Any(p => p.PassportNo == passportNo.Trim())) // Check if a passenger with the same passport number already exists in the repository.
-            { error = "Passport already exists."; return false; // Return false to indicate that the registration failed due to a duplicate passport number. }
+            {
+                error = "Passport already exists."; return false; // Return false to indicate that the registration failed due to a duplicate passport number. }
             }
 
-            var p = new Passenger { FullName = fullName.Trim(), PassportNo = passportNo.Trim(), Email = email?.Trim()  // Create a new Passenger object with the provided details.
+            var p = new Passenger
+            {
+                FullName = fullName.Trim(),
+                PassportNo = passportNo.Trim(),
+                Email = email?.Trim()  // Create a new Passenger object with the provided details.
             };
             _repo.Add(p); _repo.Save(); // Save the new passenger to the repository.
             return true;
