@@ -23,7 +23,7 @@ namespace FlightManagementCompany.Services
             if (string.IsNullOrWhiteSpace(iata) || iata.Trim().Length != 3) { error = "IATA must be 3 letters."; return false; } // Validate IATA code length.
             if (string.IsNullOrWhiteSpace(name)) { error = "Airport name required."; return false; } // Validate airport name.
             //prevent duplicates
-            if (_repo.GetAll().Any(a => a.IATA.Equals(iata.Trim(), StringComparison.OrdinalIgnoreCase))) { error = "IATA already exists."; return false; }
+            if (_repo.GetAll().Any(a => a.IATA.Equals(iata.Trim(), StringComparison.OrdinalIgnoreCase))) { error = "IATA already exists."; return false; } // Check if the IATA code already exists in the repository.
 
             var a = new Airport { IATA = iata.Trim().ToUpper(), Name = name.Trim(), City = city?.Trim(), Country = country?.Trim(), TimeZone = timeZone?.Trim() };
             _repo.Add(a); _repo.Save();
