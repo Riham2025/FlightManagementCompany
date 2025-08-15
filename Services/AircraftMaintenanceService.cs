@@ -32,7 +32,7 @@ namespace FlightManagementCompany.Services
 
             var m = new AircraftMaintenance { AircraftId = aircraftId, Description = description.Trim(), PerformedAtUtc = performedAtUtc }; // Create a new AircraftMaintenance object with the provided details.
             _maint.Add(m);  // Stage the new maintenance record for addition to the repository.
-            _maint.Save();
+            _maint.Save(); // Save the changes to the repository after adding the new maintenance record.
             return true;
         }
 
