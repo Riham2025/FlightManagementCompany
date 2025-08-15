@@ -30,7 +30,7 @@ namespace FlightManagementCompany.Services
 
             var p = new Passenger { FullName = fullName.Trim(), PassportNo = passportNo.Trim(), Email = email?.Trim()  // Create a new Passenger object with the provided details.
             };
-            _repo.Add(p); _repo.Save();
+            _repo.Add(p); _repo.Save(); // Save the new passenger to the repository.
             return true;
         }
 
