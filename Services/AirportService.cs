@@ -14,7 +14,7 @@ namespace FlightManagementCompany.Services
         private readonly Airports _repo; // Repository for accessing airport data
         public AirportService(Airports repo) { _repo = repo; } // Constructor to initialize the service with a repository
 
-        public List<Airport> GetAll() => _repo.GetAll();
+        public List<Airport> GetAll() => _repo.GetAll(); // Retrieves all airports from the repository.
         public Airport? GetById(int id) => _repo.GetById(id);
 
         public bool Create(string iata, string name, string city, string country, string timeZone, out string error)
