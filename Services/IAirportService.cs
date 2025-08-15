@@ -1,0 +1,13 @@
+﻿using FlightManagementCompany.Models;
+
+namespace FlightManagementCompany.Services
+{
+    public interface IAirportService
+    {
+        bool Create(string iata, string name, string city, string country, string timeZone, out string error);
+        bool Delete(int id, out string error);
+        List<Airport> GetAll();
+        Airport? GetById(int id);
+        bool Update(Airport airport, out string error);
+    }
+}
