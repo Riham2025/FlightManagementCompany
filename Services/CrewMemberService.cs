@@ -12,7 +12,7 @@ namespace FlightManagementCompany.Services
     {
 
         private readonly CrewMemberRepository _crew; // Repository for accessing crew member data
-        public CrewMemberService(CrewMemberRepository crew) { _crew = crew; }
+        public CrewMemberService(CrewMemberRepository crew) { _crew = crew; } // Constructor to initialize the service with a repository
 
         public List<CrewMember> GetAll() => _crew.GetAll();
         public CrewMember? GetById(int id) => _crew.GetById(id);
