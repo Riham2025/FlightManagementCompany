@@ -38,10 +38,10 @@ namespace FlightManagementCompany.Services
             if (route.OriginAirportId == route.DestinationAirportId) { error = "Origin and destination must differ."; return false; } // Validate that the origin and destination airport IDs are not the same.
             _routes.Update(route); // Stage the updated route for modification in the repository.
             _routes.Save(); // Save the updated route to the repository.
-            return true;
+            return true; // Return true to indicate successful update of the route.
         }
 
-        public bool Delete(int id, out string error)
+        public bool Delete(int id, out string error) 
         {
             error = string.Empty;
             _routes.Delete(id); _routes.Save();
