@@ -8,7 +8,7 @@ using FlightManagementCompany.Repository;
 
 namespace FlightManagementCompany.Services
 {
-    public class FlightCrewService
+    public class FlightCrewService : IFlightCrewService // Service class for managing flight crew assignments in the flight management system.
     {
 
         private readonly FlightCrewRepository _repo; // Repository for managing flight crew assignments
