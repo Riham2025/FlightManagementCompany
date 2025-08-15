@@ -31,7 +31,7 @@ namespace FlightManagementCompany.Services
 
             if (_flights.GetById(flightId) == null)   // Validate that the specified flight exists in the repository.  
             { error = "Flight not found."; return false; } 
-            if (fare <= 0) { error = "Fare must be positive."; return false; }
+            if (fare <= 0) { error = "Fare must be positive."; return false; } // Validate that the fare is a positive value.
 
             var t = new Ticket { BookingId = bookingId, FlightId = flightId, Fare = fare, Seat = seat?.Trim() };
             _tickets.Add(t); _tickets.Save();
