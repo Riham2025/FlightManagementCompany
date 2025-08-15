@@ -13,7 +13,7 @@ namespace FlightManagementCompany
         {
             // ===================== BOOTSTRAP =====================
 
-            // 1) Create EF Core DbContext (adjust ctor if your context needs options)
+            // 1)Create EF Core DbContext (adjust ctor if your context needs options)
             FlightDbContext ctx = new FlightDbContext();
 
             // (Optional) Ensure DB exists; if you use migrations, call ctx.Database.Migrate() instead.
