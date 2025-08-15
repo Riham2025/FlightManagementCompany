@@ -33,7 +33,7 @@ namespace FlightManagementCompany.Services
 
         public bool Update(Route route, out string error) // Updates an existing flight route with the provided details and validates the input.
         {
-            error = string.Empty;
+            error = string.Empty; // Initialize error message to empty string.
             if (route == null || route.RouteId <= 0) { error = "Invalid route."; return false; }
             if (route.OriginAirportId == route.DestinationAirportId) { error = "Origin and destination must differ."; return false; }
             _routes.Update(route); _routes.Save();
