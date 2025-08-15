@@ -35,7 +35,7 @@ namespace FlightManagementCompany.Services
             error = string.Empty; // Initialize error message to empty string.
             if (airport == null || airport.AirportId <= 0) { error = "Invalid airport."; return false; } // Validate the airport object and its ID.
             _repo.Update(airport); _repo.Save(); // Save the updated airport to the repository.
-            return true;
+            return true; // Return true to indicate successful update of the airport.
         }
 
         public bool Delete(int id, out string error)
