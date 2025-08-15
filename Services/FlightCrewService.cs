@@ -32,7 +32,7 @@ namespace FlightManagementCompany.Services
             if (_repo.Exists(flightId, crewId)) { error = "Already assigned."; return false; } // Check if the crew member is already assigned to the flight in the repository.
             if (string.IsNullOrWhiteSpace(role)) { error = "Role required."; return false; } // Validate that the role is not empty or whitespace.
 
-            _repo.Add(new FlightCrew { FlightId = flightId, CrewId = crewId, Role = role.Trim() }); // Create a new FlightCrew object with the provided flight ID, crew ID, and role.
+            _repo.Add(new FlightCrew { FlightId = flightId, CrewId = crewId, RoleOnFlight = role.Trim() }); // Create a new FlightCrew object with the provided flight ID, crew ID, and role.
             _repo.Save(); // Save the new flight crew assignment to the repository.
             return true;
         }
