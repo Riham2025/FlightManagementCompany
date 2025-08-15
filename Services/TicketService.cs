@@ -33,7 +33,8 @@ namespace FlightManagementCompany.Services
             { error = "Flight not found."; return false; } 
             if (fare <= 0) { error = "Fare must be positive."; return false; } // Validate that the fare is a positive value.
 
-            var t = new Ticket { BookingId = bookingId, FlightId = flightId, Fare = fare, Seat = seat?.Trim() };
+            var t = new Ticket // Create a new Ticket object with the provided booking ID, flight ID, fare, and seat information.
+            { BookingId = bookingId, FlightId = flightId, Fare = fare, Seat = seat?.Trim() };
             _tickets.Add(t); _tickets.Save();
             return true;
         }
