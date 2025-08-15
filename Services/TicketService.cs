@@ -34,8 +34,9 @@ namespace FlightManagementCompany.Services
             if (fare <= 0) { error = "Fare must be positive."; return false; } // Validate that the fare is a positive value.
 
             var t = new Ticket // Create a new Ticket object with the provided booking ID, flight ID, fare, and seat information.
-            { BookingId = bookingId, FlightId = flightId, Fare = fare, Seat = seat?.Trim() };
-            _tickets.Add(t); _tickets.Save();
+            { BookingId = bookingId, FlightId = flightId, Fare = fare, Seat = seat?.Trim() }; 
+            _tickets.Add(t); // Stage the new ticket for addition to the repository.
+            _tickets.Save();
             return true;
         }
 
