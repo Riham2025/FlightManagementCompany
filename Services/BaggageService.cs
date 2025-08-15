@@ -18,7 +18,7 @@ namespace FlightManagementCompany.Services
 
         public BaggageService(BaggageRepository baggage, PassengerRepository passengers) // Constructor to initialize the BaggageService with repositories for baggage and passengers.
         {
-            _baggage = baggage; _passengers = passengers;
+            _baggage = baggage; _passengers = passengers; // Assign the provided repositories to the private fields
         }
 
         public List<Baggage> GetAll() => _baggage.GetAll();
