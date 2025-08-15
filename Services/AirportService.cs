@@ -32,7 +32,7 @@ namespace FlightManagementCompany.Services
 
         public bool Update(Airport airport, out string error) // Updates an existing airport with the provided details and validates the input.
         {
-            error = string.Empty;
+            error = string.Empty; // Initialize error message to empty string.
             if (airport == null || airport.AirportId <= 0) { error = "Invalid airport."; return false; }
             _repo.Update(airport); _repo.Save();
             return true;
