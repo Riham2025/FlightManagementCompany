@@ -45,7 +45,7 @@ namespace FlightManagementCompany.Services
             error = string.Empty; // Initialize error message to empty string.
             if (ticket == null || ticket.TicketId <= 0) // Validate the ticket object and its ID. 
             { error = "Invalid ticket."; return false; } // Validate that the ticket object is not null and has a valid ID.
-            _tickets.Update(ticket);
+            _tickets.Update(ticket); // Stage the updated ticket for modification in the repository.
             _tickets.Save();
             return true;
         }
