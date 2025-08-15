@@ -37,7 +37,7 @@ namespace FlightManagementCompany.Services
         public bool Update(Passenger passenger, out string error) // Updates an existing passenger with the provided details and validates the input.
         {
             error = string.Empty; // Initialize error message to empty string.
-            if (passenger == null || passenger.PassengerId <= 0) { error = "Invalid passenger."; return false; }
+            if (passenger == null || passenger.PassengerId <= 0) { error = "Invalid passenger."; return false; }  // Validate the passenger object and its ID.
             _repo.Update(passenger); _repo.Save();
             return true;
         }
