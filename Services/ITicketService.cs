@@ -2,7 +2,7 @@
 
 namespace FlightManagementCompany.Services
 {
-    public interface ITicketService
+    public interface ITicketService // Represents a service for managing ticket operations in the flight management system.
     {
         bool Create(int bookingId, int flightId, decimal fare, string seat, out string error);
         bool Delete(int id, out string error);
