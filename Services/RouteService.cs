@@ -44,7 +44,7 @@ namespace FlightManagementCompany.Services
         public bool Delete(int id, out string error)  // Deletes a flight route by its unique identifier and validates the input.
         {
             error = string.Empty; // Initialize error message to empty string.
-            _routes.Delete(id); _routes.Save();
+            _routes.Delete(id); _routes.Save(); // Save the changes to the repository after deletion.
             return true;
         }
     }
