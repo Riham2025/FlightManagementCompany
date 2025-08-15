@@ -28,8 +28,9 @@ namespace FlightManagementCompany.Services
         {
             error = string.Empty; // Initialize error message to empty string.
             if (_passengers.GetById(passengerId) == null)  // Validate that the specified passenger exists in the repository.
-            { error = "Passenger not found."; return false; }
-            if (_flights.GetById(flightId) == null) { error = "Flight not found."; return false; }
+            { error = "Passenger not found."; return false; } 
+            if (_flights.GetById(flightId) == null)  // Validate that the specified flight exists in the repository.
+            { error = "Flight not found."; return false; }
             // prevent duplicate booking for same passenger/flight
             if (_bookings.GetAll().Any(b => b.PassengerId == passengerId && b.FlightId == flightId)) { error = "Already booked."; return false; }
 
