@@ -9,6 +9,6 @@ namespace FlightManagementCompany.Services
         List<Flight> GetAll(); // Retrieves all flights from the repository, including associated routes and aircraft.
         List<Flight> GetByDateRange(DateTime fromUtc, DateTime toUtc); // Retrieves flights within a specified date range, including associated routes and aircraft details.
         Flight? GetById(int id); // Retrieves a flight by its unique identifier, including associated route and aircraft details.
-        bool Update(Flight flight, out string error);
+        bool Update(Flight flight, out string error); // Updates an existing flight with the provided details and validates the input.
     }
 }
