@@ -46,7 +46,7 @@ namespace FlightManagementCompany.Services
         }
 
         public List<CrewMember> GetCrewForFlight(int flightId) => _repo.GetCrewForFlight(flightId); // Retrieves a list of crew members assigned to a specific flight by its unique identifier.
-        public List<Flight> GetFlightsForCrew(int crewId) => _repo.GetFlightsForCrew(crewId);
+        public List<Flight> GetFlightsForCrew(int crewId) => _repo.GetFlightsForCrew(crewId); // Retrieves a list of flights that a specific crew member is assigned to by their unique identifier.
     }
 }
 
