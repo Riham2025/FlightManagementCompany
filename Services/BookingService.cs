@@ -21,7 +21,7 @@ namespace FlightManagementCompany.Services
             _bookings = bookings; _passengers = passengers; _flights = flights; // Assign the provided repositories to the private fields.
         }
 
-        public List<Booking> GetAll() => _bookings.GetAll();
+        public List<Booking> GetAll() => _bookings.GetAll(); // Retrieves all bookings from the repository, including associated passengers and flights.
         public Booking? GetById(int id) => _bookings.GetById(id);
 
         public bool Create(int passengerId, int flightId, out string error)
