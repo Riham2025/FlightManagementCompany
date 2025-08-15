@@ -39,7 +39,7 @@ namespace FlightManagementCompany.Services
         {
             error = string.Empty; // Initialize error message to empty string.
             _crew.Delete(id); _crew.Save(); // Save the changes to the repository after deletion.
-            return true;
+            return true; // Return true to indicate successful deletion of the crew member.
         }
     }
 }
