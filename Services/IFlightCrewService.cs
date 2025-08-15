@@ -8,6 +8,6 @@ namespace FlightManagementCompany.Services
         List<FlightCrew> GetAll(); // Retrieves all flight crew assignments from the repository, including associated flights and crew members.
         List<CrewMember> GetCrewForFlight(int flightId); // Retrieves all crew members assigned to a specific flight, including their roles.
         List<Flight> GetFlightsForCrew(int crewId); // Retrieves all flights assigned to a specific crew member, including their roles.
-        bool Unassign(int flightId, int crewId, out string error);
+        bool Unassign(int flightId, int crewId, out string error); // Unassigns a crew member from a flight and validates the input.
     }
 }
