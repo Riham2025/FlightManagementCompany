@@ -39,7 +39,7 @@ namespace FlightManagementCompany.Services
         public bool Update(AircraftMaintenance maintenance, out string error) // Updates an existing aircraft maintenance record with the provided details and validates the input.
         {
             error = string.Empty; // Initialize error message to empty string.
-            if (maintenance == null || maintenance.MaintenanceId <= 0) { error = "Invalid record."; return false; }
+            if (maintenance == null || maintenance.MaintenanceId <= 0) { error = "Invalid record."; return false; } // Validate the maintenance record object and its ID.
             _maint.Update(maintenance); _maint.Save();
             return true;
         }
