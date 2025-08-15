@@ -27,7 +27,7 @@ namespace FlightManagementCompany.Services
 
             var a = new Airport { IATA = iata.Trim().ToUpper(), Name = name.Trim(), City = city?.Trim(), Country = country?.Trim(), TimeZone = timeZone?.Trim() }; // Create a new Airport object with the provided details.
             _repo.Add(a); _repo.Save(); // Save the new airport to the repository.
-            return true;
+            return true; // Return true to indicate successful creation of the airport.
         }
 
         public bool Update(Airport airport, out string error)
