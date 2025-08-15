@@ -46,7 +46,7 @@ namespace FlightManagementCompany.Services
         {
             error = string.Empty; // Initialize error message to empty string.
             _bookings.Delete(id); // Delete the booking with the specified ID from the repository.
-            _bookings.Save();
+            _bookings.Save(); // Save the changes to the repository after deletion.
             return true;
         }
     }
