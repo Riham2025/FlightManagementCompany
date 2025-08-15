@@ -31,7 +31,7 @@ namespace FlightManagementCompany.Services
             return true; // Return true to indicate successful creation of the route.
         }
 
-        public bool Update(Route route, out string error)
+        public bool Update(Route route, out string error) // Updates an existing flight route with the provided details and validates the input.
         {
             error = string.Empty;
             if (route == null || route.RouteId <= 0) { error = "Invalid route."; return false; }
