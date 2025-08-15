@@ -8,6 +8,6 @@ namespace FlightManagementCompany.Services
         bool Delete(int id, out string error); // Deletes a crew member by their unique identifier and validates the input.
         List<CrewMember> GetAll(); // Retrieves all crew members from the repository, including their details such as full name and role.
         CrewMember? GetById(int id); // Retrieves a crew member by their unique identifier, including their details such as full name and role.
-        bool Update(CrewMember crew, out string error);
+        bool Update(CrewMember crew, out string error); // Updates an existing crew member with the provided details and validates the input.
     }
 }
