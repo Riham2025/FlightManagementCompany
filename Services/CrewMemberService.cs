@@ -22,7 +22,7 @@ namespace FlightManagementCompany.Services
             error = string.Empty; // Initialize error message to empty string.
             if (string.IsNullOrWhiteSpace(fullName)) { error = "Name required."; return false; } // Validate that the full name is not empty or whitespace.
             if (string.IsNullOrWhiteSpace(role)) { error = "Role required."; return false; } // Validate that the role is not empty or whitespace.
-            var c = new CrewMember { FullName = fullName.Trim(), Role = role.Trim() };
+            var c = new CrewMember { FullName = fullName.Trim(), Role = role.Trim() }; // Create a new CrewMember object with the provided details.
             _crew.Add(c); _crew.Save();
             return true;
         }
