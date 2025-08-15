@@ -31,7 +31,7 @@ namespace FlightManagementCompany.Services
             if (string.IsNullOrWhiteSpace(tagNumber)) { error = "Tag number required."; return false; } // Validate that the tag number is not empty or whitespace.
             if (weightKg <= 0) { error = "Weight must be positive."; return false; } // Validate that the weight is a positive value.
 
-            var b = new Baggage { PassengerId = passengerId, TagNumber = tagNumber.Trim(), Weight = weightKg };
+            var b = new Baggage { PassengerId = passengerId, TagNumber = tagNumber.Trim(), Weight = weightKg }; // Create a new Baggage object with the provided passenger ID, tag number, and weight.
             _baggage.Add(b); _baggage.Save();
             return true;
         }
