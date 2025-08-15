@@ -8,6 +8,6 @@ namespace FlightManagementCompany.Services
         List<Passenger> GetAll(); // Retrieves all passengers from the repository, including their details such as full name, passport number, and email.
         Passenger? GetById(int id); // Retrieves a passenger by their unique identifier, including their details such as full name, passport number, and email.
         bool Register(string fullName, string passportNo, string email, out string error); // Registers a new passenger with the provided details and validates the input.
-        bool Update(Passenger passenger, out string error);
+        bool Update(Passenger passenger, out string error); // Updates an existing passenger with the provided details and validates the input.
     }
 }
