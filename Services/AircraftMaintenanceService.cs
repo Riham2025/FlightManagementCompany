@@ -27,7 +27,7 @@ namespace FlightManagementCompany.Services
         public bool Add(int aircraftId, string description, DateTime performedAtUtc, out string error) // Adds a new aircraft maintenance record for a specific aircraft and validates the input.
         {
             error = string.Empty;
-            if (_aircraft.GetById(aircraftId) == null) { error = "Aircraft not found."; return false; }
+            if (_aircraft.GetById(aircraftId) == null) { error = "Aircraft not found."; return false; } // Validate that the specified aircraft exists in the repository.
             if (string.IsNullOrWhiteSpace(description)) { error = "Description required."; return false; }
 
             var m = new AircraftMaintenance { AircraftId = aircraftId, Description = description.Trim(), PerformedAtUtc = performedAtUtc };
