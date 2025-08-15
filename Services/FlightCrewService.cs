@@ -29,7 +29,7 @@ namespace FlightManagementCompany.Services
             error = string.Empty; // Initialize error message to empty string.
             if (_flights.GetById(flightId) == null) { error = "Flight not found."; return false; } // Validate that the specified flight exists in the repository.
             if (_crew.GetById(crewId) == null) { error = "Crew member not found."; return false; } // Validate that the specified crew member exists in the repository.
-            if (_repo.Exists(flightId, crewId)) { error = "Already assigned."; return false; }
+            if (_repo.Exists(flightId, crewId)) { error = "Already assigned."; return false; } // Check if the crew member is already assigned to the flight in the repository.
             if (string.IsNullOrWhiteSpace(role)) { error = "Role required."; return false; }
 
             _repo.Add(new FlightCrew { FlightId = flightId, CrewId = crewId, Role = role.Trim() });
