@@ -26,7 +26,8 @@ namespace FlightManagementCompany.Services
             if (_airports.GetById(originAirportId) == null || _airports.GetById(destinationAirportId) == null) { error = "Airport(s) not found."; return false; } // Validate that both the origin and destination airports exist in the repository.
 
             var r = new Route { OriginAirportId = originAirportId, DestinationAirportId = destinationAirportId }; // Create a new Route object with the provided origin and destination airport IDs.
-            _routes.Add(r); _routes.Save();
+            _routes.Add(r); // Stage the new route for addition to the repository.
+            _routes.Save();
             return true;
         }
 
