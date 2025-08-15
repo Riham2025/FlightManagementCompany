@@ -14,7 +14,7 @@ namespace FlightManagementCompany.Services
 
 
         private readonly FlightRepository _flights; // Repository for accessing flight data
-        private readonly RouteRepository _routes;
+        private readonly RouteRepository _routes; // Repository for accessing route data
         private readonly AircraftRepository _aircraft;
 
         public FlightService(FlightRepository flights, RouteRepository routes, AircraftRepository aircraft)
