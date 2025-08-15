@@ -8,6 +8,6 @@ namespace FlightManagementCompany.Services
         bool Delete(int id, out string error); // Deletes an aircraft by its unique identifier and validates the input.
         List<Aircraft> GetAll(); // Retrieves all aircraft from the repository.
         Aircraft? GetById(int id); // Retrieves an aircraft by its unique identifier.
-        bool Update(Aircraft aircraft, out string error);
+        bool Update(Aircraft aircraft, out string error); // Updates an existing aircraft with the provided details and validates the input.
     }
 }
