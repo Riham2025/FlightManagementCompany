@@ -14,9 +14,15 @@ namespace FlightManagementCompany.Models
         [Required] public string FullName { get; set; } = null!; // Full name of the passenger
         [Required, StringLength(20)] public string PassportNo { get; set; } = null!; // Passport number of the passenger
 
+
+
         
         public string Nationality { get; set; } = "US";  
+
+
         public DateTime DOB { get; set; } // Date of birth of the passenger
+
+        [EmailAddress] public string? Email { get; set; } // Email address of the passenger, optional
 
 
         // Navigation properties
