@@ -11,7 +11,7 @@ namespace FlightManagementCompany.Services
     public class AirportService : IAirportService // Represents a service for managing airport operations in the flight management system.
     {
 
-        private readonly Airports _repo;
+        private readonly Airports _repo; // Repository for accessing airport data
         public AirportService(Airports repo) { _repo = repo; }
 
         public List<Airport> GetAll() => _repo.GetAll();
