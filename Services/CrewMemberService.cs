@@ -14,7 +14,7 @@ namespace FlightManagementCompany.Services
         private readonly CrewMemberRepository _crew; // Repository for accessing crew member data
         public CrewMemberService(CrewMemberRepository crew) { _crew = crew; } // Constructor to initialize the service with a repository
 
-        public List<CrewMember> GetAll() => _crew.GetAll();
+        public List<CrewMember> GetAll() => _crew.GetAll(); // Retrieves all crew members from the repository, including their details such as full name and role.
         public CrewMember? GetById(int id) => _crew.GetById(id);
 
         public bool Create(string fullName, string role, out string error)
