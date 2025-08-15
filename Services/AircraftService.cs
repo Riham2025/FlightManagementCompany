@@ -39,7 +39,7 @@ namespace FlightManagementCompany.Services
             return true;
         }
 
-        public bool Delete(int id, out string error)
+        public bool Delete(int id, out string error) // Deletes an aircraft by its unique identifier and validates the input.
         {
             error = string.Empty;
             if (id <= 0) { error = "Invalid id."; return false; }
