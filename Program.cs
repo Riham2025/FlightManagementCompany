@@ -40,7 +40,7 @@ namespace FlightManagementCompany
             IPassengerService passengerService = new PassengerService(passengerRepo); // Service for managing passenger operations in the flight management system.
             IBookingService bookingService = new BookingService(bookingRepo, passengerRepo, flightRepo); // Service for managing booking operations in the flight management system, including passenger and flight details.
             ITicketService ticketService = new TicketService(ticketRepo, bookingRepo, flightRepo); // Service for managing ticket operations in the flight management system, including booking and flight details.
-            IBaggageService baggageService = new BaggageService(baggageRepo, passengerRepo);
+            IBaggageService baggageService = new BaggageService(baggageRepo, passengerRepo); // Service for managing baggage operations in the flight management system, including passenger details.
             ICrewMemberService crewMemberService = new CrewMemberService(crewRepo);
             IFlightCrewService flightCrewService = new FlightCrewService(flightCrewRepo, flightRepo, crewRepo);
             IAircraftMaintenanceService maintenanceService = new AircraftMaintenanceService(maintenanceRepo, aircraftRepo);
