@@ -15,7 +15,7 @@ namespace FlightManagementCompany.Services
         private readonly FlightRepository _flights; // Repository for managing flight data
         private readonly CrewMemberRepository _crew; // Repository for managing crew member data
 
-        public FlightCrewService(FlightCrewRepository repo, FlightRepository flights, CrewMemberRepository crew)
+        public FlightCrewService(FlightCrewRepository repo, FlightRepository flights, CrewMemberRepository crew) // Constructor to initialize the FlightCrewService with repositories for flight crew assignments, flights, and crew members.
         {
             _repo = repo; _flights = flights; _crew = crew;
         }
