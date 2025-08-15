@@ -38,7 +38,7 @@ namespace FlightManagementCompany.Services
             return true; // Return true to indicate successful update of the airport.
         }
 
-        public bool Delete(int id, out string error)
+        public bool Delete(int id, out string error) // Deletes an airport by its unique identifier and validates the input.
         {
             error = string.Empty;
             if (id <= 0) { error = "Invalid id."; return false; }
