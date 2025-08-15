@@ -26,7 +26,7 @@ namespace FlightManagementCompany.Services
         public Flight? GetById(int id) => _flights.GetById(id); // Retrieves a flight by its unique identifier, including associated route and aircraft details.
         public List<Flight> GetByDateRange(DateTime fromUtc, DateTime toUtc) => _flights.GetByDateRange(fromUtc, toUtc); // Retrieves flights within a specified date range, including associated routes and aircraft details.
 
-        public bool Create(string flightNumber, int routeId, int aircraftId, DateTime depUtc, DateTime arrUtc, out string error)
+        public bool Create(string flightNumber, int routeId, int aircraftId, DateTime depUtc, DateTime arrUtc, out string error) // Creates a new flight with the specified details and validates the input.
         {
             error = string.Empty;
             if (string.IsNullOrWhiteSpace(flightNumber)) { error = "Flight number required."; return false; }
