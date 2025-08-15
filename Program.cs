@@ -25,7 +25,7 @@ namespace FlightManagementCompany
             RouteRepository routeRepo = new RouteRepository(ctx); // Repository for managing flight routes in the flight management system.
             FlightRepository flightRepo = new FlightRepository(ctx); // Repository for managing flight operations in the flight management system.
             PassengerRepository passengerRepo = new PassengerRepository(ctx); // Repository for managing passenger entities in the flight management system.
-            BookingRepository bookingRepo = new BookingRepository(ctx);
+            BookingRepository bookingRepo = new BookingRepository(ctx); // Repository for managing booking entities in the flight management system.
             TicketRepository ticketRepo = new TicketRepository(ctx);
             BaggageRepository baggageRepo = new BaggageRepository(ctx);
             CrewMemberRepository crewRepo = new CrewMemberRepository(ctx);
