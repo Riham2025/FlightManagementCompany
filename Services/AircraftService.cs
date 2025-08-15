@@ -18,7 +18,7 @@ namespace FlightManagementCompany.Services
         public List<Aircraft> GetAll() => _repo.GetAll(); // Retrieves all aircraft from the repository.
         public Aircraft? GetById(int id) => _repo.GetById(id); // Retrieves an aircraft by its unique identifier.
 
-        public bool Create(string tailNumber, string model, int capacity, out string error)
+        public bool Create(string tailNumber, string model, int capacity, out string error) // Creates a new aircraft with the specified details and validates the input.
         {
             error = string.Empty;
             if (string.IsNullOrWhiteSpace(tailNumber)) { error = "Tail number required."; return false; }
