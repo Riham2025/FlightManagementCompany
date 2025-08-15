@@ -36,7 +36,7 @@ namespace FlightManagementCompany.Services
             var t = new Ticket // Create a new Ticket object with the provided booking ID, flight ID, fare, and seat information.
             { BookingId = bookingId, FlightId = flightId, Fare = fare, Seat = seat?.Trim() }; 
             _tickets.Add(t); // Stage the new ticket for addition to the repository.
-            _tickets.Save();
+            _tickets.Save(); // Save the changes to the repository after adding the new ticket.
             return true;
         }
 
