@@ -14,7 +14,7 @@ namespace FlightManagementCompany.Services
         private readonly AircraftMaintenanceRepository _maint; // Repository for managing aircraft maintenance records in the flight management system.
         private readonly AircraftRepository _aircraft; // Repository for managing aircraft entities in the flight management system.
 
-        public AircraftMaintenanceService(AircraftMaintenanceRepository maint, AircraftRepository aircraft)
+        public AircraftMaintenanceService(AircraftMaintenanceRepository maint, AircraftRepository aircraft) // Constructor to initialize the service with repositories
         {
             _maint = maint; _aircraft = aircraft;
         }
