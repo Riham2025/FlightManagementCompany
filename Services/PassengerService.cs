@@ -47,7 +47,7 @@ namespace FlightManagementCompany.Services
         {
             error = string.Empty; // Initialize error message to empty string.
             _repo.Delete(id); // Delete the passenger with the specified ID from the repository.
-            _repo.Save();
+            _repo.Save(); // Save the changes to the repository after deletion.
             return true;
         }
     }
