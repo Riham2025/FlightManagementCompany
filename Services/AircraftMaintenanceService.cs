@@ -20,7 +20,7 @@ namespace FlightManagementCompany.Services
         }
 
         public List<AircraftMaintenance> GetAll() => _maint.GetAll(); // Retrieves all aircraft maintenance records from the repository, including associated aircraft details.
-        public AircraftMaintenance? GetById(int id) => _maint.GetById(id);
+        public AircraftMaintenance? GetById(int id) => _maint.GetById(id); // Retrieves a specific aircraft maintenance record by its unique identifier, including associated aircraft details.
         public List<AircraftMaintenance> GetByAircraft(int aircraftId) => _maint.GetByAircraft(aircraftId);
         public List<AircraftMaintenance> GetRecent(int days) => _maint.GetRecent(days);
 
