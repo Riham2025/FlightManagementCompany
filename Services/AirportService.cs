@@ -43,7 +43,7 @@ namespace FlightManagementCompany.Services
             error = string.Empty; // Initialize error message to empty string.
             if (id <= 0) { error = "Invalid id."; return false; } // Validate the ID of the airport to be deleted.
             _repo.Delete(id); _repo.Save(); // Save the changes to the repository after deletion.
-            return true;
+            return true; // Return true to indicate successful deletion of the airport.
         }
     }
 }
