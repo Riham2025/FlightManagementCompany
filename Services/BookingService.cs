@@ -24,7 +24,7 @@ namespace FlightManagementCompany.Services
         public List<Booking> GetAll() => _bookings.GetAll(); // Retrieves all bookings from the repository, including associated passengers and flights.
         public Booking? GetById(int id) => _bookings.GetById(id); // Retrieves a booking by its unique identifier, including associated passenger and flight details.
 
-        public bool Create(int passengerId, int flightId, out string error)
+        public bool Create(int passengerId, int flightId, out string error) // Creates a new booking for a passenger on a specific flight and validates the input.
         {
             error = string.Empty;
             if (_passengers.GetById(passengerId) == null) { error = "Passenger not found."; return false; }
