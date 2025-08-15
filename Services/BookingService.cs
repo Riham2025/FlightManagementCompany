@@ -33,7 +33,7 @@ namespace FlightManagementCompany.Services
             { error = "Flight not found."; return false; }
 
             // prevent duplicate booking for same passenger/flight
-            if (_bookings.GetAll().Any(b => b.PassengerId == passengerId && b.FlightId == flightId)) { error = "Already booked."; return false; }
+            if (_bookings.GetAll().Any(b => b.PassengerId == passengerId && b.FlightId == flightId)) { error = "Already booked."; return false; } // Check if a booking for the same passenger and flight already exists in the repository.
 
             var b = new Booking { PassengerId = passengerId, FlightId = flightId };
             _bookings.Add(b); _bookings.Save();
