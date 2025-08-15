@@ -12,7 +12,7 @@ namespace FlightManagementCompany.Services
     {
 
         private readonly Airports _repo; // Repository for accessing airport data
-        public AirportService(Airports repo) { _repo = repo; }
+        public AirportService(Airports repo) { _repo = repo; } // Constructor to initialize the service with a repository
 
         public List<Airport> GetAll() => _repo.GetAll();
         public Airport? GetById(int id) => _repo.GetById(id);
