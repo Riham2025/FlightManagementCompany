@@ -28,7 +28,7 @@ namespace FlightManagementCompany.Services
         {
             error = string.Empty;
             if (_aircraft.GetById(aircraftId) == null) { error = "Aircraft not found."; return false; } // Validate that the specified aircraft exists in the repository.
-            if (string.IsNullOrWhiteSpace(description)) { error = "Description required."; return false; }
+            if (string.IsNullOrWhiteSpace(description)) { error = "Description required."; return false; } // Validate that the description is not empty or whitespace.
 
             var m = new AircraftMaintenance { AircraftId = aircraftId, Description = description.Trim(), PerformedAtUtc = performedAtUtc };
             _maint.Add(m); _maint.Save();
