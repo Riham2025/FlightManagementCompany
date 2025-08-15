@@ -40,7 +40,7 @@ namespace FlightManagementCompany.Services
         {
             error = string.Empty; // Initialize error message to empty string.
             if (baggage == null || baggage.BaggageId <= 0) { error = "Invalid baggage."; return false; } // Validate the baggage object and its ID.
-            _baggage.Update(baggage); _baggage.Save();
+            _baggage.Update(baggage); _baggage.Save(); // Stage the updated baggage for modification in the repository and save it.
             return true;
         }
 
