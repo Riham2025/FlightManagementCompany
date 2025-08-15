@@ -27,8 +27,10 @@ namespace FlightManagementCompany.Services
         {
             error = string.Empty; // Initialize error message to empty string.
             if (_bookings.GetById(bookingId) == null) // Validate that the specified booking exists in the repository.
-            { error = "Booking not found."; return false; }
-            if (_flights.GetById(flightId) == null) { error = "Flight not found."; return false; }
+            { error = "Booking not found."; return false; } 
+
+            if (_flights.GetById(flightId) == null)   // Validate that the specified flight exists in the repository.  
+            { error = "Flight not found."; return false; } 
             if (fare <= 0) { error = "Fare must be positive."; return false; }
 
             var t = new Ticket { BookingId = bookingId, FlightId = flightId, Fare = fare, Seat = seat?.Trim() };
