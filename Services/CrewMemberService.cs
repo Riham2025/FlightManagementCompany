@@ -31,7 +31,7 @@ namespace FlightManagementCompany.Services
         {
             error = string.Empty; // Initialize error message to empty string.
             if (crew == null || crew.CrewId <= 0) { error = "Invalid crew member."; return false; } // Validate the crew member object and its ID.
-            _crew.Update(crew); _crew.Save();
+            _crew.Update(crew); _crew.Save(); // Save the updated crew member to the repository.
             return true;
         }
 
