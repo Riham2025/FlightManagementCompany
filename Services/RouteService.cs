@@ -35,7 +35,7 @@ namespace FlightManagementCompany.Services
         {
             error = string.Empty; // Initialize error message to empty string.
             if (route == null || route.RouteId <= 0) { error = "Invalid route."; return false; } // Validate the route object and its ID.
-            if (route.OriginAirportId == route.DestinationAirportId) { error = "Origin and destination must differ."; return false; }
+            if (route.OriginAirportId == route.DestinationAirportId) { error = "Origin and destination must differ."; return false; } // Validate that the origin and destination airport IDs are not the same.
             _routes.Update(route); _routes.Save();
             return true;
         }
