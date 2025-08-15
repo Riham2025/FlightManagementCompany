@@ -48,7 +48,7 @@ namespace FlightManagementCompany.Services
         public bool Update(Flight flight, out string error) // Updates an existing flight with the provided details and validates the input.
         {
             error = string.Empty;
-            if (flight == null || flight.FlightId <= 0) { error = "Invalid flight."; return false; }
+            if (flight == null || flight.FlightId <= 0) { error = "Invalid flight."; return false; } // Validate the flight object and its ID.
             if (flight.ArrivalUtc <= flight.DepartureUtc) { error = "Arrival must be after departure."; return false; }
             _flights.Update(flight); _flights.Save();
             return true;
