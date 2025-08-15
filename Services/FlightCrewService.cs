@@ -1,0 +1,50 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using FlightManagementCompany.Models;
+using FlightManagementCompany.Repository;
+
+namespace FlightManagementCompany.Services
+{
+    public class FlightCrewService
+    {
+
+        private readonly FlightCrewRepository _repo; // Repository for managing flight crew assignments
+        private readonly FlightRepository _flights;
+        private readonly CrewMemberRepository _crew;
+
+        public FlightCrewService(FlightCrewRepository repo, FlightRepository flights, CrewMemberRepository crew)
+        {
+            _repo = repo; _flights = flights; _crew = crew;
+        }
+
+        public List<FlightCrew> GetAll() => _repo.GetAll();
+
+        public bool Assign(int flightId, int crewId, string role, out string error)
+        {
+            error = string.Empty;
+            if (_flights.GetById(flightId) == null) { error = "Flight not found."; return false; }
+            if (_crew.GetById(crewId) == null) { error = "Crew member not found."; return false; }
+            if (_repo.Exists(flightId, crewId)) { error = "Already assigned."; return false; }
+            if (string.IsNullOrWhiteSpace(role)) { error = "Role required."; return false; }
+
+            _repo.Add(new FlightCrew { FlightId = flightId, CrewId = crewId, Role = role.Trim() });
+            _repo.Save();
+            return true;
+        }
+
+        public bool Unassign(int flightId, int crewId, out string error)
+        {
+            error = string.Empty;
+            _repo.Delete(flightId, crewId);
+            _repo.Save();
+            return true;
+        }
+
+        public List<CrewMember> GetCrewForFlight(int flightId) => _repo.GetCrewForFlight(flightId);
+        public List<Flight> GetFlightsForCrew(int crewId) => _repo.GetFlightsForCrew(crewId);
+    }
+}
+
