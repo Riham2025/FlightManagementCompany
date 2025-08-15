@@ -14,7 +14,7 @@ namespace FlightManagementCompany.Services
         private readonly PassengerRepository _repo; // Repository for accessing passenger data
         public PassengerService(PassengerRepository repo) { _repo = repo; } // Constructor to initialize the service with a repository
 
-        public List<Passenger> GetAll() => _repo.GetAll();
+        public List<Passenger> GetAll() => _repo.GetAll(); // Retrieves all passengers from the repository, including their details such as full name, passport number, and email.
         public Passenger? GetById(int id) => _repo.GetById(id);
 
         public bool Register(string fullName, string passportNo, string email, out string error)
