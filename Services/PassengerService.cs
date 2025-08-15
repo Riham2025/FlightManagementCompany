@@ -20,7 +20,8 @@ namespace FlightManagementCompany.Services
         public bool Register(string fullName, string passportNo, string email, out string error) // Registers a new passenger with the provided details and validates the input.
         {
             error = string.Empty; // Initialize error message to empty string.
-            if (string.IsNullOrWhiteSpace(fullName)) { error = "Name required."; return false; }
+            if (string.IsNullOrWhiteSpace(fullName)) // Validate that the full name is not empty or whitespace.
+            { error = "Name required."; return false; }
             if (string.IsNullOrWhiteSpace(passportNo)) { error = "Passport required."; return false; }
             if (_repo.GetAll().Any(p => p.PassportNo == passportNo.Trim())) { error = "Passport already exists."; return false; }
 
