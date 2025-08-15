@@ -8,7 +8,7 @@ using FlightManagementCompany.Repository;
 
 namespace FlightManagementCompany.Services
 {
-    public  class AircraftService
+    public class AircraftService : IAircraftService // Represents a service for managing aircraft operations in the flight management system.
     {
 
 
@@ -28,7 +28,7 @@ namespace FlightManagementCompany.Services
             var a = new Aircraft { TailNumber = tailNumber.Trim().ToUpper(), Model = model?.Trim(), Capacity = capacity }; // Create a new Aircraft object with the provided details.
             _repo.Add(a); // Save the new aircraft to the repository.
             _repo.Save(); // Return true to indicate successful creation of the aircraft. 
-            return true; 
+            return true;
         }
 
         public bool Update(Aircraft aircraft, out string error) // Updates an existing aircraft with the provided details and validates the input.
