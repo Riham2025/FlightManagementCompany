@@ -25,7 +25,7 @@ namespace FlightManagementCompany.Services
             //prevent duplicates
             if (_repo.GetAll().Any(a => a.IATA.Equals(iata.Trim(), StringComparison.OrdinalIgnoreCase))) { error = "IATA already exists."; return false; } // Check if the IATA code already exists in the repository.
 
-            var a = new Airport { IATA = iata.Trim().ToUpper(), Name = name.Trim(), City = city?.Trim(), Country = country?.Trim(), TimeZone = timeZone?.Trim() };
+            var a = new Airport { IATA = iata.Trim().ToUpper(), Name = name.Trim(), City = city?.Trim(), Country = country?.Trim(), TimeZone = timeZone?.Trim() }; // Create a new Airport object with the provided details.
             _repo.Add(a); _repo.Save();
             return true;
         }
