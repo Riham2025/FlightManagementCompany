@@ -21,7 +21,7 @@ namespace FlightManagementCompany.Services
             _baggage = baggage; _passengers = passengers; // Assign the provided repositories to the private fields
         }
 
-        public List<Baggage> GetAll() => _baggage.GetAll();
+        public List<Baggage> GetAll() => _baggage.GetAll(); // Retrieves all baggage items from the repository, including associated passenger details.
         public Baggage? GetById(int id) => _baggage.GetById(id);
 
         public bool Add(int passengerId, string tagNumber, double weightKg, out string error)
