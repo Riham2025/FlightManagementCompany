@@ -49,7 +49,7 @@ namespace FlightManagementCompany.Services
         {
             error = string.Empty; // Initialize error message to empty string.
             _maint.Delete(id); // Delete the maintenance record with the specified ID from the repository.
-            _maint.Save();
+            _maint.Save(); // Save the changes to the repository after deletion.
             return true;
         }
     }
