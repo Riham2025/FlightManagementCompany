@@ -32,7 +32,7 @@ namespace FlightManagementCompany.Services
             if (string.IsNullOrWhiteSpace(flightNumber)) { error = "Flight number required."; return false; } // Validate flight number.
             if (arrUtc <= depUtc) { error = "Arrival must be after departure."; return false; } // Validate that the arrival time is after the departure time.
             if (_routes.GetById(routeId) == null) { error = "Route not found."; return false; } // Validate that the specified route exists in the repository.
-            if (_aircraft.GetById(aircraftId) == null) { error = "Aircraft not found."; return false; }
+            if (_aircraft.GetById(aircraftId) == null) { error = "Aircraft not found."; return false; } // Validate that the specified aircraft exists in the repository.
             // basic uniqueness check on same departure timestamp
             if (_flights.GetAll().Any(f => f.FlightNumber == flightNumber.Trim() && f.DepartureUtc == depUtc)) { error = "Duplicate flight/departure."; return false; }
 
