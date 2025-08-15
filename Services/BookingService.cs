@@ -8,7 +8,7 @@ using FlightManagementCompany.Repository;
 
 namespace FlightManagementCompany.Services
 {
-    public class BookingService
+    public class BookingService : IBookingService // Interface for booking management in the flight management system.
     {
 
 
@@ -28,7 +28,7 @@ namespace FlightManagementCompany.Services
         {
             error = string.Empty; // Initialize error message to empty string.
             if (_passengers.GetById(passengerId) == null)  // Validate that the specified passenger exists in the repository.
-            { error = "Passenger not found."; return false; } 
+            { error = "Passenger not found."; return false; }
             if (_flights.GetById(flightId) == null)  // Validate that the specified flight exists in the repository.
             { error = "Flight not found."; return false; }
 
@@ -36,13 +36,13 @@ namespace FlightManagementCompany.Services
             if (_bookings.GetAll().Any(b => b.PassengerId == passengerId && b.FlightId == flightId)) { error = "Already booked."; return false; } // Check if a booking for the same passenger and flight already exists in the repository.
 
             var b = new Booking  // Create a new Booking object with the provided passenger and flight identifiers.
-            { PassengerId = passengerId, FlightId = flightId }; 
+            { PassengerId = passengerId, FlightId = flightId };
             _bookings.Add(b); // Stage the new booking for addition to the repository.
             _bookings.Save(); // Save the changes to the repository after adding the new booking.
             return true;
         }
 
-        public bool Cancel(int id, out string error) 
+        public bool Cancel(int id, out string error)
         {
             error = string.Empty; // Initialize error message to empty string.
             _bookings.Delete(id); // Delete the booking with the specified ID from the repository.
