@@ -53,7 +53,7 @@ namespace FlightManagementCompany.Services
         public bool Delete(int id, out string error) // Deletes a ticket by its unique identifier and validates the input.
         {
             error = string.Empty; // Initialize error message to empty string.
-            _tickets.Delete(id); _tickets.Save();
+            _tickets.Delete(id); _tickets.Save(); // Save the changes to the repository after deletion.
             return true;
         }
     }
