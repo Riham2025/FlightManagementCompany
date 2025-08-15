@@ -38,7 +38,7 @@ namespace FlightManagementCompany.Services
             var b = new Booking  // Create a new Booking object with the provided passenger and flight identifiers.
             { PassengerId = passengerId, FlightId = flightId }; 
             _bookings.Add(b); // Stage the new booking for addition to the repository.
-            _bookings.Save();
+            _bookings.Save(); // Save the changes to the repository after adding the new booking.
             return true;
         }
 
