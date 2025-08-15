@@ -26,7 +26,8 @@ namespace FlightManagementCompany.Services
             if (_repo.GetAll().Any(a => a.TailNumber.Equals(tailNumber.Trim(), StringComparison.OrdinalIgnoreCase))) { error = "Tail number exists."; return false; } // Check if the tail number already exists in the repository.
 
             var a = new Aircraft { TailNumber = tailNumber.Trim().ToUpper(), Model = model?.Trim(), Capacity = capacity }; // Create a new Aircraft object with the provided details.
-            _repo.Add(a); _repo.Save();
+            _repo.Add(a); // Save the new aircraft to the repository.
+            _repo.Save(); 
             return true;
         }
 
