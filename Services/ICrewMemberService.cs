@@ -2,7 +2,7 @@
 
 namespace FlightManagementCompany.Services
 {
-    public interface ICrewMemberService
+    public interface ICrewMemberService // Represents a service for managing crew member operations in the flight management system.
     {
         bool Create(string fullName, string role, out string error);
         bool Delete(int id, out string error);
