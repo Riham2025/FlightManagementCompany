@@ -38,7 +38,7 @@ namespace FlightManagementCompany.Services
 
         public bool Update(Baggage baggage, out string error) // Updates an existing baggage item with the provided details and validates the input.
         {
-            error = string.Empty;
+            error = string.Empty; // Initialize error message to empty string.
             if (baggage == null || baggage.BaggageId <= 0) { error = "Invalid baggage."; return false; }
             _baggage.Update(baggage); _baggage.Save();
             return true;
