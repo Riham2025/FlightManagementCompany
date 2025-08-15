@@ -17,7 +17,7 @@ namespace FlightManagementCompany.Services
 
         public TicketService(TicketRepository tickets, BookingRepository bookings, FlightRepository flights) // Constructor to initialize the TicketService with repositories for tickets, bookings, and flights.
         {
-            _tickets = tickets; _bookings = bookings; _flights = flights;
+            _tickets = tickets; _bookings = bookings; _flights = flights; // Assign the provided repositories to the private fields
         }
 
         public List<Ticket> GetAll() => _tickets.GetAll();
