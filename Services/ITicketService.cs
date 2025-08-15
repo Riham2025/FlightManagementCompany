@@ -6,7 +6,7 @@ namespace FlightManagementCompany.Services
     {
         bool Create(int bookingId, int flightId, decimal fare, string seat, out string error); // Creates a new ticket with the specified booking ID, flight ID, fare, and seat, and validates the input.
         bool Delete(int id, out string error); // Deletes a ticket by its unique identifier and validates the input.
-        List<Ticket> GetAll();
+        List<Ticket> GetAll(); // Retrieves all tickets from the repository, including associated bookings and flights.
         Ticket? GetById(int id);
         bool Update(Ticket ticket, out string error);
     }
