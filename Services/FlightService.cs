@@ -19,7 +19,7 @@ namespace FlightManagementCompany.Services
 
         public FlightService(FlightRepository flights, RouteRepository routes, AircraftRepository aircraft) // Constructor to initialize the service with repositories
         {
-            _flights = flights; _routes = routes; _aircraft = aircraft;
+            _flights = flights; _routes = routes; _aircraft = aircraft; // Assign the provided repositories to the private fields
         }
 
         public List<Flight> GetAll() => _flights.GetAll();
