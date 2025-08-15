@@ -19,7 +19,7 @@ namespace FlightManagementCompany.Services
 
         public bool Create(string iata, string name, string city, string country, string timeZone, out string error) // Creates a new airport with the specified details and validates the input.
         {
-            error = string.Empty;
+            error = string.Empty; // Initialize error message to empty string.
             if (string.IsNullOrWhiteSpace(iata) || iata.Trim().Length != 3) { error = "IATA must be 3 letters."; return false; }
             if (string.IsNullOrWhiteSpace(name)) { error = "Airport name required."; return false; }
             // prevent duplicates
