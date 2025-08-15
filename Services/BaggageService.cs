@@ -9,7 +9,7 @@ using FlightManagementCompany.Repository;
 
 namespace FlightManagementCompany.Services
 {
-    public class BaggageService
+    public class BaggageService : IBaggageService // Service class for managing baggage operations in the flight management system.
     {
 
 
