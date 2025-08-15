@@ -19,7 +19,7 @@ namespace FlightManagementCompany
             //(Optional) Ensure DB exists; if you use migrations, call ctx.Database.Migrate() instead.
             ctx.Database.EnsureCreated();
 
-            // 2) Repositories (one per entity, as you implemented)
+            // 2)Repositories (one per entity, as you implemented)
             Airports airportRepo = new Airports(ctx);
             AircraftRepository aircraftRepo = new AircraftRepository(ctx);
             RouteRepository routeRepo = new RouteRepository(ctx);
