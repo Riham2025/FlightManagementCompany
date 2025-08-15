@@ -29,7 +29,7 @@ namespace FlightManagementCompany.Services
 
         public bool Update(CrewMember crew, out string error) // Updates an existing crew member with the provided details and validates the input.
         {
-            error = string.Empty;
+            error = string.Empty; // Initialize error message to empty string.
             if (crew == null || crew.CrewId <= 0) { error = "Invalid crew member."; return false; }
             _crew.Update(crew); _crew.Save();
             return true;
