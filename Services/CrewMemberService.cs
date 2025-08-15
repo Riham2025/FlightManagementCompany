@@ -8,7 +8,38 @@ using FlightManagementCompany.Repository;
 
 namespace FlightManagementCompany.Services
 {
-    public class CrewMemberService
+    public class CrewMemberService : ICrewMemberService // Service class for managing crew member operations in the flight management system.
     {
+
+        private readonly CrewMemberRepository _crew;
+        public CrewMemberService(CrewMemberRepository crew) { _crew = crew; }
+
+        public List<CrewMember> GetAll() => _crew.GetAll();
+        public CrewMember? GetById(int id) => _crew.GetById(id);
+
+        public bool Create(string fullName, string role, out string error)
+        {
+            error = string.Empty;
+            if (string.IsNullOrWhiteSpace(fullName)) { error = "Name required."; return false; }
+            if (string.IsNullOrWhiteSpace(role)) { error = "Role required."; return false; }
+            var c = new CrewMember { FullName = fullName.Trim(), Role = role.Trim() };
+            _crew.Add(c); _crew.Save();
+            return true;
+        }
+
+        public bool Update(CrewMember crew, out string error)
+        {
+            error = string.Empty;
+            if (crew == null || crew.CrewId <= 0) { error = "Invalid crew member."; return false; }
+            _crew.Update(crew); _crew.Save();
+            return true;
+        }
+
+        public bool Delete(int id, out string error)
+        {
+            error = string.Empty;
+            _crew.Delete(id); _crew.Save();
+            return true;
+        }
     }
 }
