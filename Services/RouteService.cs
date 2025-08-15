@@ -22,7 +22,7 @@ namespace FlightManagementCompany.Services
         public bool Create(int originAirportId, int destinationAirportId, out string error) // Creates a new flight route with the specified origin and destination airport IDs and validates the input.
         {
             error = string.Empty; // Initialize error message to empty string.
-            if (originAirportId == destinationAirportId) { error = "Origin and destination must differ."; return false; }
+            if (originAirportId == destinationAirportId) { error = "Origin and destination must differ."; return false; } // Validate that the origin and destination airport IDs are not the same.
             if (_airports.GetById(originAirportId) == null || _airports.GetById(destinationAirportId) == null) { error = "Airport(s) not found."; return false; }
 
             var r = new Route { OriginAirportId = originAirportId, DestinationAirportId = destinationAirportId };
