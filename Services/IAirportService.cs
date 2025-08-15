@@ -8,6 +8,6 @@ namespace FlightManagementCompany.Services
         bool Delete(int id, out string error); // Deletes an airport by its unique identifier and validates the input.
         List<Airport> GetAll(); // Retrieves all airports from the repository.
         Airport? GetById(int id); // Retrieves an airport by its unique identifier.
-        bool Update(Airport airport, out string error);
+        bool Update(Airport airport, out string error); // Updates an existing airport with the provided details and validates the input.
     }
 }
