@@ -26,7 +26,8 @@ namespace FlightManagementCompany.Services
         public bool Create(int bookingId, int flightId, decimal fare, string seat, out string error) // Creates a new ticket for a booking on a specific flight and validates the input.
         {
             error = string.Empty; // Initialize error message to empty string.
-            if (_bookings.GetById(bookingId) == null) { error = "Booking not found."; return false; }
+            if (_bookings.GetById(bookingId) == null) // Validate that the specified booking exists in the repository.
+            { error = "Booking not found."; return false; }
             if (_flights.GetById(flightId) == null) { error = "Flight not found."; return false; }
             if (fare <= 0) { error = "Fare must be positive."; return false; }
 
