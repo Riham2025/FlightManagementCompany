@@ -25,7 +25,8 @@ namespace FlightManagementCompany.Services
             }
             if (string.IsNullOrWhiteSpace(passportNo)) { error = "Passport required."; return false; } // Validate that the passport number is not empty or whitespace.
             if (_repo.GetAll().Any(p => p.PassportNo == passportNo.Trim())) // Check if a passenger with the same passport number already exists in the repository.
-            { error = "Passport already exists."; return false; }
+            { error = "Passport already exists."; return false; // Return false to indicate that the registration failed due to a duplicate passport number. }
+            }
 
             var p = new Passenger { FullName = fullName.Trim(), PassportNo = passportNo.Trim(), Email = email?.Trim() };
             _repo.Add(p); _repo.Save();
