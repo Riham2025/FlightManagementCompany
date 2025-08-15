@@ -40,7 +40,7 @@ namespace FlightManagementCompany.Services
         public bool Unassign(int flightId, int crewId, out string error) // Unassigns a crew member from a flight by their unique identifiers and validates the input.
         {
             error = string.Empty; // Initialize error message to empty string.
-            _repo.Delete(flightId, crewId);
+            _repo.Delete(flightId, crewId); // Delete the flight crew assignment with the specified flight ID and crew ID from the repository.
             _repo.Save();
             return true;
         }
