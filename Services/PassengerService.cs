@@ -46,7 +46,8 @@ namespace FlightManagementCompany.Services
         public bool Delete(int id, out string error) // Deletes a passenger by their unique identifier and validates the input.
         {
             error = string.Empty; // Initialize error message to empty string.
-            _repo.Delete(id); _repo.Save();
+            _repo.Delete(id); // Delete the passenger with the specified ID from the repository.
+            _repo.Save();
             return true;
         }
     }
