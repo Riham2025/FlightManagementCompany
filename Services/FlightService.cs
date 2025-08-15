@@ -57,7 +57,8 @@ namespace FlightManagementCompany.Services
         public bool Delete(int id, out string error) // Deletes a flight by its unique identifier and validates the input.
         {
             error = string.Empty; // Initialize error message to empty string.
-            _flights.Delete(id); _flights.Save();
+            _flights.Delete(id); // Stage the flight for deletion in the repository.
+            _flights.Save(); 
             return true;
         }
     }
