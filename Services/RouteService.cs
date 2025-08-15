@@ -45,7 +45,7 @@ namespace FlightManagementCompany.Services
         {
             error = string.Empty; // Initialize error message to empty string.
             _routes.Delete(id); _routes.Save(); // Save the changes to the repository after deletion.
-            return true;
+            return true; // Return true to indicate successful deletion of the route.
         }
     }
 }
