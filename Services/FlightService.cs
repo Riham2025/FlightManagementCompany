@@ -41,7 +41,7 @@ namespace FlightManagementCompany.Services
             } 
 
             var f = new Flight { FlightNumber = flightNumber.Trim().ToUpper(), RouteId = routeId, AircraftId = aircraftId, DepartureUtc = depUtc, ArrivalUtc = arrUtc }; // Create a new Flight object with the provided details.
-            _flights.Add(f); _flights.Save();
+            _flights.Add(f); _flights.Save(); // Stage the new flight for addition to the repository and save it.
             return true;
         }
 
