@@ -8,7 +8,7 @@ namespace FlightManagementCompany.Services
         bool Delete(int id, out string error); // Deletes a maintenance record by its unique identifier and validates the input.
         List<AircraftMaintenance> GetAll(); // Retrieves all maintenance records from the repository, including associated aircraft details.
         List<AircraftMaintenance> GetByAircraft(int aircraftId); // Retrieves maintenance records for a specific aircraft by its unique identifier, including associated aircraft details.
-        AircraftMaintenance? GetById(int id);
+        AircraftMaintenance? GetById(int id); // Retrieves a maintenance record by its unique identifier, including associated aircraft details.
         List<AircraftMaintenance> GetRecent(int days);
         bool Update(AircraftMaintenance maintenance, out string error);
     }
