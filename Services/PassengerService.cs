@@ -39,7 +39,7 @@ namespace FlightManagementCompany.Services
             error = string.Empty; // Initialize error message to empty string.
             if (passenger == null || passenger.PassengerId <= 0) { error = "Invalid passenger."; return false; }  // Validate the passenger object and its ID.
             _repo.Update(passenger); // Save the updated passenger to the repository.
-            _repo.Save();
+            _repo.Save(); // Return true to indicate successful update of the passenger.
             return true;
         }
 
