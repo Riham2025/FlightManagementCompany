@@ -29,7 +29,7 @@ namespace FlightManagementCompany.Services
         public bool Create(string flightNumber, int routeId, int aircraftId, DateTime depUtc, DateTime arrUtc, out string error) // Creates a new flight with the specified details and validates the input.
         {
             error = string.Empty; // Initialize error message to empty string.
-            if (string.IsNullOrWhiteSpace(flightNumber)) { error = "Flight number required."; return false; }
+            if (string.IsNullOrWhiteSpace(flightNumber)) { error = "Flight number required."; return false; } // Validate flight number.
             if (arrUtc <= depUtc) { error = "Arrival must be after departure."; return false; }
             if (_routes.GetById(routeId) == null) { error = "Route not found."; return false; }
             if (_aircraft.GetById(aircraftId) == null) { error = "Aircraft not found."; return false; }
