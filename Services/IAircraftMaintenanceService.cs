@@ -1,0 +1,15 @@
+﻿using FlightManagementCompany.Models;
+
+namespace FlightManagementCompany.Services
+{
+    public interface IAircraftMaintenanceService
+    {
+        bool Add(int aircraftId, string description, DateTime performedAtUtc, out string error);
+        bool Delete(int id, out string error);
+        List<AircraftMaintenance> GetAll();
+        List<AircraftMaintenance> GetByAircraft(int aircraftId);
+        AircraftMaintenance? GetById(int id);
+        List<AircraftMaintenance> GetRecent(int days);
+        bool Update(AircraftMaintenance maintenance, out string error);
+    }
+}

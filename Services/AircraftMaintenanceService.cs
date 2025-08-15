@@ -8,7 +8,7 @@ using FlightManagementCompany.Repository;
 
 namespace FlightManagementCompany.Services
 {
-    public class AircraftMaintenanceService
+    public class AircraftMaintenanceService : IAircraftMaintenanceService // Service class for managing aircraft maintenance operations in the flight management system.
     {
 
         private readonly AircraftMaintenanceRepository _maint; // Repository for managing aircraft maintenance records in the flight management system.
