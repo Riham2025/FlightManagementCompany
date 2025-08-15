@@ -18,7 +18,7 @@ namespace FlightManagementCompany.Services
 
         public BookingService(BookingRepository bookings, PassengerRepository passengers, FlightRepository flights) // Constructor to initialize the BookingService with repositories for bookings, passengers, and flights.
         {
-            _bookings = bookings; _passengers = passengers; _flights = flights;
+            _bookings = bookings; _passengers = passengers; _flights = flights; // Assign the provided repositories to the private fields.
         }
 
         public List<Booking> GetAll() => _bookings.GetAll();
