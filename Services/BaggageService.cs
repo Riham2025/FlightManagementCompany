@@ -48,7 +48,7 @@ namespace FlightManagementCompany.Services
         {
             error = string.Empty; // Initialize error message to empty string.
             _baggage.Delete(id); _baggage.Save(); // Save the changes to the repository after deletion.
-            return true;
+            return true; // Return true to indicate successful deletion of the baggage item.
         }
     }
 }
