@@ -3,10 +3,47 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FlightManagementCompany.Models;
+using FlightManagementCompany.Repository;
 
 namespace FlightManagementCompany.Services
 {
-    public class RouteService
+    public class RouteService : IRouteService // Represents a service for managing flight routes in the flight management system.
     {
+
+
+        private readonly RouteRepository _routes;
+        private readonly Airports _airports;
+        public RouteService(RouteRepository routes, Airports airports) { _routes = routes; _airports = airports; }
+
+        public List<Route> GetAll() => _routes.GetAll();
+        public Route? GetById(int id) => _routes.GetById(id);
+
+        public bool Create(int originAirportId, int destinationAirportId, out string error)
+        {
+            error = string.Empty;
+            if (originAirportId == destinationAirportId) { error = "Origin and destination must differ."; return false; }
+            if (_airports.GetById(originAirportId) == null || _airports.GetById(destinationAirportId) == null) { error = "Airport(s) not found."; return false; }
+
+            var r = new Route { OriginAirportId = originAirportId, DestinationAirportId = destinationAirportId };
+            _routes.Add(r); _routes.Save();
+            return true;
+        }
+
+        public bool Update(Route route, out string error)
+        {
+            error = string.Empty;
+            if (route == null || route.RouteId <= 0) { error = "Invalid route."; return false; }
+            if (route.OriginAirportId == route.DestinationAirportId) { error = "Origin and destination must differ."; return false; }
+            _routes.Update(route); _routes.Save();
+            return true;
+        }
+
+        public bool Delete(int id, out string error)
+        {
+            error = string.Empty;
+            _routes.Delete(id); _routes.Save();
+            return true;
+        }
     }
 }
