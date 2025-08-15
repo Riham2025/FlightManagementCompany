@@ -27,7 +27,7 @@ namespace FlightManagementCompany.Services
         public bool Add(int passengerId, string tagNumber, double weightKg, out string error) // Creates a new baggage item for a passenger and validates the input.
         {
             error = string.Empty; // Initialize error message to empty string.
-            if (_passengers.GetById(passengerId) == null) { error = "Passenger not found."; return false; }
+            if (_passengers.GetById(passengerId) == null) { error = "Passenger not found."; return false; } // Validate that the specified passenger exists in the repository.
             if (string.IsNullOrWhiteSpace(tagNumber)) { error = "Tag number required."; return false; }
             if (weightKg <= 0) { error = "Weight must be positive."; return false; }
 
