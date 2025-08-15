@@ -16,7 +16,7 @@ namespace FlightManagementCompany.Services
 
         public AircraftMaintenanceService(AircraftMaintenanceRepository maint, AircraftRepository aircraft) // Constructor to initialize the service with repositories
         {
-            _maint = maint; _aircraft = aircraft;
+            _maint = maint; _aircraft = aircraft; // Assign the provided repositories to the private fields
         }
 
         public List<AircraftMaintenance> GetAll() => _maint.GetAll();
