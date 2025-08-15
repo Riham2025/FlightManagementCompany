@@ -20,7 +20,7 @@ namespace FlightManagementCompany.Services
 
         public bool Create(string tailNumber, string model, int capacity, out string error) // Creates a new aircraft with the specified details and validates the input.
         {
-            error = string.Empty;
+            error = string.Empty; // Initialize error message to empty string.
             if (string.IsNullOrWhiteSpace(tailNumber)) { error = "Tail number required."; return false; }
             if (capacity <= 0) { error = "Capacity must be positive."; return false; }
             if (_repo.GetAll().Any(a => a.TailNumber.Equals(tailNumber.Trim(), StringComparison.OrdinalIgnoreCase))) { error = "Tail number exists."; return false; }
