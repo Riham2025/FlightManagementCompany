@@ -46,7 +46,7 @@ namespace FlightManagementCompany.Services
 
         public bool Delete(int id, out string error) // Deletes a baggage item by its unique identifier and validates the input.
         {
-            error = string.Empty;
+            error = string.Empty; // Initialize error message to empty string.
             _baggage.Delete(id); _baggage.Save();
             return true;
         }
