@@ -46,7 +46,7 @@ namespace FlightManagementCompany.Services
             if (ticket == null || ticket.TicketId <= 0) // Validate the ticket object and its ID. 
             { error = "Invalid ticket."; return false; } // Validate that the ticket object is not null and has a valid ID.
             _tickets.Update(ticket); // Stage the updated ticket for modification in the repository.
-            _tickets.Save();
+            _tickets.Save(); // Save the updated ticket to the repository.
             return true;
         }
 
