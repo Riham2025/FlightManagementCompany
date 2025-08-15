@@ -22,7 +22,7 @@ namespace FlightManagementCompany.Services
             _crew = crew; // Assign the provided CrewMemberRepository to the private field.
         }
 
-        public List<FlightCrew> GetAll() => _repo.GetAll();
+        public List<FlightCrew> GetAll() => _repo.GetAll(); // Retrieves all flight crew assignments from the repository, including associated flights and crew members.
 
         public bool Assign(int flightId, int crewId, string role, out string error)
         {
