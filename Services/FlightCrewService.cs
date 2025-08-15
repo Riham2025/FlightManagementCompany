@@ -41,7 +41,7 @@ namespace FlightManagementCompany.Services
         {
             error = string.Empty; // Initialize error message to empty string.
             _repo.Delete(flightId, crewId); // Delete the flight crew assignment with the specified flight ID and crew ID from the repository.
-            _repo.Save();
+            _repo.Save(); // Save the changes to the repository after unassignment.
             return true;
         }
 
