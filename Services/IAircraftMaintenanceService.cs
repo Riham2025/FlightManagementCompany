@@ -10,6 +10,6 @@ namespace FlightManagementCompany.Services
         List<AircraftMaintenance> GetByAircraft(int aircraftId); // Retrieves maintenance records for a specific aircraft by its unique identifier, including associated aircraft details.
         AircraftMaintenance? GetById(int id); // Retrieves a maintenance record by its unique identifier, including associated aircraft details.
         List<AircraftMaintenance> GetRecent(int days); // Retrieves recent maintenance records performed within the specified number of days, including associated aircraft details.
-        bool Update(AircraftMaintenance maintenance, out string error);
+        bool Update(AircraftMaintenance maintenance, out string error); // Updates an existing maintenance record with the provided details and validates the input.
     }
 }
