@@ -34,12 +34,13 @@ namespace FlightManagementCompany.Services
             if (_routes.GetById(routeId) == null) { error = "Route not found."; return false; } // Validate that the specified route exists in the repository.
             if (_aircraft.GetById(aircraftId) == null) { error = "Aircraft not found."; return false; } // Validate that the specified aircraft exists in the repository.
             //basic uniqueness check on same departure timestamp
+
             if (_flights.GetAll().Any(f => f.FlightNumber == flightNumber.Trim() && f.DepartureUtc == depUtc)) // Check if a flight with the same flight number and departure time already exists in the repository.
             { error = "Duplicate flight/departure."; // If a duplicate flight is found, set the error message and return false.
                 return false; // Return false to indicate that the flight could not be created due to a duplicate entry.
             } 
 
-            var f = new Flight { FlightNumber = flightNumber.Trim().ToUpper(), RouteId = routeId, AircraftId = aircraftId, DepartureUtc = depUtc, ArrivalUtc = arrUtc };
+            var f = new Flight { FlightNumber = flightNumber.Trim().ToUpper(), RouteId = routeId, AircraftId = aircraftId, DepartureUtc = depUtc, ArrivalUtc = arrUtc }; // Create a new Flight object with the provided details.
             _flights.Add(f); _flights.Save();
             return true;
         }
