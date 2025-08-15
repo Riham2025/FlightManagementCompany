@@ -12,7 +12,7 @@ namespace FlightManagementCompany.Services
     {
 
         private readonly FlightCrewRepository _repo; // Repository for managing flight crew assignments
-        private readonly FlightRepository _flights;
+        private readonly FlightRepository _flights; // Repository for managing flight data
         private readonly CrewMemberRepository _crew;
 
         public FlightCrewService(FlightCrewRepository repo, FlightRepository flights, CrewMemberRepository crew)
