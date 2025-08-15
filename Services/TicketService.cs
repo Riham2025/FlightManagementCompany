@@ -43,7 +43,8 @@ namespace FlightManagementCompany.Services
         public bool Update(Ticket ticket, out string error) // Updates an existing ticket with the provided details and validates the input.
         {
             error = string.Empty; // Initialize error message to empty string.
-            if (ticket == null || ticket.TicketId <= 0) { error = "Invalid ticket."; return false; }
+            if (ticket == null || ticket.TicketId <= 0) // Validate the ticket object and its ID. 
+            { error = "Invalid ticket."; return false; }
             _tickets.Update(ticket); _tickets.Save();
             return true;
         }
