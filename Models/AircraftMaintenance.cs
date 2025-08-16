@@ -13,7 +13,8 @@ namespace FlightManagementCompany.Models
         // Represents maintenance records for an aircraft.
         [Key] public int MaintenanceId { get; set; } // Unique identifier for the maintenance record
 
-        public string Description { get; set; } = string.Empty; // Description of the maintenance performed on the aircraft, defaulting to an empty string
+        public string Description { get; set; } // Description of the maintenance performed (e.g., "Engine overhaul", "Landing gear inspection", etc.)
+
 
 
         [ForeignKey(nameof(Aircraft))] public int AircraftId { get; set; } // Identifier for the aircraft associated with this maintenance record
