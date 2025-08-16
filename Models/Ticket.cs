@@ -15,7 +15,8 @@ namespace FlightManagementCompany.Models
 
         [Key] public int TicketId { get; set; } // Unique identifier for the ticket
 
-        public string? Seat { get; set; } // Seat assigned to the ticket (optional, can be null)
+        public string Seat { get; set; } // Seat number assigned to the ticket (e.g., "12A")
+
 
 
         [ForeignKey(nameof(Booking))] public int BookingId { get; set; } // Identifier for the booking associated with this ticket
