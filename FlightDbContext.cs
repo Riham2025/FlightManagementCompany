@@ -42,48 +42,48 @@ namespace FlightManagementCompany
         // This method is called when the model for a derived context is being created.
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            base.OnModelCreating(modelBuilder); // Calls the base implementation of OnModelCreating to ensure that any configurations defined in the base class are applied.
 
-            
+
+            modelBuilder.Entity<Booking>()  
+                .HasOne(b => b.Passenger) // Represents the passenger who made the booking.
+                .WithMany(p => p.Bookings) // Represents the collection of bookings made by the passenger.
+                .HasForeignKey(b => b.PassengerId) // Foreign key in the Booking entity that references the Passenger entity.
+                .OnDelete(DeleteBehavior.Restrict); // Prevents cascading delete behavior when a passenger is deleted, meaning that bookings associated with that passenger will not be automatically deleted.
+
             modelBuilder.Entity<Booking>()
-                .HasOne(b => b.Passenger)
-                .WithMany(p => p.Bookings)
-                .HasForeignKey(b => b.PassengerId)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<Booking>()
-                .HasOne(b => b.Flight)
-                .WithMany(f => f.Bookings)
-                .HasForeignKey(b => b.FlightId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .HasOne(b => b.Flight) // Represents the flight associated with the booking.
+                .WithMany(f => f.Bookings) // Represents the collection of bookings for that flight.
+                .HasForeignKey(b => b.FlightId) // Foreign key in the Booking entity that references the Flight entity.
+                .OnDelete(DeleteBehavior.Restrict); // Prevents cascading delete behavior when a flight is deleted, meaning that bookings associated with that flight will not be automatically deleted.
 
 
 
-            modelBuilder.Entity<Ticket>()
-                .HasOne(t => t.Booking)
-                .WithMany(b => b.Tickets)
-                .HasForeignKey(t => t.BookingId)
-                .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Ticket>() // Represents a ticket associated with a booking for a flight.
+                .HasOne(t => t.Booking) // Represents the booking associated with the ticket.
+                .WithMany(b => b.Tickets) // Represents the collection of tickets associated with the booking.
+                .HasForeignKey(t => t.BookingId) // Foreign key in the Ticket entity that references the Booking entity.
+                .OnDelete(DeleteBehavior.Restrict); // Prevents cascading delete behavior when a booking is deleted, meaning that tickets associated with that booking will not be automatically deleted.
 
-            modelBuilder.Entity<Ticket>()
-                .HasOne(t => t.Flight)
-                .WithMany(f => f.Tickets)
-                .HasForeignKey(t => t.FlightId)
-                .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Ticket>() // Represents a ticket associated with a flight.
+                .HasOne(t => t.Flight) // Represents the flight associated with the ticket.
+                .WithMany(f => f.Tickets) // Represents the collection of tickets for that flight.
+                .HasForeignKey(t => t.FlightId) // Foreign key in the Ticket entity that references the Flight entity.
+                .OnDelete(DeleteBehavior.Restrict); // Prevents cascading delete behavior when a flight is deleted, meaning that tickets associated with that flight will not be automatically deleted.
 
-        
-            modelBuilder.Entity<Baggage>()
-                .HasOne(b => b.Passenger)
-                .WithMany(p => p.BaggageItems)
-                .HasForeignKey(b => b.PassengerId)
-                .OnDelete(DeleteBehavior.Restrict);
 
-          
-            modelBuilder.Entity<AircraftMaintenance>()
-                .HasOne(m => m.Aircraft)
-                .WithMany(a => a.Maintenance)
-                .HasForeignKey(m => m.AircraftId)
-                .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Baggage>() // Represents baggage items associated with a ticket.
+                .HasOne(b => b.Passenger) // Represents the passenger who owns the baggage item.
+                .WithMany(p => p.BaggageItems) // Represents the collection of baggage items owned by the passenger.
+                .HasForeignKey(b => b.PassengerId) // Foreign key in the Baggage entity that references the Passenger entity.
+                .OnDelete(DeleteBehavior.Restrict); // Prevents cascading delete behavior when a passenger is deleted, meaning that baggage items associated with that passenger will not be automatically deleted.
+
+
+            modelBuilder.Entity<AircraftMaintenance>() // Represents maintenance records for aircraft.
+                .HasOne(m => m.Aircraft) // Represents the aircraft associated with the maintenance record.
+                .WithMany(a => a.Maintenance) // Represents the collection of maintenance records for that aircraft.
+                .HasForeignKey(m => m.AircraftId) // Foreign key in the AircraftMaintenance entity that references the Aircraft entity.
+                .OnDelete(DeleteBehavior.Restrict); // Prevents cascading delete behavior when an aircraft is deleted, meaning that maintenance records associated with that aircraft will not be automatically deleted.
         }
 
     }
