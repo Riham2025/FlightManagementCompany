@@ -40,92 +40,50 @@ namespace FlightManagementCompany
 
 
         // This method is called when the model for a derived context is being created.
-        protected override void OnModelCreating(ModelBuilder mb)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Airport
-            mb.Entity<Airport>() // Represents the Airport entity
-              .HasIndex(a => a.IATA).IsUnique(); // Ensure IATA code is unique
-            mb.Entity<Airport>() // Represents the Airport entity
-              .Property(a => a.IATA).IsRequired().HasMaxLength(3); // Ensure IATA code is required and has a maximum length of 3 characters
+            base.OnModelCreating(modelBuilder);
 
-            // Aircraft
-            mb.Entity<Aircraft>() // Represents the Aircraft entity
-              .HasIndex(a => a.TailNumber).IsUnique(); // Ensure TailNumber is unique
-            mb.Entity<Aircraft>() // Represents the Aircraft entity
-              .Property(a => a.TailNumber).IsRequired(); // Ensure TailNumber is required
+            
+            modelBuilder.Entity<Booking>()
+                .HasOne(b => b.Passenger)
+                .WithMany(p => p.Bookings)
+                .HasForeignKey(b => b.PassengerId)
+                .OnDelete(DeleteBehavior.Restrict);  
 
-            // Route (Airport as Origin & Destination)
-            mb.Entity<Route>()// Represents the Route entity
-              .HasOne(r => r.Origin).WithMany()
-              .HasForeignKey(r => r.OriginAirportId) // Foreign key to the origin airport
-              .OnDelete(DeleteBehavior.Restrict); // Prevent cascading delete on origin airport
-            mb.Entity<Route>() // Represents the Route entity
-              .HasOne(r => r.Destination).WithMany() // Navigation property for destination airport
-              .HasForeignKey(r => r.DestinationAirportId) // Foreign key to the destination airport
-              .OnDelete(DeleteBehavior.Restrict); // Prevent cascading delete on destination airport
+            modelBuilder.Entity<Booking>()
+                .HasOne(b => b.Flight)
+                .WithMany(f => f.Bookings)
+                .HasForeignKey(b => b.FlightId)
+                .OnDelete(DeleteBehavior.Restrict);   
 
-            // Flight
-            mb.Entity<Flight>() // Represents the Flight entity
-              .Property(f => f.FlightNumber).IsRequired().HasMaxLength(10); // Ensure FlightNumber is required and has a maximum length of 10 characters
-            // Unique (FlightNumber + Departure Date only)
-            mb.Entity<Flight>() // Represents the Flight entity
-              .HasIndex(f => new { f.FlightNumber, f.DepartureUtc }) // Ensure uniqueness of FlightNumber and DepartureUtc
-              .IsUnique(); // Ensure that the combination of FlightNumber and DepartureUtc is unique
-            mb.Entity<Flight>() // Represents the Flight entity
-              .HasOne(f => f.Route).WithMany(r => r.Flights) // Navigation property for the route associated with the flight
-              .HasForeignKey(f => f.RouteId); // Foreign key to the route
-            mb.Entity<Flight>() // Represents the Flight entity
-              .HasOne(f => f.Aircraft).WithMany(a => a.Flights) // Navigation property for the aircraft operating the flight
-              .HasForeignKey(f => f.AircraftId); // Foreign key to the aircraft
+            
+          
+            modelBuilder.Entity<Ticket>()
+                .HasOne(t => t.Booking)
+                .WithMany(b => b.Tickets)
+                .HasForeignKey(t => t.BookingId)
+                .OnDelete(DeleteBehavior.Restrict);
 
-            // Passenger
-            mb.Entity<Passenger>()// Represents the Passenger entity
-              .HasIndex(p => p.PassportNo).IsUnique(); // Ensure PassportNo is unique
-            mb.Entity<Passenger>() // Represents the Passenger entity
-              .Property(p => p.FullName).IsRequired().HasMaxLength(80); // Ensure FullName is required and has a maximum length of 80 characters
+            modelBuilder.Entity<Ticket>()
+                .HasOne(t => t.Flight)
+                .WithMany(f => f.Tickets)
+                .HasForeignKey(t => t.FlightId)
+                .OnDelete(DeleteBehavior.Restrict);
 
-            // Booking
-            mb.Entity<Booking>() // Represents the Booking entity
-              .HasIndex(b => b.BookingRef).IsUnique(); // Ensure BookingRef is unique
-            mb.Entity<Booking>() // Represents the Booking entity
-              .HasOne(b => b.Passenger).WithMany(p => p.Bookings) // Navigation property for the passenger associated with the booking
-              .HasForeignKey(b => b.PassengerId); // Foreign key to the passenger
+        
+            modelBuilder.Entity<Baggage>()
+                .HasOne(b => b.Passenger)
+                .WithMany(p => p.BaggageItems)
+                .HasForeignKey(b => b.PassengerId)
+                .OnDelete(DeleteBehavior.Restrict);
 
-            // Ticket
-            mb.Entity<Ticket>() // Represents the Ticket entity
-              .Property(t => t.Fare).HasColumnType("decimal(10,2)"); // Ensure Fare is a decimal with 10 digits total and 2 decimal places
-            mb.Entity<Ticket>() // Represents the Ticket entity
-              .HasOne(t => t.Booking).WithMany(b => b.Tickets) // Navigation property for the booking associated with the ticket
-              .HasForeignKey(t => t.BookingId); // Foreign key to the booking
-            mb.Entity<Ticket>() // Represents the Ticket entity
-              .HasOne(t => t.Flight).WithMany(f => f.Tickets) // Navigation property for the flight associated with the ticket
-              .HasForeignKey(t => t.FlightId); // Foreign key to the flight
-
-            // Baggage
-            mb.Entity<Baggage>() // Represents the Baggage entity
-              .Property(b => b.WeightKg).HasColumnType("decimal(6,2)"); // Ensure WeightKg is a decimal with 6 digits total and 2 decimal places
-            mb.Entity<Baggage>() // Represents the Baggage entity
-              .HasOne(b => b.Ticket).WithMany(t => t.Baggage) // Navigation property for the ticket associated with the baggage
-              .HasForeignKey(b => b.TicketId); // Foreign key to the ticket
-
-            // CrewMember
-            mb.Entity<CrewMember>() // Represents the CrewMember entity
-              .Property(c => c.FullName).IsRequired().HasMaxLength(80); // Ensure FullName is required and has a maximum length of 80 characters
-
-            // FlightCrew (composite key FlightId + CrewId)
-            mb.Entity<FlightCrew>() // Represents the FlightCrew entity
-              .HasKey(fc => new { fc.FlightId, fc.CrewId }); // Composite key consisting of FlightId and CrewId
-            mb.Entity<FlightCrew>() // Represents the FlightCrew entity
-              .HasOne(fc => fc.Flight).WithMany(f => f.FlightCrew) // Navigation property for the flight associated with the crew member
-              .HasForeignKey(fc => fc.FlightId); // Foreign key to the flight
-            mb.Entity<FlightCrew>() // Represents the FlightCrew entity
-              .HasOne(fc => fc.CrewMember).WithMany(c => c.FlightCrew) // Navigation property for the crew member assigned to the flight
-              .HasForeignKey(fc => fc.CrewId); // Foreign key to the crew member
-
-            // AircraftMaintenance
-            mb.Entity<AircraftMaintenance>() // Represents the AircraftMaintenance entity
-              .HasOne(m => m.Aircraft).WithMany(a => a.Maintenance) // Navigation property for the aircraft associated with the maintenance record
-              .HasForeignKey(m => m.AircraftId); // Foreign key to the aircraft
+          
+            modelBuilder.Entity<AircraftMaintenance>()
+                .HasOne(m => m.Aircraft)
+                .WithMany(a => a.Maintenance)
+                .HasForeignKey(m => m.AircraftId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
 
     }

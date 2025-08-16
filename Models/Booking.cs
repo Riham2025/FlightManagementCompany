@@ -17,7 +17,7 @@ namespace FlightManagementCompany.Models
         public DateTime BookingDate { get; set; } = DateTime.UtcNow; // Date when the booking was made, defaulting to the current UTC time
         [Required] public string Status { get; set; } = "Confirmed"; // Status of the booking (e.g., "Confirmed", "Cancelled", "Pending")
 
-        public Flight? Flight { get; set; } // Flight associated with this booking, nullable to allow for cases where a booking may not yet be linked to a flight
+        public Flight Flight { get; set; } // Flight associated with this booking, representing the flight details for which the booking was made.
 
 
         // Navigation properties
