@@ -49,16 +49,16 @@ namespace FlightManagementCompany
                 .HasOne(b => b.Passenger)
                 .WithMany(p => p.Bookings)
                 .HasForeignKey(b => b.PassengerId)
-                .OnDelete(DeleteBehavior.Restrict);  
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Booking>()
                 .HasOne(b => b.Flight)
                 .WithMany(f => f.Bookings)
                 .HasForeignKey(b => b.FlightId)
-                .OnDelete(DeleteBehavior.Restrict);   
+                .OnDelete(DeleteBehavior.Restrict);
 
-            
-          
+
+
             modelBuilder.Entity<Ticket>()
                 .HasOne(t => t.Booking)
                 .WithMany(b => b.Tickets)

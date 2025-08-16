@@ -27,5 +27,7 @@ namespace FlightManagementCompany.Models
 
         // Navigation properties
         public ICollection<Booking> Bookings { get; set; } = new List<Booking>(); // Bookings made by this passenger
+
+        public ICollection<Baggage> BaggageItems { get; set; } = new List<Baggage>(); // Baggage items associated with this passenger
     }
 }
