@@ -10,6 +10,8 @@ namespace FlightManagementCompany.Services
 {
     public class TicketService : ITicketService // Service class for managing ticket operations in the flight management system.
     {
+      
+
 
         private readonly TicketRepository _tickets; // Represents a repository for managing ticket entities in the flight management system.    
         private readonly BookingRepository _bookings; // Represents a repository for managing booking entities in the flight management system.
@@ -56,6 +58,9 @@ namespace FlightManagementCompany.Services
             _tickets.Delete(id); _tickets.Save(); // Save the changes to the repository after deletion.
             return true;
         }
+
+       
+
     }
 }
 

@@ -44,8 +44,10 @@ namespace FlightManagementCompany
         {
             base.OnModelCreating(mb);
 
+           
+
             // ========== Airport ==========
-            
+
             mb.Entity<Airport>() 
               .HasIndex(a => a.IATA)
               .IsUnique();
@@ -109,7 +111,7 @@ namespace FlightManagementCompany
               .HasMaxLength(5);
 
             
-           
+
 
             // ========== Baggage ==========
             mb.Entity<Baggage>()
@@ -168,6 +170,16 @@ namespace FlightManagementCompany
               .HasIndex(f => f.FlightNumber)
               .IsUnique();
 
+
+           
+
         }
+
+       
+        
+           
+           
+        
+
     }
 }
