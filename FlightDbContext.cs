@@ -128,7 +128,7 @@ namespace FlightManagementCompany
               .OnDelete(DeleteBehavior.Restrict); // Restrict delete behavior to prevent deletion of a ticket that has baggage associated with it
 
             mb.Entity<Baggage>() // Represents baggage associated with a passenger
-              .HasOne(b => b.Passenger)
+              .HasOne(b => b.Passenger) // Passenger who owns this baggage
               .WithMany(p => p.BaggageItems)
               .HasForeignKey(b => b.PassengerId)
               .OnDelete(DeleteBehavior.Restrict);
