@@ -102,7 +102,7 @@ namespace FlightManagementCompany
             // ========== Ticket ==========
             mb.Entity<Ticket>() // Represents a ticket booked for a flight
               .HasOne(t => t.Booking) // Booking associated with this ticket
-              .WithMany(b => b.Tickets)
+              .WithMany(b => b.Tickets) // One booking can have many tickets
               .HasForeignKey(t => t.BookingId)
               .OnDelete(DeleteBehavior.Restrict);
 
