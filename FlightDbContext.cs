@@ -174,7 +174,7 @@ namespace FlightManagementCompany
               .IsUnique();
 
             mb.Entity<Flight>() // Represents a flight with its details
-              .HasIndex(f => f.FlightNumber)
+              .HasIndex(f => f.FlightNumber) // Unique index on the FlightNumber to ensure no two flights have the same flight number
               .IsUnique();
 
 
