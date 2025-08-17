@@ -83,7 +83,7 @@ namespace FlightManagementCompany
             mb.Entity<Flight>() // Represents a flight with its details
               .HasOne(f => f.Aircraft) // Aircraft operating this flight
               .WithMany(a => a.Flights) // One aircraft can operate many flights
-              .HasForeignKey(f => f.AircraftId)
+              .HasForeignKey(f => f.AircraftId) // Foreign key for the aircraft
               .OnDelete(DeleteBehavior.Restrict);
 
             // ========== Booking ==========
