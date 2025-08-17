@@ -284,7 +284,7 @@ namespace FlightManagementCompany
 
                         case "14":
                             {
-                                // List Flights
+                                //List Flights
                                 List<Flight> flights = flightService.GetAll();
                                 if (flights.Count == 0)
                                 {
