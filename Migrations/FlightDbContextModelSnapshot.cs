@@ -143,7 +143,7 @@ namespace FlightManagementCompany.Migrations
                         .HasColumnType("float");
 
                     b.Property<decimal>("WeightKg")
-                        .HasColumnType("decimal(6,2)");
+                        .HasColumnType("decimal(10,2)");
 
                     b.HasKey("BaggageId");
 
@@ -182,9 +182,6 @@ namespace FlightManagementCompany.Migrations
 
                     b.HasKey("BookingId");
 
-                    b.HasIndex("BookingRef")
-                        .IsUnique();
-
                     b.HasIndex("FlightId");
 
                     b.HasIndex("PassengerId");
@@ -202,8 +199,7 @@ namespace FlightManagementCompany.Migrations
 
                     b.Property<string>("FullName")
                         .IsRequired()
-                        .HasMaxLength(80)
-                        .HasColumnType("nvarchar(80)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LicenseNo")
                         .HasColumnType("nvarchar(max)");
@@ -250,10 +246,10 @@ namespace FlightManagementCompany.Migrations
 
                     b.HasIndex("AircraftId");
 
-                    b.HasIndex("RouteId");
-
-                    b.HasIndex("FlightNumber", "DepartureUtc")
+                    b.HasIndex("FlightNumber")
                         .IsUnique();
+
+                    b.HasIndex("RouteId");
 
                     b.ToTable("Flights");
                 });
@@ -293,8 +289,7 @@ namespace FlightManagementCompany.Migrations
 
                     b.Property<string>("FullName")
                         .IsRequired()
-                        .HasMaxLength(80)
-                        .HasColumnType("nvarchar(80)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nationality")
                         .IsRequired()
@@ -321,12 +316,6 @@ namespace FlightManagementCompany.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RouteId"));
 
-                    b.Property<int?>("AirportId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("AirportId1")
-                        .HasColumnType("int");
-
                     b.Property<int>("DestinationAirportId")
                         .HasColumnType("int");
 
@@ -337,10 +326,6 @@ namespace FlightManagementCompany.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("RouteId");
-
-                    b.HasIndex("AirportId");
-
-                    b.HasIndex("AirportId1");
 
                     b.HasIndex("DestinationAirportId");
 
@@ -371,10 +356,6 @@ namespace FlightManagementCompany.Migrations
 
                     b.Property<string>("Seat")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("SeatNumber")
-                        .IsRequired()
                         .HasMaxLength(5)
                         .HasColumnType("nvarchar(5)");
 
@@ -392,7 +373,7 @@ namespace FlightManagementCompany.Migrations
                     b.HasOne("FlightManagementCompany.Models.Aircraft", "Aircraft")
                         .WithMany("Maintenance")
                         .HasForeignKey("AircraftId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Aircraft");
@@ -401,15 +382,15 @@ namespace FlightManagementCompany.Migrations
             modelBuilder.Entity("FlightManagementCompany.Models.Baggage", b =>
                 {
                     b.HasOne("FlightManagementCompany.Models.Passenger", "Passenger")
-                        .WithMany()
+                        .WithMany("BaggageItems")
                         .HasForeignKey("PassengerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("FlightManagementCompany.Models.Ticket", "Ticket")
                         .WithMany("Baggage")
                         .HasForeignKey("TicketId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Passenger");
@@ -420,15 +401,15 @@ namespace FlightManagementCompany.Migrations
             modelBuilder.Entity("FlightManagementCompany.Models.Booking", b =>
                 {
                     b.HasOne("FlightManagementCompany.Models.Flight", "Flight")
-                        .WithMany()
+                        .WithMany("Bookings")
                         .HasForeignKey("FlightId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("FlightManagementCompany.Models.Passenger", "Passenger")
                         .WithMany("Bookings")
                         .HasForeignKey("PassengerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Flight");
@@ -441,13 +422,13 @@ namespace FlightManagementCompany.Migrations
                     b.HasOne("FlightManagementCompany.Models.Aircraft", "Aircraft")
                         .WithMany("Flights")
                         .HasForeignKey("AircraftId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("FlightManagementCompany.Models.Route", "Route")
                         .WithMany("Flights")
                         .HasForeignKey("RouteId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Aircraft");
@@ -460,13 +441,13 @@ namespace FlightManagementCompany.Migrations
                     b.HasOne("FlightManagementCompany.Models.CrewMember", "CrewMember")
                         .WithMany("FlightCrew")
                         .HasForeignKey("CrewId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("FlightManagementCompany.Models.Flight", "Flight")
                         .WithMany("FlightCrew")
                         .HasForeignKey("FlightId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("CrewMember");
@@ -476,22 +457,14 @@ namespace FlightManagementCompany.Migrations
 
             modelBuilder.Entity("FlightManagementCompany.Models.Route", b =>
                 {
-                    b.HasOne("FlightManagementCompany.Models.Airport", null)
-                        .WithMany("DestinationRoutes")
-                        .HasForeignKey("AirportId");
-
-                    b.HasOne("FlightManagementCompany.Models.Airport", null)
-                        .WithMany("OriginRoutes")
-                        .HasForeignKey("AirportId1");
-
                     b.HasOne("FlightManagementCompany.Models.Airport", "Destination")
-                        .WithMany()
+                        .WithMany("DestinationRoutes")
                         .HasForeignKey("DestinationAirportId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("FlightManagementCompany.Models.Airport", "Origin")
-                        .WithMany()
+                        .WithMany("OriginRoutes")
                         .HasForeignKey("OriginAirportId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -506,13 +479,13 @@ namespace FlightManagementCompany.Migrations
                     b.HasOne("FlightManagementCompany.Models.Booking", "Booking")
                         .WithMany("Tickets")
                         .HasForeignKey("BookingId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("FlightManagementCompany.Models.Flight", "Flight")
                         .WithMany("Tickets")
                         .HasForeignKey("FlightId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Booking");
@@ -546,6 +519,8 @@ namespace FlightManagementCompany.Migrations
 
             modelBuilder.Entity("FlightManagementCompany.Models.Flight", b =>
                 {
+                    b.Navigation("Bookings");
+
                     b.Navigation("FlightCrew");
 
                     b.Navigation("Tickets");
@@ -553,6 +528,8 @@ namespace FlightManagementCompany.Migrations
 
             modelBuilder.Entity("FlightManagementCompany.Models.Passenger", b =>
                 {
+                    b.Navigation("BaggageItems");
+
                     b.Navigation("Bookings");
                 });
 
