@@ -67,7 +67,7 @@ namespace FlightManagementCompany
               .OnDelete(DeleteBehavior.Restrict);  // Restrict delete behavior to prevent deletion of an airport that has routes associated with it
 
             // Route: DestinationAirport -> Airport (One Airport has many DestinationRoutes)
-            mb.Entity<Route>()
+            mb.Entity<Route>() // Represents a flight route between two airports
               .HasOne(r => r.Destination)
               .WithMany(a => a.DestinationRoutes)
               .HasForeignKey(r => r.DestinationAirportId)
