@@ -183,7 +183,7 @@ namespace FlightManagementCompany
 
                         case "7":
                             {
-                                // Register Passenger
+                                //Register Passenger
                                 Console.Write("Full Name: ");
                                 string name = (Console.ReadLine() ?? "").Trim();
 
