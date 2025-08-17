@@ -81,7 +81,7 @@ namespace FlightManagementCompany
               .OnDelete(DeleteBehavior.Restrict); // Restrict delete behavior to prevent deletion of a route that has flights associated with it
 
             mb.Entity<Flight>() // Represents a flight with its details
-              .HasOne(f => f.Aircraft)
+              .HasOne(f => f.Aircraft) // Aircraft operating this flight
               .WithMany(a => a.Flights)
               .HasForeignKey(f => f.AircraftId)
               .OnDelete(DeleteBehavior.Restrict);
