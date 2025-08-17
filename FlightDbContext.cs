@@ -71,7 +71,7 @@ namespace FlightManagementCompany
               .HasOne(r => r.Destination) // Destination airport of the route
               .WithMany(a => a.DestinationRoutes) // One airport can have many routes arriving at it
               .HasForeignKey(r => r.DestinationAirportId) // Foreign key for the destination airport
-              .OnDelete(DeleteBehavior.Restrict);
+              .OnDelete(DeleteBehavior.Restrict); // Restrict delete behavior to prevent deletion of an airport that has routes associated with it
 
             // ========== Flight ==========
             mb.Entity<Flight>()
