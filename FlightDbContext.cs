@@ -153,7 +153,7 @@ namespace FlightManagementCompany
               .OnDelete(DeleteBehavior.Restrict); // Restrict delete behavior to prevent deletion of a crew member that has flight assignments associated with them
 
             // ========== AircraftMaintenance ==========
-            mb.Entity<AircraftMaintenance>()
+            mb.Entity<AircraftMaintenance>() // Represents maintenance records for aircraft
               .HasOne(m => m.Aircraft)
               .WithMany(a => a.Maintenance)
               .HasForeignKey(m => m.AircraftId)
