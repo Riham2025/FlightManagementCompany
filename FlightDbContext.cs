@@ -68,7 +68,7 @@ namespace FlightManagementCompany
 
             // Route: DestinationAirport -> Airport (One Airport has many DestinationRoutes)
             mb.Entity<Route>() // Represents a flight route between two airports
-              .HasOne(r => r.Destination)
+              .HasOne(r => r.Destination) // Destination airport of the route
               .WithMany(a => a.DestinationRoutes)
               .HasForeignKey(r => r.DestinationAirportId)
               .OnDelete(DeleteBehavior.Restrict);
