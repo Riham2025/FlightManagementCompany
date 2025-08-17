@@ -173,7 +173,7 @@ namespace FlightManagementCompany
               .HasIndex(p => p.PassportNo) // Unique index on the PassportNo to ensure no two passengers have the same passport number
               .IsUnique();
 
-            mb.Entity<Flight>()
+            mb.Entity<Flight>() // Represents a flight with its details
               .HasIndex(f => f.FlightNumber)
               .IsUnique();
 
