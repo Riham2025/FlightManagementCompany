@@ -366,7 +366,7 @@ namespace FlightManagementCompany
             }
         }
 
-        // Read a UTC DateTime with prompt and validation
+        //Read a UTC DateTime with prompt and validation
         private static DateTime ReadDate(string label)
         {
             while (true)
