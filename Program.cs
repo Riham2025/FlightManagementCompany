@@ -336,7 +336,7 @@ namespace FlightManagementCompany
             }
         }
 
-        // Read a decimal with prompt and validation
+        //Read a decimal with prompt and validation
         private static decimal ReadDecimal(string label)
         {
             while (true)
