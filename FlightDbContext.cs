@@ -57,10 +57,10 @@ namespace FlightManagementCompany
 
             mb.Entity<Airport>() // Represents an airport in the flight management system
               .HasIndex(a => a.IATA) // Unique index on the IATA code to ensure no two airports have the same IATA code
-              .IsUnique();
+              .IsUnique(); 
 
             // Route: OriginAirport -> Airport (One Airport has many OriginRoutes)
-            mb.Entity<Route>()
+            mb.Entity<Route>() // Represents a flight route between two airports
               .HasOne(r => r.Origin)
               .WithMany(a => a.OriginRoutes)
               .HasForeignKey(r => r.OriginAirportId)
