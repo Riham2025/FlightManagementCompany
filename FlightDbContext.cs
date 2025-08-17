@@ -154,7 +154,7 @@ namespace FlightManagementCompany
 
             // ========== AircraftMaintenance ==========
             mb.Entity<AircraftMaintenance>() // Represents maintenance records for aircraft
-              .HasOne(m => m.Aircraft)
+              .HasOne(m => m.Aircraft) // Aircraft associated with this maintenance record
               .WithMany(a => a.Maintenance)
               .HasForeignKey(m => m.AircraftId)
               .OnDelete(DeleteBehavior.Restrict);
