@@ -90,7 +90,7 @@ namespace FlightManagementCompany
             mb.Entity<Booking>() // Represents a booking made by a passenger for a flight
               .HasOne(b => b.Passenger) // Passenger who made the booking
               .WithMany(p => p.Bookings) // One passenger can have many bookings
-              .HasForeignKey(b => b.PassengerId)
+              .HasForeignKey(b => b.PassengerId) // Foreign key for the passenger
               .OnDelete(DeleteBehavior.Restrict);
 
             mb.Entity<Booking>()
