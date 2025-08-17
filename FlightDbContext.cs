@@ -55,7 +55,7 @@ namespace FlightManagementCompany
 
             // ========== Airport ==========
 
-            mb.Entity<Airport>() 
+            mb.Entity<Airport>() // Represents an airport in the flight management system
               .HasIndex(a => a.IATA)
               .IsUnique();
 
