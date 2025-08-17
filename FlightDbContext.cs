@@ -42,6 +42,10 @@ namespace FlightManagementCompany
         // This method is called when the model for a derived context is being created.
         protected override void OnModelCreating(ModelBuilder mb)
         {
+
+            mb.Entity<Ticket>().Ignore(t => t.SeatNumber);
+
+
             base.OnModelCreating(mb);
 
            
