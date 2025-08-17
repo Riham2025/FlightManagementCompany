@@ -161,7 +161,7 @@ namespace FlightManagementCompany
 
 
             mb.Entity<AircraftMaintenance>() // Represents maintenance records for aircraft
-              .Property(m => m.PerformedAtUtc)
+              .Property(m => m.PerformedAtUtc) // Date and time when the maintenance was performed
               .HasColumnType("datetime2");
 
             
