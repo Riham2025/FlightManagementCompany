@@ -165,7 +165,7 @@ namespace FlightManagementCompany
               .HasColumnType("datetime2"); // Set the column type for PerformedAtUtc to datetime2 for better precision
 
 
-            mb.Entity<Aircraft>()
+            mb.Entity<Aircraft>() // Represents an aircraft in the flight management system
               .HasIndex(a => a.TailNumber)
               .IsUnique();
 
