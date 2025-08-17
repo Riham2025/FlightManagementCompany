@@ -113,7 +113,7 @@ namespace FlightManagementCompany
               .OnDelete(DeleteBehavior.Restrict); // Restrict delete behavior to prevent deletion of a flight that has tickets associated with it
 
 
-            mb.Entity<Ticket>()
+            mb.Entity<Ticket>() // Represents a ticket booked for a flight
               .Property(t => t.Seat)
               .HasMaxLength(5);
 
