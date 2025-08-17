@@ -110,9 +110,9 @@ namespace FlightManagementCompany
               .HasOne(t => t.Flight) // Flight associated with this ticket
               .WithMany(f => f.Tickets) // One flight can have many tickets
               .HasForeignKey(t => t.FlightId) // Foreign key for the flight
-              .OnDelete(DeleteBehavior.Restrict);
+              .OnDelete(DeleteBehavior.Restrict); // Restrict delete behavior to prevent deletion of a flight that has tickets associated with it
 
-            
+
             mb.Entity<Ticket>()
               .Property(t => t.Seat)
               .HasMaxLength(5);
