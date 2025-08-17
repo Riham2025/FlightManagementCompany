@@ -124,7 +124,7 @@ namespace FlightManagementCompany
             mb.Entity<Baggage>() // Represents baggage associated with a ticket
               .HasOne(b => b.Ticket) // Ticket associated with this baggage
               .WithMany(t => t.Baggage) // One ticket can have many baggage items
-              .HasForeignKey(b => b.TicketId)
+              .HasForeignKey(b => b.TicketId) // Foreign key for the ticket
               .OnDelete(DeleteBehavior.Restrict);
 
             mb.Entity<Baggage>()
