@@ -150,7 +150,7 @@ namespace FlightManagementCompany
               .HasOne(fc => fc.CrewMember) // Crew member assigned to this flight
               .WithMany(cm => cm.FlightCrew) // One crew member can be assigned to many flights
               .HasForeignKey(fc => fc.CrewId) // Foreign key for the crew member
-              .OnDelete(DeleteBehavior.Restrict);
+              .OnDelete(DeleteBehavior.Restrict); // Restrict delete behavior to prevent deletion of a crew member that has flight assignments associated with them
 
             // ========== AircraftMaintenance ==========
             mb.Entity<AircraftMaintenance>()
