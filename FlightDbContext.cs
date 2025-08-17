@@ -160,7 +160,7 @@ namespace FlightManagementCompany
               .OnDelete(DeleteBehavior.Restrict); // Restrict delete behavior to prevent deletion of an aircraft that has maintenance records associated with it
 
 
-            mb.Entity<AircraftMaintenance>()
+            mb.Entity<AircraftMaintenance>() // Represents maintenance records for aircraft
               .Property(m => m.PerformedAtUtc)
               .HasColumnType("datetime2");
 
