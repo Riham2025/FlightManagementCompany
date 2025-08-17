@@ -106,7 +106,7 @@ namespace FlightManagementCompany
               .HasForeignKey(t => t.BookingId) // Foreign key for the booking
               .OnDelete(DeleteBehavior.Restrict); // Restrict delete behavior to prevent deletion of a booking that has tickets associated with it
 
-            mb.Entity<Ticket>()
+            mb.Entity<Ticket>() // Represents a ticket booked for a flight
               .HasOne(t => t.Flight)
               .WithMany(f => f.Tickets)
               .HasForeignKey(t => t.FlightId)
