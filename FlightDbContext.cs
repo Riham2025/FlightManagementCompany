@@ -166,7 +166,7 @@ namespace FlightManagementCompany
 
 
             mb.Entity<Aircraft>() // Represents an aircraft in the flight management system
-              .HasIndex(a => a.TailNumber)
+              .HasIndex(a => a.TailNumber) // Unique index on the TailNumber to ensure no two aircraft have the same tail number
               .IsUnique();
 
             mb.Entity<Passenger>()
