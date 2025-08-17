@@ -131,10 +131,10 @@ namespace FlightManagementCompany
               .HasOne(b => b.Passenger) // Passenger who owns this baggage
               .WithMany(p => p.BaggageItems) // One passenger can have many baggage items
               .HasForeignKey(b => b.PassengerId) // Foreign key for the passenger
-              .OnDelete(DeleteBehavior.Restrict);
+              .OnDelete(DeleteBehavior.Restrict); // Restrict delete behavior to prevent deletion of a passenger that has baggage associated with them
 
-           
-           
+
+
 
             // ========== FlightCrew (Many-to-Many via explicit join) ==========
             mb.Entity<FlightCrew>()
