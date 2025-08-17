@@ -311,7 +311,7 @@ namespace FlightManagementCompany
                 }
                 catch (Exception ex)
                 {
-                    // Defensive catch so the loop doesn't crash on unexpected exceptions
+                    //Defensive catch so the loop doesn't crash on unexpected exceptions
                     Console.WriteLine($"Unhandled error: {ex.Message}");
                 }
             }
