@@ -351,7 +351,7 @@ namespace FlightManagementCompany
             }
         }
 
-        // Read a double with prompt and validation
+        //Read a double with prompt and validation
         private static double ReadDouble(string label)
         {
             while (true)
