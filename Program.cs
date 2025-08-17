@@ -101,7 +101,7 @@ namespace FlightManagementCompany
 
                         case "2":
                             {
-                                // List Airports
+                                //List Airports
                                 List<Airport> airports = airportService.GetAll();
                                 if (airports.Count == 0)
                                 {
