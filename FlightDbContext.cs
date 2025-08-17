@@ -87,7 +87,7 @@ namespace FlightManagementCompany
               .OnDelete(DeleteBehavior.Restrict); // Restrict delete behavior to prevent deletion of an aircraft that has flights associated with it
 
             // ========== Booking ==========
-            mb.Entity<Booking>()
+            mb.Entity<Booking>() // Represents a booking made by a passenger for a flight
               .HasOne(b => b.Passenger)
               .WithMany(p => p.Bookings)
               .HasForeignKey(b => b.PassengerId)
