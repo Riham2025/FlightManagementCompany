@@ -115,9 +115,9 @@ namespace FlightManagementCompany
 
             mb.Entity<Ticket>() // Represents a ticket booked for a flight
               .Property(t => t.Seat) // Seat number assigned to the ticket
-              .HasMaxLength(5);
+              .HasMaxLength(5); // Set maximum length for the Seat property to 5 characters
 
-            
+
 
 
             // ========== Baggage ==========
