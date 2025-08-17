@@ -157,9 +157,9 @@ namespace FlightManagementCompany
               .HasOne(m => m.Aircraft) // Aircraft associated with this maintenance record
               .WithMany(a => a.Maintenance) // One aircraft can have many maintenance records
               .HasForeignKey(m => m.AircraftId) // Foreign key for the aircraft
-              .OnDelete(DeleteBehavior.Restrict);
+              .OnDelete(DeleteBehavior.Restrict); // Restrict delete behavior to prevent deletion of an aircraft that has maintenance records associated with it
 
-            
+
             mb.Entity<AircraftMaintenance>()
               .Property(m => m.PerformedAtUtc)
               .HasColumnType("datetime2");
