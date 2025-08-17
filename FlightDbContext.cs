@@ -146,7 +146,7 @@ namespace FlightManagementCompany
               .HasForeignKey(fc => fc.FlightId) // Foreign key for the flight
               .OnDelete(DeleteBehavior.Restrict); // Restrict delete behavior to prevent deletion of a flight that has crew assignments associated with it
 
-            mb.Entity<FlightCrew>()
+            mb.Entity<FlightCrew>() // Represents the assignment of crew members to flights
               .HasOne(fc => fc.CrewMember)
               .WithMany(cm => cm.FlightCrew)
               .HasForeignKey(fc => fc.CrewId)
