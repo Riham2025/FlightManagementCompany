@@ -43,7 +43,10 @@ namespace FlightManagementCompany
         protected override void OnModelCreating(ModelBuilder mb)
         {
 
-            mb.Entity<Ticket>().Ignore(t => t.SeatNumber);
+            mb.Entity<Ticket>().Ignore(t => t.SeatNumber); // Ignore SeatNumber property in Ticket entity to avoid redundancy with Seat property
+
+            mb.Entity<Ticket>().Ignore(t => t.Seat); // Ignore Seat property in Ticket entity to avoid redundancy with SeatNumber property
+
 
 
             base.OnModelCreating(mb);
