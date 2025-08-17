@@ -319,7 +319,7 @@ namespace FlightManagementCompany
             Console.WriteLine("Goodbye!");
         }
 
-        // ===================== INPUT HELPERS =====================
+        // ====================== INPUT HELPERS =====================
 
         // Read an integer with prompt and validation
         private static int ReadInt(string label)
