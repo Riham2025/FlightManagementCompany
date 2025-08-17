@@ -321,7 +321,7 @@ namespace FlightManagementCompany
 
         // ====================== INPUT HELPERS =====================
 
-        // Read an integer with prompt and validation
+        //Read an integer with prompt and validation
         private static int ReadInt(string label)
         {
             while (true)
