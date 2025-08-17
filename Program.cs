@@ -136,7 +136,7 @@ namespace FlightManagementCompany
 
                         case "4":
                             {
-                                // List Aircraft
+                                //List Aircraft
                                 List<Aircraft> aircraft = aircraftService.GetAll();
                                 if (aircraft.Count == 0)
                                 {
