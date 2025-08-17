@@ -77,7 +77,7 @@ namespace FlightManagementCompany
             mb.Entity<Flight>() // Represents a flight with its details
               .HasOne(f => f.Route) // Route associated with this flight
               .WithMany(r => r.Flights) // One route can have many flights
-              .HasForeignKey(f => f.RouteId)
+              .HasForeignKey(f => f.RouteId) // Foreign key for the route
               .OnDelete(DeleteBehavior.Restrict);
 
             mb.Entity<Flight>()
