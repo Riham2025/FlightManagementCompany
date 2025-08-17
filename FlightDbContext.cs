@@ -170,7 +170,7 @@ namespace FlightManagementCompany
               .IsUnique(); 
 
             mb.Entity<Passenger>() // Represents a passenger in the flight management system
-              .HasIndex(p => p.PassportNo)
+              .HasIndex(p => p.PassportNo) // Unique index on the PassportNo to ensure no two passengers have the same passport number
               .IsUnique();
 
             mb.Entity<Flight>()
