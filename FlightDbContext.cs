@@ -66,6 +66,12 @@ namespace FlightManagementCompany
                 new Aircraft { AircraftId = 2, TailNumber = "HZ-B777", Model = "B777-300", Capacity = 396 }
             );
 
+            // Routes (FK: OriginAirportId/DestinationAirportId)
+            mb.Entity<Route>().HasData(
+                new Route { RouteId = 1, OriginAirportId = 1, DestinationAirportId = 2, DistanceKm = 850 }, // JED -> RUH
+                new Route { RouteId = 2, OriginAirportId = 1, DestinationAirportId = 3, DistanceKm = 1700 }  // JED -> DXB
+            );
+
 
 
             // ========== Airport ==========
