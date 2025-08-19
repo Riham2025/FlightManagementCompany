@@ -79,6 +79,7 @@ namespace FlightManagementCompany
             // Add aircraft maintenance records only if not already seeded
             {
                 ctx.AircraftMaintenance.AddRange(
+                    // Assuming aircraft 1 and 2 have maintenance records
                     new AircraftMaintenance { MaintenanceId = 1, AircraftId = 1, Description = "A-Check complete", PerformedAtUtc = DateTime.UtcNow.AddDays(-5), Type = "A-Check" },
                     new AircraftMaintenance { MaintenanceId = 2, AircraftId = 2, Description = "Engine inspection", PerformedAtUtc = DateTime.UtcNow.AddDays(-15), Type = "B-Check" }
                 );
