@@ -4,6 +4,7 @@ using FlightManagementCompany.Models;
 using FlightManagementCompany.Repository;
 using FlightManagementCompany.Repository;
 using FlightManagementCompany.Services;
+using Microsoft.EntityFrameworkCore;
 
 namespace FlightManagementCompany
 {
@@ -11,13 +12,20 @@ namespace FlightManagementCompany
     {
         static void Main(string[] args)
         {
+
+
+            // 1) Create context (adjust ctor if you use options)
+            var ctx = new FlightDbContext();
+
+          
+
+
+
             // ===================== BOOTSTRAP =====================
 
-            // 1)Create EF Core DbContext (adjust ctor if your context needs options)
-            FlightDbContext ctx = new FlightDbContext();
+           
 
-            //(Optional) Ensure DB exists; if you use migrations, call ctx.Database.Migrate() instead.
-            ctx.Database.EnsureCreated();
+           
 
             // 2)Repositories (one per entity, as you implemented)
             Airports airportRepo = new Airports(ctx); // Repository for managing airport entities in the flight management system.
