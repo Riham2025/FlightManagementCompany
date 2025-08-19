@@ -29,14 +29,25 @@ namespace FlightManagementCompany
             if (!ctx.Bookings.Any())
             {
                 // Use existing seeded flight ids (1,2) and passengers we just added
-                var p1 = ctx.Passengers.First(p => p.PassportNo == "P1234567");
-                var p2 = ctx.Passengers.First(p => p.PassportNo == "P7654321");
+                var p1 = ctx.Passengers.First(p => p.PassportNo == "P1234567"); 
+                var p2 = ctx.Passengers.First(p => p.PassportNo == "P7654321"); 
 
                 ctx.Bookings.AddRange(
                     new Booking { BookingId = 1, BookingRef = "BK000001", PassengerId = p1.PassengerId, FlightId = 1, BookingDate = DateTime.UtcNow, Status = "Confirmed" },
                     new Booking { BookingId = 2, BookingRef = "BK000002", PassengerId = p2.PassengerId, FlightId = 2, BookingDate = DateTime.UtcNow, Status = "Confirmed" }
                 );
                 ctx.SaveChanges();
+            }
+
+            
+            
+            if (!ctx.Tickets.Any())
+            {
+                ctx.Tickets.AddRange(
+                    new Ticket { TicketId = 1, BookingId = 1, FlightId = 1, Fare = 350.00m, Seat = "12A", SeatNumber = "12A", CheckedIn = false },
+                    new Ticket { TicketId = 2, BookingId = 2, FlightId = 2, Fare = 790.00m, Seat = "4C", SeatNumber = "4C", CheckedIn = false }
+                );
+                ctx.SaveChanges(); 
             }
 
 
