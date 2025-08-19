@@ -72,6 +72,8 @@ namespace FlightManagementCompany
                 new Route { RouteId = 2, OriginAirportId = 1, DestinationAirportId = 3, DistanceKm = 1700 }  // JED -> DXB
             );
 
+            // Flights (FK: RouteId, AircraftId)
+
 
 
             // ========== Airport ==========
