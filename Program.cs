@@ -17,6 +17,10 @@ namespace FlightManagementCompany
             // 1) Create context (adjust ctor if you use options)
             var ctx = new FlightDbContext();
 
+            // 2) Apply migrations (creates DB if not exists + runs HasData seed)
+            ctx.Database.Migrate();
+
+
           
 
 
