@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace FlightManagementCompany
 {
-    internal class DataSeeder
+    public static class DataSeeder
     {
-    }
+
+        // Call once at app startup
+        public static void Seed(FlightDbContext ctx)
+        {
+        
+        
+        }
+
+
+
+
+    }   
 }
