@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FlightManagementCompany.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace FlightManagementCompany
 {
@@ -48,6 +49,19 @@ namespace FlightManagementCompany
                     new Ticket { TicketId = 2, BookingId = 2, FlightId = 2, Fare = 790.00m, Seat = "4C", SeatNumber = "4C", CheckedIn = false }
                 );
                 ctx.SaveChanges(); 
+            }
+
+
+            if (!ctx.Baggage.Any())
+            {
+                // Link some baggage to ticket 1 and passenger of booking 1
+                var b1PassengerId = ctx.Bookings.Include(b => b.Passenger).First(b => b.BookingId == 1).PassengerId;
+
+                ctx.Baggage.AddRange(
+                    new Baggage { BaggageId = 1, TicketId = 1, PassengerId = b1PassengerId, TagNumber = "BG123456", Weight = 18.5, WeightKg = 18.5m },
+                    new Baggage { BaggageId = 2, TicketId = 1, PassengerId = b1PassengerId, TagNumber = "BG123457", Weight = 7.25, WeightKg = 7.25m }
+                );
+                ctx.SaveChanges();
             }
 
 
