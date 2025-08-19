@@ -79,6 +79,11 @@ namespace FlightManagementCompany
             var dep2 = new DateTime(2025, 08, 21, 10, 00, 00, DateTimeKind.Utc);
             var arr2 = new DateTime(2025, 08, 21, 12, 45, 00, DateTimeKind.Utc);
 
+                mb.Entity<Flight>().HasData(
+                new Flight { FlightId = 1, FlightNumber = "SV1001", RouteId = 1, AircraftId = 1, DepartureUtc = dep1, ArrivalUtc = arr1, Status = "Scheduled" },
+                new Flight { FlightId = 2, FlightNumber = "SV2002", RouteId = 2, AircraftId = 2, DepartureUtc = dep2, ArrivalUtc = arr2, Status = "Scheduled" }
+             );
+
 
 
             // ========== Airport ==========
