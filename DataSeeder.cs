@@ -44,6 +44,7 @@ namespace FlightManagementCompany
             
             if (!ctx.Tickets.Any())
             {
+                // Use existing booking and flight ids (1,2) to create tickets
                 ctx.Tickets.AddRange(
                     new Ticket { TicketId = 1, BookingId = 1, FlightId = 1, Fare = 350.00m, Seat = "12A", SeatNumber = "12A", CheckedIn = false },
                     new Ticket { TicketId = 2, BookingId = 2, FlightId = 2, Fare = 790.00m, Seat = "4C", SeatNumber = "4C", CheckedIn = false }
