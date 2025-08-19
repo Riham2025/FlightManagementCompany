@@ -21,7 +21,8 @@ namespace FlightManagementCompany
             ctx.Database.Migrate();
 
 
-          
+            // 3) Runtime seed (test/demo data) – safe to call repeatedly
+            DataSeeder.Seed(ctx);
 
 
 
