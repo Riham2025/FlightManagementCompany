@@ -53,6 +53,13 @@ namespace FlightManagementCompany
 
             // ====== STATIC SEED (HasData) ======
 
+            // Airports
+            mb.Entity<Airport>().HasData(
+                new Airport { AirportId = 1, IATA = "JED", Name = "King Abdulaziz Int'l", City = "Jeddah", Country = "Saudi Arabia", TimeZone = "UTC+3" },
+                new Airport { AirportId = 2, IATA = "RUH", Name = "King Khalid Int'l", City = "Riyadh", Country = "Saudi Arabia", TimeZone = "UTC+3" },
+                new Airport { AirportId = 3, IATA = "DXB", Name = "Dubai Int'l", City = "Dubai", Country = "UAE", TimeZone = "UTC+4" }
+            );
+
 
 
             // ========== Airport ==========
