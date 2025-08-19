@@ -52,14 +52,24 @@ namespace FlightManagementCompany
             }
 
 
-            if (!ctx.Baggage.Any())
+            if (!ctx.Baggage.Any()) 
             {
                 // Link some baggage to ticket 1 and passenger of booking 1
                 var b1PassengerId = ctx.Bookings.Include(b => b.Passenger).First(b => b.BookingId == 1).PassengerId;
 
-                ctx.Baggage.AddRange(
+                ctx.Baggage.AddRange( 
                     new Baggage { BaggageId = 1, TicketId = 1, PassengerId = b1PassengerId, TagNumber = "BG123456", Weight = 18.5, WeightKg = 18.5m },
                     new Baggage { BaggageId = 2, TicketId = 1, PassengerId = b1PassengerId, TagNumber = "BG123457", Weight = 7.25, WeightKg = 7.25m }
+                );
+                ctx.SaveChanges();
+            }
+
+            if (!ctx.FlightCrew.Any())
+            // Add flight crew only if not already seeded
+            {
+                ctx.FlightCrew.AddRange(
+                    new FlightCrew { FlightId = 1, CrewId = 1, RoleOnFlight = "Pilot" },
+                    new FlightCrew { FlightId = 1, CrewId = 2, RoleOnFlight = "Attendant" }
                 );
                 ctx.SaveChanges();
             }
