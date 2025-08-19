@@ -54,10 +54,16 @@ namespace FlightManagementCompany
             // ====== STATIC SEED (HasData) ======
 
             // Airports
-            mb.Entity<Airport>().HasData(
-                new Airport { AirportId = 1, IATA = "JED", Name = "King Abdulaziz Int'l", City = "Jeddah", Country = "Saudi Arabia", TimeZone = "UTC+3" },
+            mb.Entity<Airport>().HasData( 
+                new Airport { AirportId = 1, IATA = "JED", Name = "King Abdulaziz Int'l", City = "Jeddah", Country = "Saudi Arabia", TimeZone = "UTC+3" }, 
                 new Airport { AirportId = 2, IATA = "RUH", Name = "King Khalid Int'l", City = "Riyadh", Country = "Saudi Arabia", TimeZone = "UTC+3" },
                 new Airport { AirportId = 3, IATA = "DXB", Name = "Dubai Int'l", City = "Dubai", Country = "UAE", TimeZone = "UTC+4" }
+            );
+
+            // Aircraft
+            mb.Entity<Aircraft>().HasData(
+                new Aircraft { AircraftId = 1, TailNumber = "HZ-A001", Model = "A320", Capacity = 180 },
+                new Aircraft { AircraftId = 2, TailNumber = "HZ-B777", Model = "B777-300", Capacity = 396 }
             );
 
 
