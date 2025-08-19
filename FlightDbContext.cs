@@ -51,7 +51,9 @@ namespace FlightManagementCompany
 
             base.OnModelCreating(mb);
 
-           
+            // ====== STATIC SEED (HasData) ======
+
+
 
             // ========== Airport ==========
 
