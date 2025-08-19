@@ -68,7 +68,8 @@ namespace FlightManagementCompany
             // Add flight crew only if not already seeded
             {
                 ctx.FlightCrew.AddRange(
-                    new FlightCrew { FlightId = 1, CrewId = 1, RoleOnFlight = "Pilot" },
+                    // Assuming flight 1 has a pilot and an attendant
+                    new FlightCrew { FlightId = 1, CrewId = 1, RoleOnFlight = "Pilot" }, 
                     new FlightCrew { FlightId = 1, CrewId = 2, RoleOnFlight = "Attendant" }
                 );
                 ctx.SaveChanges();
