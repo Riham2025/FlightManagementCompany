@@ -48,6 +48,22 @@ namespace FlightManagementCompany.Migrations
                         .IsUnique();
 
                     b.ToTable("Aircraft");
+
+                    b.HasData(
+                        new
+                        {
+                            AircraftId = 1,
+                            Capacity = 180,
+                            Model = "A320",
+                            TailNumber = "HZ-A001"
+                        },
+                        new
+                        {
+                            AircraftId = 2,
+                            Capacity = 396,
+                            Model = "B777-300",
+                            TailNumber = "HZ-B777"
+                        });
                 });
 
             modelBuilder.Entity("FlightManagementCompany.Models.AircraftMaintenance", b =>
@@ -119,6 +135,35 @@ namespace FlightManagementCompany.Migrations
                         .IsUnique();
 
                     b.ToTable("Airports");
+
+                    b.HasData(
+                        new
+                        {
+                            AirportId = 1,
+                            City = "Jeddah",
+                            Country = "Saudi Arabia",
+                            IATA = "JED",
+                            Name = "King Abdulaziz Int'l",
+                            TimeZone = "UTC+3"
+                        },
+                        new
+                        {
+                            AirportId = 2,
+                            City = "Riyadh",
+                            Country = "Saudi Arabia",
+                            IATA = "RUH",
+                            Name = "King Khalid Int'l",
+                            TimeZone = "UTC+3"
+                        },
+                        new
+                        {
+                            AirportId = 3,
+                            City = "Dubai",
+                            Country = "UAE",
+                            IATA = "DXB",
+                            Name = "Dubai Int'l",
+                            TimeZone = "UTC+4"
+                        });
                 });
 
             modelBuilder.Entity("FlightManagementCompany.Models.Baggage", b =>
@@ -252,6 +297,28 @@ namespace FlightManagementCompany.Migrations
                     b.HasIndex("RouteId");
 
                     b.ToTable("Flights");
+
+                    b.HasData(
+                        new
+                        {
+                            FlightId = 1,
+                            AircraftId = 1,
+                            ArrivalUtc = new DateTime(2025, 8, 20, 9, 30, 0, 0, DateTimeKind.Utc),
+                            DepartureUtc = new DateTime(2025, 8, 20, 8, 0, 0, 0, DateTimeKind.Utc),
+                            FlightNumber = "SV1001",
+                            RouteId = 1,
+                            Status = "Scheduled"
+                        },
+                        new
+                        {
+                            FlightId = 2,
+                            AircraftId = 2,
+                            ArrivalUtc = new DateTime(2025, 8, 21, 12, 45, 0, 0, DateTimeKind.Utc),
+                            DepartureUtc = new DateTime(2025, 8, 21, 10, 0, 0, 0, DateTimeKind.Utc),
+                            FlightNumber = "SV2002",
+                            RouteId = 2,
+                            Status = "Scheduled"
+                        });
                 });
 
             modelBuilder.Entity("FlightManagementCompany.Models.FlightCrew", b =>
@@ -332,6 +399,22 @@ namespace FlightManagementCompany.Migrations
                     b.HasIndex("OriginAirportId");
 
                     b.ToTable("Routes");
+
+                    b.HasData(
+                        new
+                        {
+                            RouteId = 1,
+                            DestinationAirportId = 2,
+                            DistanceKm = 850,
+                            OriginAirportId = 1
+                        },
+                        new
+                        {
+                            RouteId = 2,
+                            DestinationAirportId = 3,
+                            DistanceKm = 1700,
+                            OriginAirportId = 1
+                        });
                 });
 
             modelBuilder.Entity("FlightManagementCompany.Models.Ticket", b =>
