@@ -73,6 +73,11 @@ namespace FlightManagementCompany
             );
 
             // Flights (FK: RouteId, AircraftId)
+            // Use UTC times
+            var dep1 = new DateTime(2025, 08, 20, 08, 00, 00, DateTimeKind.Utc);
+            var arr1 = new DateTime(2025, 08, 20, 09, 30, 00, DateTimeKind.Utc);
+            var dep2 = new DateTime(2025, 08, 21, 10, 00, 00, DateTimeKind.Utc);
+            var arr2 = new DateTime(2025, 08, 21, 12, 45, 00, DateTimeKind.Utc);
 
 
 
