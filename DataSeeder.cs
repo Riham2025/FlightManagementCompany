@@ -27,7 +27,8 @@ namespace FlightManagementCompany
             IBaggageRepository baggageRepo,
             ICrewMemberRepository crewRepo,
             IFlightCrewRepository flightCrewRepo,
-            IAircraftMaintenanceRepository maintenanceRepo
+            IAircraftMaintenanceRepository maintenanceRepo,
+            IAircraftMaintenanceRepository AMRepo
         )
         {
 
@@ -80,38 +81,48 @@ namespace FlightManagementCompany
             }
 
 
-            if (!ctx.Baggage.Any())
+            if (!baggageRepo.GetAll().Any())
             {
                 // Link some baggage to ticket 1 and passenger of booking 1
-                var b1PassengerId = ctx.Bookings.Include(b => b.Passenger).First(b => b.BookingId == 1).PassengerId;
+                var Baggage = db.Baggage.ToList();
+                var passengesrs = new List<Passenger>();
 
-                ctx.Baggage.AddRange(
-                    new Baggage { BaggageId = 1, TicketId = 1, PassengerId = b1PassengerId, TagNumber = "BG123456", Weight = 18.5, WeightKg = 18.5m },
-                    new Baggage { BaggageId = 2, TicketId = 1, PassengerId = b1PassengerId, TagNumber = "BG123457", Weight = 7.25, WeightKg = 7.25m }
-                );
-                ctx.SaveChanges();
+                var baggage = new List<Baggage>();
+                {
+                    new Baggage { BaggageId = 1, TicketId = 1, PassengerId = passengesrs[0].PassengerId, TagNumber = "BG123456", Weight = 18.5, WeightKg = 18.5m };
+                    new Baggage { BaggageId = 2, TicketId = 1, PassengerId = passengesrs[1].PassengerId, TagNumber = "BG123457", Weight = 7.25, WeightKg = 7.25m };
+                }
+                foreach (var b in baggage ) baggageRepo.Add(b);
+                db.SaveChanges();
             }
 
-            if (!ctx.FlightCrew.Any())
+            if (!flightCrewRepo.GetAll().Any())
             // Add flight crew only if not already seeded
             {
-                ctx.FlightCrew.AddRange(
+                var FlightCrew = db.FlightCrew.ToList();
+                var crews = new List<CrewMember>();
+                var flights = new List<Flight>();
+                var flightCrew = new List<Flight>(); 
+                {
                     // Assuming flight 1 has a pilot and an attendant
-                    new FlightCrew { FlightId = 1, CrewId = 1, RoleOnFlight = "Pilot" },
-                    new FlightCrew { FlightId = 1, CrewId = 2, RoleOnFlight = "Attendant" }
-                );
-                ctx.SaveChanges();
+                    new FlightCrew { FlightId = flights[0].FlightId, CrewId = crews[0].CrewId, RoleOnFlight = "Pilot" };
+                    new FlightCrew { FlightId = flights[1].FlightId, CrewId = crews[1].CrewId, RoleOnFlight = "Attendant" };
+                }
+                foreach (var fc in flightCrew) flightCrewRepo.Add(fc);
+                db.SaveChanges();
             }
 
-            if (!ctx.AircraftMaintenance.Any())
+            if (!AMRepo.GetAll().Any())
             // Add aircraft maintenance records only if not already seeded
             {
+                var maintenaces = new List<AircraftMaintenance>();
+                var aircrafts = new List<Aircraft>();
                 ctx.AircraftMaintenance.AddRange(
                     // Assuming aircraft 1 and 2 have maintenance records
                     new AircraftMaintenance { MaintenanceId = 1, AircraftId = 1, Description = "A-Check complete", PerformedAtUtc = DateTime.UtcNow.AddDays(-5), Type = "A-Check" },
                     new AircraftMaintenance { MaintenanceId = 2, AircraftId = 2, Description = "Engine inspection", PerformedAtUtc = DateTime.UtcNow.AddDays(-15), Type = "B-Check" }
                 );
-                ctx.SaveChanges();
+                db.SaveChanges();
             }
 
 
