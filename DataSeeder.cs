@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FlightManagementCompany
 {
+
     public static class DataSeeder
     {
 
@@ -96,33 +97,28 @@ namespace FlightManagementCompany
                 db.SaveChanges();
             }
 
+            // FLIGHT-CREW ASSIGNMENTS
             if (!flightCrewRepo.GetAll().Any())
-            // Add flight crew only if not already seeded
             {
-                var FlightCrew = db.FlightCrew.ToList();
-                var crews = new List<CrewMember>();
-                var flights = new List<Flight>();
-                var flightCrew = new List<Flight>(); 
+                var flights = flightRepo.GetAll();
+                var crew = crewRepo.GetAll();
+                if (flights.Count >= 1 && crew.Count >= 2)
                 {
-                    // Assuming flight 1 has a pilot and an attendant
-                    new FlightCrew { FlightId = flights[0].FlightId, CrewId = crews[0].CrewId, RoleOnFlight = "Pilot" };
-                    new FlightCrew { FlightId = flights[1].FlightId, CrewId = crews[1].CrewId, RoleOnFlight = "Attendant" };
+                    flightCrewRepo.Add(new FlightCrew { FlightId = flights[0].FlightId, CrewId = crew[0].CrewId, RoleOnFlight = "Pilot" });
+                    flightCrewRepo.Add(new FlightCrew { FlightId = flights[0].FlightId, CrewId = crew[1].CrewId, RoleOnFlight = "Attendant" });
+                    flightCrewRepo.Save();
                 }
-                foreach (var fc in flightCrew) flightCrewRepo.Add(fc);
-                db.SaveChanges();
             }
 
-            if (!AMRepo.GetAll().Any())
-            // Add aircraft maintenance records only if not already seeded
+            if (!maintenanceRepo.GetAll().Any())
             {
-                var maintenaces = new List<AircraftMaintenance>();
-                var aircrafts = new List<Aircraft>();
+                var aircraft = aircraftRepo.GetAll();
+                if (aircraft.Count >= 2)
                 {
-                    // Assuming aircraft 1 and 2 have maintenance records
-                    new AircraftMaintenance { MaintenanceId = 1, AircraftId = 1, Description = "A-Check complete", PerformedAtUtc = DateTime.UtcNow.AddDays(-5), Type = "A-Check" };
-                    new AircraftMaintenance { MaintenanceId = 2, AircraftId = 2, Description = "Engine inspection", PerformedAtUtc = DateTime.UtcNow.AddDays(-15), Type = "B-Check" };
+                    maintenanceRepo.Add(new AircraftMaintenance { AircraftId = aircraft[0].AircraftId, Description = "A-Check complete", Type = "A-Check", PerformedAtUtc = DateTime.UtcNow.AddDays(-5) });
+                    maintenanceRepo.Add(new AircraftMaintenance { AircraftId = aircraft[1].AircraftId, Description = "Engine inspection", Type = "B-Check", PerformedAtUtc = DateTime.UtcNow.AddDays(-15) });
+                    maintenanceRepo.Save();
                 }
-                db.SaveChanges();
             }
 
 
