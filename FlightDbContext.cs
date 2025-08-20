@@ -54,10 +54,10 @@ namespace FlightManagementCompany
             // ====== STATIC SEED (HasData) ======
 
             // Airports
-            mb.Entity<Airport>().HasData( 
-                new Airport { AirportId = 1, IATA = "JED", Name = "King Abdulaziz Int'l", City = "Jeddah", Country = "Saudi Arabia", TimeZone = "UTC+3" }, 
-                new Airport { AirportId = 2, IATA = "RUH", Name = "King Khalid Int'l", City = "Riyadh", Country = "Saudi Arabia", TimeZone = "UTC+3" },
-                new Airport { AirportId = 3, IATA = "DXB", Name = "Dubai Int'l", City = "Dubai", Country = "UAE", TimeZone = "UTC+4" }
+            mb.Entity<Airport>().HasData(
+               new Airport { AirportId = 1, IATA = "JED", Name = "King Abdulaziz Int'l", City = "Jeddah", Country = "Saudi Arabia", TimeZone = "UTC+3" },
+               new Airport { AirportId = 2, IATA = "RUH", Name = "King Khalid Int'l", City = "Riyadh", Country = "Saudi Arabia", TimeZone = "UTC+3" },
+               new Airport { AirportId = 3, IATA = "DXB", Name = "Dubai Int'l", City = "Dubai", Country = "UAE", TimeZone = "UTC+4" }
             );
 
             // Aircraft
@@ -68,21 +68,23 @@ namespace FlightManagementCompany
 
             // Routes (FK: OriginAirportId/DestinationAirportId)
             mb.Entity<Route>().HasData(
-                new Route { RouteId = 1, OriginAirportId = 1, DestinationAirportId = 2, DistanceKm = 850 }, // JED -> RUH
-                new Route { RouteId = 2, OriginAirportId = 1, DestinationAirportId = 3, DistanceKm = 1700 }  // JED -> DXB
+                new Route { RouteId = 1, OriginAirportId = 1, DestinationAirportId = 2, DistanceKm = 850 },
+                new Route { RouteId = 2, OriginAirportId = 1, DestinationAirportId = 3, DistanceKm = 1700 }
             );
 
             // Flights (FK: RouteId, AircraftId)
             // Use UTC times
+
+
             var dep1 = new DateTime(2025, 08, 20, 08, 00, 00, DateTimeKind.Utc);
             var arr1 = new DateTime(2025, 08, 20, 09, 30, 00, DateTimeKind.Utc);
             var dep2 = new DateTime(2025, 08, 21, 10, 00, 00, DateTimeKind.Utc);
             var arr2 = new DateTime(2025, 08, 21, 12, 45, 00, DateTimeKind.Utc);
 
-                mb.Entity<Flight>().HasData(
-                new Flight { FlightId = 1, FlightNumber = "SV1001", RouteId = 1, AircraftId = 1, DepartureUtc = dep1, ArrivalUtc = arr1, Status = "Scheduled" },
-                new Flight { FlightId = 2, FlightNumber = "SV2002", RouteId = 2, AircraftId = 2, DepartureUtc = dep2, ArrivalUtc = arr2, Status = "Scheduled" }
-             );
+            mb.Entity<Flight>().HasData(
+                 new Flight { FlightId = 1, FlightNumber = "SV1001", RouteId = 1, AircraftId = 1, DepartureUtc = dep1, ArrivalUtc = arr1, Status = "Scheduled" },
+                 new Flight { FlightId = 2, FlightNumber = "SV2002", RouteId = 2, AircraftId = 2, DepartureUtc = dep2, ArrivalUtc = arr2, Status = "Scheduled" }
+            );
 
 
 
